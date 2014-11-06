@@ -1,0 +1,1 @@
+E:\xampp\htdocs\miami-delivery\app/views/type_notifications/create.blade.php

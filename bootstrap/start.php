@@ -24,11 +24,11 @@ $app = new Illuminate\Foundation\Application;
 |
 */
 
-$env = $app->detectEnvironment(array(
-
-	'local' => array('homestead'),
-
-));
+//para cambiar a production
+$env = $app->detectEnvironment(function()
+{
+    return 'local';
+});
 
 /*
 |--------------------------------------------------------------------------
