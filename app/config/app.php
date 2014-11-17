@@ -121,8 +121,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-        'Way\Generators\GeneratorsServiceProvider',
-        'Barryvdh\Debugbar\ServiceProvider',
+        //'Way\Generators\GeneratorsServiceProvider',
+        //'Barryvdh\Debugbar\ServiceProvider',
 	),
 
 	/*
