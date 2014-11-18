@@ -26,8 +26,8 @@ $app = new Illuminate\Foundation\Application;
 
 //para cambiar a production
 $env = $app->detectEnvironment(array(
-    'local' => array('eveR','BRAPASTOR'),
-    'remoto'=> array('*deliveryguyapp.com'),
+    'local' => array('eveR','BRAPASTOR-PC'),
+    'remoto'=> array('ec2-54-83-196-7.compute-1.amazonaws.com'),
 ));
 
 /*
