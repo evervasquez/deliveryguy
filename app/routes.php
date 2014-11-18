@@ -6,7 +6,7 @@ Route::get('/', function()
     {
         return View::make('index');
     }else{
-        return Redirect::route('/');
+        return View::make('layout');
     }
 });
 
