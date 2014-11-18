@@ -2,5 +2,15 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+    if(Auth::check())
+    {
+        return View::make('index');
+    }else{
+        return Redirect::route('sign-in');
+    }
 });
+
+//login
+Route::get('sign-in', ['as' => 'sign-in', 'uses' => 'UserLoginController@index']);
+Route::post('login', ['as' => 'login', 'uses' => 'UserLoginController@login']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'UserLoginController@logout']);
