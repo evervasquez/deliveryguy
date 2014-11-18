@@ -25,10 +25,12 @@ $app = new Illuminate\Foundation\Application;
 */
 
 //para cambiar a production
-$env = $app->detectEnvironment(array(
-    'local' => array('eveR','BRAPASTOR-PC'),
-    'remoto'=> array('ec2-54-83-196-7.compute-1.amazonaws.com'),
-));
+$env = $app->detectEnvironment(function () {
+    if (strpos($_SERVER['HTTP_HOST'], '.') === false) {
+        return 'local';
+    }
+    return 'remoto';
+});
 
 /*
 |--------------------------------------------------------------------------
@@ -41,7 +43,7 @@ $env = $app->detectEnvironment(array(
 |
 */
 
-$app->bindInstallPaths(require __DIR__.'/paths.php');
+$app->bindInstallPaths(require __DIR__ . '/paths.php');
 
 /*
 |--------------------------------------------------------------------------
@@ -54,10 +56,10 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 |
 */
 
-$framework = $app['path.base'].
-                 '/vendor/laravel/framework/src';
+$framework = $app['path.base'] .
+    '/vendor/laravel/framework/src';
 
-require $framework.'/Illuminate/Foundation/start.php';
+require $framework . '/Illuminate/Foundation/start.php';
 
 /*
 |--------------------------------------------------------------------------
