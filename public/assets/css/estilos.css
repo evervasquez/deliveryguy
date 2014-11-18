@@ -1,0 +1,160 @@
+
+/*
+	CREATE @Bra_Pastor
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
+
+/*============MainMenu==============*/
+
+.MainMenu{
+	background: rgba(255,255,252,0.8);
+	position: fixed;
+	left: 0;
+	right:0;
+	height: 7em;	
+	display: table;
+}
+.MainMenu-logoLink{
+	text-decoration: none;
+}
+.MainMenu-containerImage
+{
+	margin: 0;
+	padding: 1em 0 0 0.5em;
+	width: 11%;
+	display: table-cell;
+	vertical-align: middle;
+
+}
+.MainMenu-image
+{
+	padding:0;
+	text-decoration: none;
+	width: 100%;
+}
+.MainMenu-ContainerOption
+{
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 4em;
+
+}
+.MainMenu-option
+{
+	display: inline-block;
+	margin: 0 3em;
+	padding-top: 1.8em;
+
+}
+.MainMenu-linkOption
+{
+	text-decoration: none;
+	color:#333c4e;
+	font-weight: bold;
+}
+
+.MainMenu-linkOption:hover{
+	color:#ff7335 ;
+}
+
+.MainMenu-optionSignIn{
+	display: inline-block;
+	float: right;
+	padding-right: 2em;
+
+}
+
+.MainMenu-linkSignIn
+{	
+	text-decoration: none;
+	background: #249b84;
+	display: block;
+	padding:0.5em;
+	color: white;
+}
+
+/*========InfoPrincipal=========*/
+
+.InfoPrincipal
+{
+
+	height: 45em;
+	background: linear-gradient(to bottom, white 60%, rgba(36,155,132,0.5));
+
+}
+.InfoPrincipa-phone
+{
+	display: inline-block;
+	margin-right:3em;
+}
+.InfoPrincipal-containerImage{
+	
+}
+
+.InfoPrincipal-image
+{
+	width: 50%;
+	margin-top: 10em;
+	margin-left: 15em;
+	 /*box-shadow: 30px 10px 20px #aaa;*/
+}
+.InfoPrincipal-containerDescription
+{
+	vertical-align: top;
+	display: inline-block;
+	padding-top: 11em;
+}
+
+.InfoPrincipal-title
+{
+	color: #e84207;
+	font-family: 'Roboto Slab', serif;
+	font-weight: 300;
+	font-size: 4em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 1070px){
+	.Header-downloadContainer{
+		display: none;
+
+	}	
+	
+	}
+
+@media screen and (max-width: 360px){
+	.Body-container{
+		margin-left: 4em;
+		width: 75%;
+	}
+	.Header-downloadContainer{
+		display: none;
+
+	}	
+	.Header-inputSearch{
+		width: 100%;
+	}
+
+}
+
