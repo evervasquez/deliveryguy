@@ -1,10 +1,5 @@
 <?php
-$url = parse_url(getenv("DATABASE_URL"));
 
-$host = $url["host"];
-$username = $url["user"];
-$password = $url["pass"];
-$database = substr($url["path"], 1);
 return array(
 
 	/*
@@ -38,10 +33,10 @@ return array(
 
         'pgsql' => array(
             'driver'   => 'pgsql',
-            'host'     => $host,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
+            'host'     => 'localhost',
+            'database' => 'bd_deliveryguy',
+            'username' => 'postgres',
+            'password' => '1234',
             'charset'  => 'utf8',
             'prefix'   => '',
             'schema'   => 'delivery',

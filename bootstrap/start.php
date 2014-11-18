@@ -25,10 +25,10 @@ $app = new Illuminate\Foundation\Application;
 */
 
 //para cambiar a production
-$env = $app->detectEnvironment(function()
-{
-    return 'local';
-});
+$env = $app->detectEnvironment(array(
+    'local' => array('eveR','BRAPASTOR'),
+    'remoto'=> array('*deliveryguyapp.com'),
+));
 
 /*
 |--------------------------------------------------------------------------
