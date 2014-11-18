@@ -6,7 +6,7 @@ Route::get('/', function()
     {
         return View::make('index');
     }else{
-        return Redirect::route('sign-in');
+        return Redirect::route('/');
     }
 });
 
