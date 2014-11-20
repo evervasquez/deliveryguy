@@ -18,3 +18,5 @@ Route::get('logout', ['as' => 'logout', 'uses' => 'UserLoginController@logout'])
 
 //companies
 Route::get('companies', ['as' => 'companies', 'uses' => 'CompaniesController@index']);
+Route::post('companies/create', ['as' => 'companies.create', 'uses' => 'CompaniesController@create']);
+

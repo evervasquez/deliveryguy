@@ -1,86 +1,100 @@
 <?php
+use delivery\Company\CompanyRepositorie;
 
-class CompaniesController extends \BaseController {
+class CompaniesController extends \BaseController
+{
+    protected $companyRepo;
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /companies
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return View::make('companies/index');
-	}
+    public function __construct(CompanyRepositorie $companyRepositorie)
+    {
+        $this->companyRepo = $companyRepositorie;
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /companies/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    /**
+     * Display a listing of the resource.
+     * GET /companies
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        return View::make('companies/index');
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /companies
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    /**
+     * Show the form for creating a new resource.
+     * GET /companies/create
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        $data = Input::all();
+        $this->companyRepo->create($data);
+        //if ($this->companyRepo->create($data)) {
+         return Redirect::route('companies')->with('message','successful registration of the company');
+        //}else{
 
-	/**
-	 * Display the specified resource.
-	 * GET /companies/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+       // }
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /companies/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+    /**
+     * Store a newly created resource in storage.
+     * POST /companies
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        //
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /companies/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    /**
+     * Display the specified resource.
+     * GET /companies/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /companies/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    /**
+     * Show the form for editing the specified resource.
+     * GET /companies/{id}/edit
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     * PUT /companies/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * DELETE /companies/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
 }
