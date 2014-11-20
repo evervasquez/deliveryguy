@@ -20,8 +20,8 @@
             longitud = evento.latLng.lng();
             //Creo un marcador utilizando las coordenadas obtenidas y almacenadas por separado en "latitud" y "longitud"
             var coordenadas = new google.maps.LatLng(latitud, longitud);
-            $("#latitud").val(latitud);
-            $("#longitud").val(longitud);
+            $("#latitude").val(latitud);
+            $("#longitude").val(longitud);
             /* Debo crear un punto geografico utilizando google.maps.LatLng */
             marcador = new google.maps.Marker({
                 position: coordenadas,
@@ -67,11 +67,11 @@
                         </div>
                         <div class="form-group">
                             <label>Latitude</label>
-                            <input type="tel" class="form-control" disabled name="company_latitude">
+                            <input type="tel" class="form-control" disabled name="company_latitude" id="latitude">
                         </div>
                         <div class="form-group">
                             <label>Longitude</label>
-                            <input type="tel" class="form-control" disabled name="company_longitude">
+                            <input type="tel" class="form-control" disabled name="company_longitude" id="longitude">
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                         <button type="reset" class="btn btn-default">Reset Button</button>
@@ -79,6 +79,7 @@
                 </div>
                 <!-- /.col-lg-6 (nested) -->
                 <div class="col-lg-8">
+                    <label>Click here to choose the location</label>
                     <div id="map_canvas" class="table-responsive" style="width: 100%; height: 400px">
                 </div>
                 <!-- /.col-lg-6 (nested) -->
