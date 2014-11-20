@@ -16,7 +16,7 @@
 		<header class="MainMenu">
 		  	<figure class="MainMenu-containerImage">
 				<a clsss="MainMenu-logoLink" href="#">
-				
+
 				{{ HTML::image('assets/img/logoOficial.png','',array('class' => 'MainMenu-image')) }}
 				</a>
 			</figure>
@@ -26,7 +26,7 @@
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Soporte</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Preguntas frecuentes</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Publicidad</a></p>
-				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="">Registrate</a></p>
+				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="{{route('sign-in')}}">Registrate</a></p>
 			</div>
 		</header>
 
@@ -50,7 +50,7 @@
 		</section>
 
 	</body>
-		<script src=" static/js/jquery-1.11.0.min.js"></script>
-		<script src=" static/js/jquery-migrate-1.2.1.min"></script>
+	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 </html>
