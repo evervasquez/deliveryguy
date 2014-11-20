@@ -22,7 +22,7 @@
 
 
     <!-- Custom Fonts -->
-    <link href="https://s3-us-west-1.amazonaws.com/deliveryguy/css/font-awesome.min.css" rel="stylesheet">
+    {{ HTML::style('assets/plugins/fontawesome/css/font-awesome.min.css'); }}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
