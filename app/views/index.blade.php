@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>DeliveryGuy - App</title>
 
     <!-- Bootstrap Core CSS -->
     {{ HTML::style('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'); }}
@@ -46,7 +46,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+    <a class="navbar-brand" href="{{url('/')}}">DeliveryGuy v1.0</a>
 </div>
 <!-- /.navbar-header -->
 
@@ -275,7 +275,7 @@
                 <!-- /input-group -->
             </li>
             <li>
-                <a class="active" href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a class="active" href="{{url('/')}}"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
             </li>
             <li>
                 <a href="#"><i class="fa fa-credit-card fa-fw"></i> Business<span class="fa arrow"></span></a>

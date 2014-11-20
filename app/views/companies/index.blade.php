@@ -6,8 +6,8 @@
         var marcador=null;
         var mapa = new google.maps.Map(document.getElementById("map_canvas"),
             {
-                center: new google.maps.LatLng(-6.489087879805055, -76.3608169555664),
-                zoom: 14,
+                center: new google.maps.LatLng(25.794327247836158, -80.20522713661194),
+                zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP
             });
         //Creo un evento asociado a "mapa" cuando se hace "click" sobre el
@@ -52,7 +52,7 @@
         <div class="panel-body">
             <div class="row">
                 <div class="col-lg-4">
-                    <form role="form">
+                    {{ Form::open(array('route' => 'companies.create','id' => 'formulario','role'=>'form')) }}
                         <div class="form-group">
                             <label>Company Name</label>
                             <input type="text" class="form-control" autofocus name="company_name" />
@@ -75,7 +75,7 @@
                         </div>
                         <button type="submit" class="btn btn-default">Submit</button>
                         <button type="reset" class="btn btn-default">Reset Button</button>
-                    </form>
+                    {{ Form::close() }}
                 </div>
                 <!-- /.col-lg-6 (nested) -->
                 <div class="col-lg-8">
