@@ -10,7 +10,7 @@ class CompaniesController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		return View::make('companies/index');
 	}
 
 	/**
