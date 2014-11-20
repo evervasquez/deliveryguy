@@ -33,7 +33,7 @@
     function loadScript() {
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyAFIPRU5PlWUpkBZnmdbHssPBgMtzzkFBU&sensor=false&callback=initialize";
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCAQb4QGnRfACuyzxoA6v1EYwJhNxSY6kQ&sensor=false&callback=initialize";
         document.body.appendChild(script);
     }
     window.onload = loadScript;
@@ -79,7 +79,7 @@
                 </div>
                 <!-- /.col-lg-6 (nested) -->
                 <div class="col-lg-8">
-                    <div id="map_canvas" class="table-responsive">
+                    <div id="map_canvas" class="table-responsive" style="width: 100%; height: 400px">
                 </div>
                 <!-- /.col-lg-6 (nested) -->
             </div>
