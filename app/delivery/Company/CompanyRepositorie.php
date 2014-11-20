@@ -11,6 +11,15 @@ namespace delivery\Company;
 
 class CompanyRepositorie
 {
+    public function getAll()
+    {
+        $companies = \DB::table('companies')
+            ->whereNull('deleted_at')
+            ->select('company_name', 'address', 'phone', 'latitude', 'longitude')
+            ->get();
+
+        return $companies;
+    }
 
     public function create($data)
     {
@@ -20,6 +29,7 @@ class CompanyRepositorie
         $company->phone = $data['company_phone'];
         $company->latitude = $data['company_latitude'];
         $company->longitude = $data['company_longitude'];
+        $company->bank_account = $data['company_bank'];
         if ($company->save()) {
             return true;
         } else {
@@ -27,4 +37,13 @@ class CompanyRepositorie
         }
 
     }
-} 
+
+    public function objectToArray($object)
+    {
+        $array = array();
+        foreach ($object as $member => $data) {
+            $array[$member] = $data;
+        }
+        return $array;
+    }
+}

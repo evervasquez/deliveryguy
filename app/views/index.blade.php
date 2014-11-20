@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <script type="text/javascript">
+        var $path_base = "<?php echo url('/')?>/";
+    </script>
     <title>DeliveryGuy - App</title>
 
     <!-- Bootstrap Core CSS -->
@@ -16,6 +18,9 @@
 
     <!-- MetisMenu CSS -->
     <link href="https://s3-us-west-1.amazonaws.com/deliveryguy/css/metisMenu.min.css" rel="stylesheet">
+
+    <!-- DataTables CSS -->
+    <link href="https://s3-us-west-1.amazonaws.com/deliveryguy/css/dataTables.bootstrap.css" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link href="https://s3-us-west-1.amazonaws.com/deliveryguy/css/sb-admin-2.css" rel="stylesheet">
@@ -31,6 +36,8 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- jQuery -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -381,8 +388,7 @@
 </div>
 <!-- /#wrapper -->
 
-<!-- jQuery -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 
 <!-- Bootstrap Core JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
@@ -390,9 +396,13 @@
 <!-- Metis Menu Plugin JavaScript -->
 <script src="https://s3-us-west-1.amazonaws.com/deliveryguy/js/metisMenu.min.js"></script>
 
+<!-- DataTables JavaScript -->
+<script src="https://s3-us-west-1.amazonaws.com/deliveryguy/js/jquery.dataTables.js"></script>
+<script src="https://s3-us-west-1.amazonaws.com/deliveryguy/js/dataTables.bootstrap.js"></script>
+
 <!-- Custom Theme JavaScript -->
 <script src="https://s3-us-west-1.amazonaws.com/deliveryguy/js/sb-admin-2.js"></script>
-
+{{ HTML::script('assets/js/deliveryguy.js'); }}
 </body>
 
 </html>

@@ -29,13 +29,8 @@ class CompaniesController extends \BaseController
      */
     public function create()
     {
-        $data = Input::all();
-        $this->companyRepo->create($data);
-        //if ($this->companyRepo->create($data)) {
-         return Redirect::route('companies')->with('message','successful registration of the company');
-        //}else{
+        return View::make('companies/create');
 
-       // }
     }
 
     /**
@@ -46,7 +41,13 @@ class CompaniesController extends \BaseController
      */
     public function store()
     {
-        //
+        $data = Input::all();
+        $this->companyRepo->create($data);
+        //if ($this->companyRepo->create($data)) {
+        return Redirect::route('companies')->with('message','successful registration of the company');
+        //}else{
+
+        // }
     }
 
     /**
@@ -95,6 +96,11 @@ class CompaniesController extends \BaseController
     public function destroy($id)
     {
         //
+    }
+
+    public function getAll()
+    {
+        return $this->companyRepo->getAll();
     }
 
 }
