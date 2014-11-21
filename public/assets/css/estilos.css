@@ -87,6 +87,7 @@
 {
 	display: inline-block;
 	margin-right:3em;
+
 }
 .InfoPrincipal-containerImage{
 	
@@ -104,6 +105,7 @@
 	vertical-align: top;
 	display: inline-block;
 	padding-top: 11em;
+	width: 49%;
 }
 
 .InfoPrincipal-title
@@ -112,15 +114,48 @@
 	font-family: 'Roboto Slab', serif;
 	font-weight: 300;
 	font-size: 4em;
+	padding: 0;
+
+}
+.InfoPrincipal-marca{
+	font-weight: bold;
+	font-family: 'Roboto Slab', serif;
 }
 
+.InfoPrincipal-subtitle
+{
+	width: 60%;
+	color: #676767;
+	font-size: 0.96rem;
+	font-style: italic;
+	display: block;
 
+}
 
+.InfoPrincipal-more{
+	color: #023844;
+	float: right;
 
+}
 
+.InfoPrincipal-more:hover{
+	color: #e84207;
+	
+}
+.InfoPrincipal-imgStore
+{
+	display: inline-block;
+	margin: 0;
+	margin-top: 3em;
+}
 
-
-
+.RedesSociales{
+	height: 5em;
+	width: 7em;
+	background: red;
+	float: right;
+	position: fixed;
+}
 
 
 

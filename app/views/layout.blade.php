@@ -33,22 +33,24 @@
 		<section class="InfoPrincipal">
 	 		<div class="InfoPrincipa-phone">
 	 			<firgure class="InfoPrincipal-containerImage">
-
 	 			 {{ HTML::image('assets/img/phone.png','',array('class' => 'InfoPrincipal-image')) }}
 	 			</firgure>
 	 		</div>
 			<div class="InfoPrincipal-containerDescription">
-				<p class="InfoPrincipal-title">Te Presentamos a <br>DeliveryGuyApp</p>
-				<p class="InfoPrincipal-subtitle">Lorem ipsum </p>
-				<figure class="InfoPrincipal-imgApple">
-				 {{ HTML::image('assets/img/apple.png','',array('class' => 'Header-image')) }}
-				</figure>
-				<figure class="InfoPrincipal-imgGoogle">
-				{{ HTML::image('assets/img/google.png','',array('class' => 'Header-image')) }}
+				<p class="InfoPrincipal-title">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuyApp</span></p>
+				<p class="InfoPrincipal-subtitle">La Aplicacion que estabas esperando para la entrega rápida y eficaz de tus deliverys, facil y segura <br><a class="InfoPrincipal-more" href="">Leer Mas...</a></p>
+				<figure class="InfoPrincipal-imgStore">
+				 <a href="#">{{ HTML::image('assets/img/apple.png','',array('class' => '')) }}</a>
+				 <a href="#">{{ HTML::image('assets/img/google.png','',array('class' => 'Header-image')) }}</a>
 				</figure>
 			</div>
 		</section>
-
+		<nav class="RedesSociales">
+			
+		</nav>
+		<section class="">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quos dolore doloremque exercitationem accusamus sit dignissimos minima cumque magnam omnis. Suscipit magni odit saepe natus debitis sint distinctio similique velit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quos dolore doloremque exercitationem accusamus sit dignissimos minima cumque magnam omnis. Suscipit magni odit saepe natus debitis sint distinctio similique velit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quos dolore doloremque exercitationem accusamus sit dignissimos minima cumque magnam omnis. Suscipit magni odit saepe natus debitis sint distinctio similique velit.</p>
+		</section>
 	</body>
 	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
