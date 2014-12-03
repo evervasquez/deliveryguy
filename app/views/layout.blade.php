@@ -63,7 +63,7 @@
 
 		<section class="TrackingDelivery">
 			
-			<article>
+			<article class="TrackingDelivery-article">
 				<div id="map_canvas" ></div>	
 				<div class="TrackingDelivery-content">
 					<h2 class="TrackingDelivery-title">Sigue y Verifica tus Deliverys</h2>
