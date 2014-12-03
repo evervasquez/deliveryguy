@@ -80,7 +80,7 @@
 {
 
 	height: 45em;
-	background: linear-gradient(to bottom, white 60%, rgba(36,155,132,0.5));
+	background: linear-gradient(to bottom, white 60%, rgba(36,155,132,0.12));
 
 }
 .InfoPrincipa-phone
@@ -126,10 +126,8 @@
 {
 	width: 60%;
 	color: #676767;
-	font-size: 0.96rem;
-	font-style: italic;
+	font-size: 1.3em;
 	display: block;
-
 }
 
 .InfoPrincipal-more{
@@ -149,15 +147,59 @@
 	margin-top: 3em;
 }
 
-.RedesSociales{
-	height: 5em;
-	width: 7em;
-	background: red;
-	float: right;
-	position: fixed;
+
+.RequestDelivery{
+	background: linear-gradient(to bottom, white 1%, rgba(229,229,229,1));
+
+	height: 28em;
+
+	/*border-top: 1px solid red;*/
+	
 }
 
+.RequestDelivery-container{
+	text-align: center;
+	padding-top: 6em;
+	width: 100%;
 
+
+}
+
+.RequestDelivery-content
+{
+	width: 43%;
+	text-align: left;
+	padding-left: 1em;
+	display: inline-block;
+	vertical-align: top;
+
+}
+.RequestDelivery-title{
+
+	vertical-align: top;
+	font-family: 'Roboto Slab', serif;
+	font-size: 4em;
+	font-weight: lighter;
+	margin: 0;
+	color: #023844;
+}
+.RequestDelivery-description{
+	display: inline-block;
+	vertical-align: top;
+	line-height: 2em;
+	color: #333c4e;
+}
+.RequestDelivery-imageContainer{
+	width: 45%;
+	display: inline-block;
+	margin: 0;
+
+}
+.RequestDelivery-image{
+	float: right;
+	width: 97%;
+	vertical-align: bottom;
+}
 
 
 
@@ -193,3 +235,4 @@
 
 }
 
+.

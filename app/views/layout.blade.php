@@ -45,12 +45,21 @@
 				</figure>
 			</div>
 		</section>
-		<nav class="RedesSociales">
+		
+		<section class="RequestDelivery">
+			<article class="RequestDelivery-container">
+				<div class="RequestDelivery-content">
+					<h2 class="RequestDelivery-title">Solicita tus Delivery's de la manera mas fácil</h2>
+					<p class="RequestDelivery-description">Sientete cómodo al momento de pedir tus delivery's. <br> Desde la comodidad de tu casa, oficina o cualquier otro lugar en donde te encuentres, todo al alcanse de tus manos, DeliveryGuyApp </p>
+				</div>
+				<figure class="RequestDelivery-imageContainer">
+					{{ HTML::image('assets/img/imagen.png','',array('class' => 'RequestDelivery-image')) }}
+				</figure>
+					
+			</article>
 			
-		</nav>
-		<section class="">
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quos dolore doloremque exercitationem accusamus sit dignissimos minima cumque magnam omnis. Suscipit magni odit saepe natus debitis sint distinctio similique velit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quos dolore doloremque exercitationem accusamus sit dignissimos minima cumque magnam omnis. Suscipit magni odit saepe natus debitis sint distinctio similique velit.</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis quos dolore doloremque exercitationem accusamus sit dignissimos minima cumque magnam omnis. Suscipit magni odit saepe natus debitis sint distinctio similique velit.</p>
 		</section>
+
 	</body>
 	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
