@@ -65,12 +65,29 @@
 			
 			<article class="TrackingDelivery-article">
 				<div id="map_canvas" ></div>	
+
 				<div class="TrackingDelivery-content">
 					<h2 class="TrackingDelivery-title">Sigue y Verifica tus Deliverys</h2>
 					<p class="TrackingDelivery-description">Sientete cómodo al momento de pedir tus delivery's. 
 					Desde la comodidad de tu casa, oficina o cualquier otro lugar en donde te encuentres, todo al alcanse de tus manos, DeliveryGuyApp  </p>
 				</div>
 			</article>			
+		</section>
+
+	
+		<section class="ReceiveDelivery">
+			<article class="ReceiveDelivery-article">
+				
+				<div class="ReceiveDelivery-content">
+					<h2 class="ReceiveDelivery-title">Tu Delivery a la Puerta de tu casa</h2>
+					<p class="ReceiveDelivery-description">
+						Recibe tus Pedidos de delivery en la puerta de tu casa, mas fácil y accesible imposible.
+					</p>
+				</div>
+				<figure class="ReceiveDelivery-imageContainer">
+					{{ HTML::image('assets/img/deliveryguy.png','',array('class' => 'ReceiveDelivery-image')) }}
+				</figure>
+			</article>
 		</section>
 
 	</body>

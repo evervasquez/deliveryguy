@@ -162,10 +162,14 @@
 
 .RequestDelivery-container{
 	text-align: center;
-	padding-top: 6em;
+	padding-top: 4em;
 	width: 100%;
 
 
+}
+
+.RequestDelivery{
+	overflow: hidden;
 }
 
 .RequestDelivery-content
@@ -208,6 +212,7 @@
 .TrackingDelivery
 {
 	position: relative;
+	overflow: hidden;
 }
 
 .TrackingDelivery-content
@@ -241,6 +246,46 @@
 
 
 .TrackingDelivery-description
+{
+	line-height: 2em;
+	font-size: 1.3em;
+	color: #333c4e;
+}
+
+/*ReceiveDelivery*/
+
+.ReceiveDelivery-article{
+	height: 28em;
+	background: white;
+	
+}
+.ReceiveDelivery-content{
+	width: 40%;
+	text-align: left;
+	margin: 5em 0 0 5em;
+	display: inline-block;
+
+}
+.ReceiveDelivery-imageContainer{
+	margin: 0;
+	display: inline-block;
+	width: 40%;
+	float: right;
+
+}
+.ReceiveDelivery-image{
+	width: 100%;
+}
+.ReceiveDelivery-title
+{
+	
+	font-family: 'Roboto Slab', serif;
+	font-size: 4em;
+	font-weight: lighter;
+	margin: 0;
+	color: #023844;
+}
+.ReceiveDelivery-description
 {
 	line-height: 2em;
 	font-size: 1.3em;
