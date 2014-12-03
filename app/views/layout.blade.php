@@ -67,7 +67,7 @@
 				<div id="map_canvas" ></div>	
 				<div class="TrackingDelivery-content">
 					<h2 class="TrackingDelivery-title">Sigue y Verifica tus Deliverys</h2>
-					<p>Sientete cómodo al momento de pedir tus delivery's. 
+					<p class="TrackingDelivery-description">Sientete cómodo al momento de pedir tus delivery's. 
 					Desde la comodidad de tu casa, oficina o cualquier otro lugar en donde te encuentres, todo al alcanse de tus manos, DeliveryGuyApp  </p>
 				</div>
 			</article>			
