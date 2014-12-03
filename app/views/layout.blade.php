@@ -81,7 +81,8 @@
 		            {
 		                center: new google.maps.LatLng(25.794327247836158, -80.20522713661194),
 		                zoom: 16,
-		                mapTypeId: google.maps.MapTypeId.ROADMAP
+		                mapTypeId: google.maps.MapTypeId.ROADMAP,
+		                scrollwheel: false 
 		            });
 		        //Creo un evento asociado a "mapa" cuando se hace "click" sobre el
 		      
