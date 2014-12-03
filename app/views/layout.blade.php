@@ -62,9 +62,14 @@
 
 
 		<section class="TrackingDelivery">
-			<div id="map_canvas" ></div>	
+			
 			<article>
-				<h2 class="TrackingDelivery-title">Sigue y Verifica tus Deliverys</h2>
+				<div id="map_canvas" ></div>	
+				<div class="TrackingDelivery-content">
+					<h2 class="TrackingDelivery-title">Sigue y Verifica tus Deliverys</h2>
+					<p>Sientete cómodo al momento de pedir tus delivery's. 
+					Desde la comodidad de tu casa, oficina o cualquier otro lugar en donde te encuentres, todo al alcanse de tus manos, DeliveryGuyApp  </p>
+				</div>
 			</article>			
 		</section>
 
@@ -75,7 +80,7 @@
 		        var mapa = new google.maps.Map(document.getElementById("map_canvas"),
 		            {
 		                center: new google.maps.LatLng(25.794327247836158, -80.20522713661194),
-		                zoom: 10,
+		                zoom: 16,
 		                mapTypeId: google.maps.MapTypeId.ROADMAP
 		            });
 		        //Creo un evento asociado a "mapa" cuando se hace "click" sobre el

@@ -205,21 +205,32 @@
 	vertical-align: bottom;
 }
 
+.TrackingDelivery
+{
+	position: relative;
+}
+.TrackingDelivery-content
+{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 42%;
+}
 #map_canvas{
 	width: 100%; 
 	height: 450px;
-	/*filter:alpha(opacity=25);*/
 	opacity: .4;
-	position: relative;
-	z-index: -1;
+	
 }
 
 .TrackingDelivery-title
 {
-	position: relative;
-	top: 0;
-	right: 0;
-	z-index: 1;
+	
+	font-family: 'Roboto Slab', serif;
+	font-size: 4em;
+	font-weight: lighter;
+	margin-top: 1em;
+	color: #e84207;
 
 }
 
