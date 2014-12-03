@@ -3,7 +3,7 @@
 	CREATE @Bra_Pastor
 */
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
+/*@import url(data:application/octet-stream;base64,QGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6ICdSb2JvdG8gU2xhYic7CiAgZm9udC1zdHlsZTogbm9ybWFsOwogIGZvbnQtd2VpZ2h0OiAzMDA7CiAgc3JjOiBsb2NhbCgnUm9ib3RvIFNsYWIgTGlnaHQnKSwgbG9jYWwoJ1JvYm90b1NsYWItTGlnaHQnKSwgdXJsKGh0dHA6Ly9mb250cy5nc3RhdGljLmNvbS9zL3JvYm90b3NsYWIvdjYvZGF6UzFQclFRdUN4QzNpT0FKRkVKYmZCMzF5eE96UC1jemJmNkFBS0NWby50dGYpIGZvcm1hdCgndHJ1ZXR5cGUnKTsKfQpAZm9udC1mYWNlIHsKICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJzsKICBmb250LXN0eWxlOiBub3JtYWw7CiAgZm9udC13ZWlnaHQ6IDQwMDsKICBzcmM6IGxvY2FsKCdSb2JvdG8gU2xhYiBSZWd1bGFyJyksIGxvY2FsKCdSb2JvdG9TbGFiLVJlZ3VsYXInKSwgdXJsKGh0dHA6Ly9mb250cy5nc3RhdGljLmNvbS9zL3JvYm90b3NsYWIvdjYveTdsZWJramdSRUJKSzk2VlFpMzdacDBFQVZ4dDBHMGJpRW50cDQzUXQ2RS50dGYpIGZvcm1hdCgndHJ1ZXR5cGUnKTsKfQpAZm9udC1mYWNlIHsKICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJzsKICBmb250LXN0eWxlOiBub3JtYWw7CiAgZm9udC13ZWlnaHQ6IDcwMDsKICBzcmM6IGxvY2FsKCdSb2JvdG8gU2xhYiBCb2xkJyksIGxvY2FsKCdSb2JvdG9TbGFiLUJvbGQnKSwgdXJsKGh0dHA6Ly9mb250cy5nc3RhdGljLmNvbS9zL3JvYm90b3NsYWIvdjYvZGF6UzFQclFRdUN4QzNpT0FKRkVKWl9Ua3Zvd2xJT3RiUjdlUGdGT3BGNC50dGYpIGZvcm1hdCgndHJ1ZXR5cGUnKTsKfQo=);*/
 
 /*============MainMenu==============*/
 
@@ -205,9 +205,23 @@
 	vertical-align: bottom;
 }
 
+#map_canvas{
+	width: 100%; 
+	height: 450px;
+	/*filter:alpha(opacity=25);*/
+	opacity: .4;
+	position: relative;
+	z-index: -1;
+}
 
+.TrackingDelivery-title
+{
+	position: relative;
+	top: 0;
+	right: 0;
+	z-index: 1;
 
-
+}
 
 
 

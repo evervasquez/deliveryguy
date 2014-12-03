@@ -61,21 +61,35 @@
 		</section>
 
 
-		<section class="RequestDelivery">
-			<article class="RequestDelivery-container">
-				<div class="RequestDelivery-content">
-					<h2 class="RequestDelivery-title">Solicita tus Delivery's de la manera mas fácil</h2>
-					<p class="RequestDelivery-description">Sientete cómodo al momento de pedir tus delivery's. <br> Desde la comodidad de tu casa, oficina o cualquier otro lugar en donde te encuentres, todo al alcanse de tus manos, DeliveryGuyApp </p>
-				</div>
-				<figure class="RequestDelivery-imageContainer">
-					{{ HTML::image('assets/img/imagen.png','',array('class' => 'RequestDelivery-image')) }}
-				</figure>
-					
-			</article>
-			
+		<section class="TrackingDelivery">
+			<div id="map_canvas" ></div>	
+			<article>
+				<h2 class="TrackingDelivery-title">Sigue y Verifica tus Deliverys</h2>
+			</article>			
 		</section>
 
 	</body>
+	   <script type="text/javascript">
+		    function initialize() {
+		        var marcador=null;
+		        var mapa = new google.maps.Map(document.getElementById("map_canvas"),
+		            {
+		                center: new google.maps.LatLng(25.794327247836158, -80.20522713661194),
+		                zoom: 10,
+		                mapTypeId: google.maps.MapTypeId.ROADMAP
+		            });
+		        //Creo un evento asociado a "mapa" cuando se hace "click" sobre el
+		      
+		    }
+		    function loadScript() {
+
+		        var script = document.createElement("script");
+		        script.type = "text/javascript";
+		        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyCAQb4QGnRfACuyzxoA6v1EYwJhNxSY6kQ&sensor=false&callback=initialize";
+		        document.body.appendChild(script);
+		    }
+		    window.onload = loadScript;
+</script>
 	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
