@@ -49,6 +49,21 @@
 		<section class="RequestDelivery">
 			<article class="RequestDelivery-container">
 				<div class="RequestDelivery-content">
+					<h2 class="RequestDelivery-title">Solicita y separa tus Delivery's de la manera mas fácil</h2>
+					<p class="RequestDelivery-description">Sientete cómodo al momento de pedir tus delivery's. <br> Desde la comodidad de tu casa, oficina o cualquier otro lugar en donde te encuentres, todo al alcanse de tus manos, DeliveryGuyApp </p>
+				</div>
+				<figure class="RequestDelivery-imageContainer">
+					{{ HTML::image('assets/img/imagen.png','',array('class' => 'RequestDelivery-image')) }}
+				</figure>
+					
+			</article>
+			
+		</section>
+
+
+		<section class="RequestDelivery">
+			<article class="RequestDelivery-container">
+				<div class="RequestDelivery-content">
 					<h2 class="RequestDelivery-title">Solicita tus Delivery's de la manera mas fácil</h2>
 					<p class="RequestDelivery-description">Sientete cómodo al momento de pedir tus delivery's. <br> Desde la comodidad de tu casa, oficina o cualquier otro lugar en donde te encuentres, todo al alcanse de tus manos, DeliveryGuyApp </p>
 				</div>

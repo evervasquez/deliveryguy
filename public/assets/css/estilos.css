@@ -45,6 +45,7 @@
 	display: inline-block;
 	margin: 0 3em;
 	padding-top: 1.8em;
+	text-transform: uppercase;
 
 }
 .MainMenu-linkOption
@@ -52,6 +53,7 @@
 	text-decoration: none;
 	color:#333c4e;
 	font-weight: bold;
+
 }
 
 .MainMenu-linkOption:hover{
@@ -62,6 +64,7 @@
 	display: inline-block;
 	float: right;
 	padding-right: 2em;
+	text-transform: uppercase;
 
 }
 
@@ -149,9 +152,9 @@
 
 
 .RequestDelivery{
-	background: linear-gradient(to bottom, white 1%, rgba(229,229,229,1));
-
-	height: 28em;
+	/*background: linear-gradient(to bottom, white 1%, rgba(229,229,229,1));*/
+	background: white;
+	height: 32em;
 
 	/*border-top: 1px solid red;*/
 	
@@ -187,6 +190,7 @@
 	display: inline-block;
 	vertical-align: top;
 	line-height: 2em;
+	font-size: 1.3em;
 	color: #333c4e;
 }
 .RequestDelivery-imageContainer{
