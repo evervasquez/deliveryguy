@@ -6,14 +6,51 @@
 /*@import url(data:application/octet-stream;base64,QGZvbnQtZmFjZSB7CiAgZm9udC1mYW1pbHk6ICdSb2JvdG8gU2xhYic7CiAgZm9udC1zdHlsZTogbm9ybWFsOwogIGZvbnQtd2VpZ2h0OiAzMDA7CiAgc3JjOiBsb2NhbCgnUm9ib3RvIFNsYWIgTGlnaHQnKSwgbG9jYWwoJ1JvYm90b1NsYWItTGlnaHQnKSwgdXJsKGh0dHA6Ly9mb250cy5nc3RhdGljLmNvbS9zL3JvYm90b3NsYWIvdjYvZGF6UzFQclFRdUN4QzNpT0FKRkVKYmZCMzF5eE96UC1jemJmNkFBS0NWby50dGYpIGZvcm1hdCgndHJ1ZXR5cGUnKTsKfQpAZm9udC1mYWNlIHsKICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJzsKICBmb250LXN0eWxlOiBub3JtYWw7CiAgZm9udC13ZWlnaHQ6IDQwMDsKICBzcmM6IGxvY2FsKCdSb2JvdG8gU2xhYiBSZWd1bGFyJyksIGxvY2FsKCdSb2JvdG9TbGFiLVJlZ3VsYXInKSwgdXJsKGh0dHA6Ly9mb250cy5nc3RhdGljLmNvbS9zL3JvYm90b3NsYWIvdjYveTdsZWJramdSRUJKSzk2VlFpMzdacDBFQVZ4dDBHMGJpRW50cDQzUXQ2RS50dGYpIGZvcm1hdCgndHJ1ZXR5cGUnKTsKfQpAZm9udC1mYWNlIHsKICBmb250LWZhbWlseTogJ1JvYm90byBTbGFiJzsKICBmb250LXN0eWxlOiBub3JtYWw7CiAgZm9udC13ZWlnaHQ6IDcwMDsKICBzcmM6IGxvY2FsKCdSb2JvdG8gU2xhYiBCb2xkJyksIGxvY2FsKCdSb2JvdG9TbGFiLUJvbGQnKSwgdXJsKGh0dHA6Ly9mb250cy5nc3RhdGljLmNvbS9zL3JvYm90b3NsYWIvdjYvZGF6UzFQclFRdUN4QzNpT0FKRkVKWl9Ua3Zvd2xJT3RiUjdlUGdGT3BGNC50dGYpIGZvcm1hdCgndHJ1ZXR5cGUnKTsKfQo=);*/
 @import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700);
 /*============MainMenu==============*/
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?iacbp7');
+	src:url('../fonts/icomoon.eot?#iefixiacbp7') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?iacbp7') format('woff'),
+		url('../fonts/icomoon.ttf?iacbp7') format('truetype'),
+		url('../fonts/icomoon.svg?iacbp7#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-truck:before {
+	content: "\e600";
+	margin-right: .5em;
+	font-size: 1.4em;
+}
+.icon-food:before {
+	content: "\e601";
+	margin-right: .5em;
+	font-size: 1.4em;
+}
+
 
 .MainMenu{
-	background: rgba(255,255,252,0.8);
+	background: rgba(255,255,252,1);
 	position: fixed;
 	left: 0;
 	right:0;
-	height: 7em;	
 	display: table;
+	z-index: 2;
+	border-bottom:2px solid #023844;
 }
 .MainMenu-logoLink{
 	text-decoration: none;
@@ -22,9 +59,10 @@
 {
 	margin: 0;
 	padding: 1em 0 0 0.5em;
-	width: 11%;
+	width: 9%;
 	display: table-cell;
 	vertical-align: middle;
+
 
 }
 .MainMenu-image
@@ -62,26 +100,30 @@
 
 .MainMenu-optionSignIn{
 	display: inline-block;
+	font-weight: bold;
 	float: right;
 	padding-right: 2em;
 	text-transform: uppercase;
+	
 
 }
 
 .MainMenu-linkSignIn
 {	
 	text-decoration: none;
-	background: #249b84;
+	border:3px solid #023844;
 	display: block;
 	padding:0.5em;
-	color: white;
+	color: #444444;
+
 }
 
 /*========InfoPrincipal=========*/
 
 .InfoPrincipal
-{
-
+{	
+	overflow: hidden;
+	text-align: center;
 	height: 45em;
 	background: linear-gradient(to bottom, white 60%, rgba(36,155,132,0.12));
 
@@ -98,17 +140,19 @@
 
 .InfoPrincipal-image
 {
-	width: 50%;
+	width: 94%;
 	margin-top: 10em;
-	margin-left: 15em;
+	
 	 /*box-shadow: 30px 10px 20px #aaa;*/
 }
 .InfoPrincipal-containerDescription
 {
 	vertical-align: top;
+	text-align: left;
 	display: inline-block;
 	padding-top: 11em;
-	width: 49%;
+	width: 45%;
+	
 }
 
 .InfoPrincipal-title
@@ -127,10 +171,10 @@
 
 .InfoPrincipal-subtitle
 {
-	width: 60%;
+
 	color: #676767;
 	font-size: 1.3em;
-	display: block;
+	
 }
 
 .InfoPrincipal-more{
@@ -143,12 +187,35 @@
 	color: #e84207;
 	
 }
-.InfoPrincipal-imgStore
-{
-	display: inline-block;
-	margin: 0;
-	margin-top: 3em;
+.InfoPrincipal-assoContainer{
+
 }
+.InfoPrincipal-linkContainer{
+	display: inline-block;
+
+}
+
+.InfoPrincipal-link{
+	display: block;
+	background:#023844;
+	padding:1em;
+	border-radius: .5em;
+	color:white;
+	text-decoration: none;
+	border-bottom: 5px solid #1db1a3;
+	margin-right: 1em;
+	font-family: 'Roboto Slab', serif;
+
+
+}
+
+.InfoPrincipal-link:hover
+{
+	background: #1db1a3;
+	border-bottom: 5px solid #023844;
+}
+
+
 
 
 .RequestDelivery{
@@ -162,7 +229,7 @@
 
 .RequestDelivery-container{
 	text-align: center;
-	padding-top: 4em;
+	padding-top: 2em;
 	width: 100%;
 
 
@@ -257,6 +324,7 @@
 .ReceiveDelivery-article{
 	height: 28em;
 	background: white;
+	overflow: hidden;
 	
 }
 .ReceiveDelivery-content{
@@ -271,10 +339,12 @@
 	display: inline-block;
 	width: 40%;
 	float: right;
+	
 
 }
 .ReceiveDelivery-image{
 	width: 100%;
+
 }
 .ReceiveDelivery-title
 {
