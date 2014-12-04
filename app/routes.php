@@ -22,4 +22,5 @@ Route::get('companies/create', ['as' => 'companies.create', 'uses' => 'Companies
 Route::post('companies/store', ['as' => 'companies.store', 'uses' => 'CompaniesController@store']);
 Route::get('companies/getAll', ['as' => 'companies.getAll', 'uses' => 'CompaniesController@getAll']);
 
-
+//Rest android
+Route::resource("companies","CompaniesController");

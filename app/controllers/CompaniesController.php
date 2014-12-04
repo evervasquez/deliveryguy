@@ -45,9 +45,6 @@ class CompaniesController extends \BaseController
         $this->companyRepo->create($data);
         //if ($this->companyRepo->create($data)) {
         return Redirect::route('companies')->with('message','successful registration of the company');
-        //}else{
-
-        // }
     }
 
     /**
