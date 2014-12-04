@@ -20,7 +20,7 @@ Route::get('logout', ['as' => 'logout', 'uses' => 'UserLoginController@logout'])
 Route::get('companies', ['as' => 'companies', 'uses' => 'CompaniesController@index']);
 Route::get('companies/create', ['as' => 'companies.create', 'uses' => 'CompaniesController@create']);
 Route::post('companies/store', ['as' => 'companies.store', 'uses' => 'CompaniesController@store']);
-Route::get('companies/ ', ['as' => 'companies.getAll', 'uses' => 'CompaniesController@getAll']);
+Route::get('companies/getAll', ['as' => 'companies.getAll', 'uses' => 'CompaniesController@getAll']);
 
 //Rest android
 Route::resource("companies","CompaniesController");

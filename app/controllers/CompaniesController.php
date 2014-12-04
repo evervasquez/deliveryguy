@@ -97,6 +97,7 @@ class CompaniesController extends \BaseController
 
     public function getAll()
     {
+        return 0;
         return $this->companyRepo->getAll();
     }
 
