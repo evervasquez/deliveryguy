@@ -95,7 +95,7 @@
 			</article>
 		</section>
 
-		<footer class="">
+		<footer class="Footer">
 
 			
 		</footer>
