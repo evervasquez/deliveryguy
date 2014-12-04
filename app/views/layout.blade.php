@@ -22,11 +22,11 @@
 			</figure>
 
 			<div class="MainMenu-ContainerOption">
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Login</a></p>
+				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="{{route('sign-in')}}">Login</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Menu</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Preguntas frecuentes</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Ayuda</a></p>
-				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="{{route('sign-in')}}">Descargar</a></p>
+				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="">Descargar</a></p>
 			</div>
 		</header>
 
@@ -96,6 +96,11 @@
 		</section>
 
 		<footer class="Footer">
+			<p class="Footer-title"> Ⓒ DeliveryGuyApp </p>
+			<p class="Footer-title "><a href="" class="Footer-network icon-google"></a></p>
+			<p class="Footer-title "><a href="" class="Footer-network icon-linkedin"></a></p>
+			<p class="Footer-title "><a href="" class="Footer-network icon-twitter"></a></p>
+			<p class="Footer-title "><a href="" class="Footer-network icon-facebook"></a></p>
 
 			
 		</footer>
