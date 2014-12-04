@@ -394,7 +394,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 
 <!-- Metis Menu Plugin JavaScript -->
-<script src="https://s3-us-west-1.amazonaws.com/deliveryguy/js/metisMenu.min.js"></script>
+{{ HTML::script('assets/js/metisMenu.min.js'); }}
+{{--<script src="https://s3-us-west-1.amazonaws.com/deliveryguy/js/metisMenu.min.js"></script>--}}
 
 <!-- DataTables JavaScript -->
 <script src="https://s3-us-west-1.amazonaws.com/deliveryguy/js/jquery.dataTables.js"></script>
