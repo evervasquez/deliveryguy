@@ -96,11 +96,23 @@
 		</section>
 
 		<footer class="Footer">
-			<p class="Footer-title"> Ⓒ DeliveryGuyApp </p>
-			<p class="Footer-title "><a href="" class="Footer-network icon-google"></a></p>
-			<p class="Footer-title "><a href="" class="Footer-network icon-linkedin"></a></p>
-			<p class="Footer-title "><a href="" class="Footer-network icon-twitter"></a></p>
-			<p class="Footer-title "><a href="" class="Footer-network icon-facebook"></a></p>
+			<div class="Footer-containerDes">
+				<p class="Footer-title"><a class="Footer-link" href="">Quienes Somos |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Ayuda |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Preguntas Frecuentes |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Política de Seguridad |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Desarrollo |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Trabajo </a></p>
+				<br>
+				<p class="Footer-corporation"><a href="" class="Footer-link"> Ⓒ DeliveryGuyApp 2014</a> </p>
+
+			</div>
+			<div class="Footer-networkContainer">
+				<p class="Footer-title "><a href="" class="Footer-network icon-google"></a></p>
+				<p class="Footer-title "><a href="" class="Footer-network icon-linkedin"></a></p>
+				<p class="Footer-title "><a href="" class="Footer-network icon-twitter"></a></p>
+				<p class="Footer-title "><a href="" class="Footer-network icon-facebook"></a></p>
+			</div>
 
 			
 		</footer>
