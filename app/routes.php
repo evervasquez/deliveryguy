@@ -24,3 +24,9 @@ Route::get('companies/getAll', ['as' => 'companies.getAll', 'uses' => 'Companies
 
 //Rest android
 Route::resource("companies","CompaniesController");
+
+
+/*
+ * API DE DELIVERYGUY
+ */
+Route::resource("api/v1/companies","CompaniesGuyApiController");
