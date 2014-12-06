@@ -22,11 +22,11 @@
 			</figure>
 
 			<div class="MainMenu-ContainerOption">
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Descargar</a></p>
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Soporte</a></p>
+				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="{{route('sign-in')}}">Login</a></p>
+				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Menu</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Preguntas frecuentes</a></p>
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Publicidad</a></p>
-				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="{{route('sign-in')}}">Registrate</a></p>
+				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Ayuda</a></p>
+				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="">Descargar</a></p>
 			</div>
 		</header>
 
@@ -37,20 +37,25 @@
 	 			</firgure>
 	 		</div>
 			<div class="InfoPrincipal-containerDescription">
-				<p class="InfoPrincipal-title">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuyApp</span></p>
-				<p class="InfoPrincipal-subtitle">La Aplicacion que estabas esperando para la entrega rápida y eficaz de tus deliverys, facil y segura <br><a class="InfoPrincipal-more" href="">Leer Mas...</a></p>
-				<figure class="InfoPrincipal-imgStore">
+				<p class="InfoPrincipal-title ">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuyApp !</span></p>
+				<p class="InfoPrincipal-subtitle">A conectar los deliveries con los consumidores de una forma mas fácil, rápida y segura.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></p>
+
+				<div class="InfoPrincipal-assoContainer">
+					<p class="InfoPrincipal-linkContainer "><a href="" class="InfoPrincipal-link "><span class="icon-food"></span>Asociate como Restaurant</a></p>
+					<p class="InfoPrincipal-linkContainer "><a href="" class="InfoPrincipal-link"><span class="icon-truck"></span>Asociate como Repartidor</a></p>
+				</div>
+			<!-- 	<figure class="InfoPrincipal-imgStore">
 				 <a href="#">{{ HTML::image('assets/img/apple.png','',array('class' => '')) }}</a>
 				 <a href="#">{{ HTML::image('assets/img/google.png','',array('class' => 'Header-image')) }}</a>
-				</figure>
+				</figure> -->
 			</div>
 		</section>
 		
 		<section class="RequestDelivery">
 			<article class="RequestDelivery-container">
 				<div class="RequestDelivery-content">
-					<h2 class="RequestDelivery-title">Solicita y separa tus Delivery's de la manera mas fácil</h2>
-					<p class="RequestDelivery-description">Sientete cómodo al momento de pedir tus delivery's. <br> Desde la comodidad de tu casa, oficina o cualquier otro lugar en donde te encuentres, todo al alcanse de tus manos, DeliveryGuyApp </p>
+					<h2 class="RequestDelivery-title">¿Qué es DeliveryGuy?</h2>
+					<p class="RequestDelivery-description">DeliveryGuy es una aplicación Móvil que ayuda a conectar negocios con consumidores, para facilitar y agilizar el proceso de delivery. Al poner una orden a traves de la aplicación, los negocios tendran acceso immediato a los conductores disponibles en el área, quienes trabajan de manera independiente con nosotros.</p>
 				</div>
 				<figure class="RequestDelivery-imageContainer">
 					{{ HTML::image('assets/img/imagen.png','',array('class' => 'RequestDelivery-image')) }}
@@ -89,6 +94,28 @@
 				</figure>
 			</article>
 		</section>
+
+		<footer class="Footer">
+			<div class="Footer-containerDes">
+				<p class="Footer-title"><a class="Footer-link" href="">Quienes Somos |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Ayuda |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Preguntas Frecuentes |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Política de Seguridad |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Desarrollo |</a></p>
+				<p class="Footer-title"><a class="Footer-link" href="">Trabajo </a></p>
+				<br>
+				<p class="Footer-corporation"><a href="" class="Footer-link"> Ⓒ DeliveryGuyApp 2014</a> </p>
+
+			</div>
+			<div class="Footer-networkContainer">
+				<p class="Footer-title "><a href="" class="Footer-network icon-google"></a></p>
+				<p class="Footer-title "><a href="" class="Footer-network icon-linkedin"></a></p>
+				<p class="Footer-title "><a href="" class="Footer-network icon-twitter"></a></p>
+				<p class="Footer-title "><a href="" class="Footer-network icon-facebook"></a></p>
+			</div>
+
+			
+		</footer>
 
 	</body>
 	   <script type="text/javascript">
