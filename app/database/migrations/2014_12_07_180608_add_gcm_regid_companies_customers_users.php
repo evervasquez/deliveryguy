@@ -13,15 +13,15 @@ class AddGcmRegidCompaniesCustomersUsers extends Migration {
 	public function up()
 	{
         Schema::table('companies',function(Blueprint $table){
-            $table->text('gcm_regid');
+            $table->text('gcm_regid')->nullable();
         });
 
         Schema::table('employees',function(Blueprint $table){
-            $table->text('gcm_regid');
+            $table->text('gcm_regid')->nullable();
         });
 
         Schema::table('users',function(Blueprint $table){
-            $table->text('gcm_regid');
+            $table->text('gcm_regid')->nullable();
         });
 	}
 
