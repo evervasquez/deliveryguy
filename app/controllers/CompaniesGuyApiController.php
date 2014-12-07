@@ -16,6 +16,7 @@ class CompaniesGuyApiController extends \BaseController
      *
      * @return Response
      */
+
     public function index()
     {
         return $this->companyRepo->getAll();
