@@ -140,3 +140,34 @@ var addBotones = function (action, url, id) {
     boton1 += boton2;
     return boton1;
 }
+
+// JS For layout
+
+var $bodyGeneral=$('body'),
+    $overlay=$('.Body-overlay'),
+    $cancel=$('.OLRegister-cancel'),
+    $close = $('.OLRegister-close'),
+    $register=$('.MainMenu-linkOption');
+
+function register()
+{
+    $overlay.css('display', 'block');
+    $bodyGeneral.css('position', 'relative');
+    $bodyGeneral.css('overflow-y', 'hidden');
+    return false;
+}
+
+
+function cerrarOverlay(){
+   
+    $bodyGeneral.css('position', 'relative');
+    $bodyGeneral.css('overflow-y', 'visible');
+    $overlay.css('display','none');
+    return false;
+}
+
+$cancel.click(cerrarOverlay);
+$close.click(cerrarOverlay);
+$register.click(register);
+
+
