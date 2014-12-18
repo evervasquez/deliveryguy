@@ -163,7 +163,8 @@ function cerrarOverlay(){
    
     $bodyGeneral.css('position', 'relative');
     $bodyGeneral.css('overflow-y', 'visible');
-    $overlay.css('display','none');
+    $overlay.fadeOut('slow');
+    // $overlay.css('display','none');
     return false;
 }
 
