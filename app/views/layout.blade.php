@@ -63,7 +63,7 @@
 	 		</div>
 			<div class="InfoPrincipal-containerDescription">
 				<p class="InfoPrincipal-title ">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuyApp !</span></p>
-				<p class="InfoPrincipal-subtitle">A conectar los deliveries con los consumidores de una forma mas fácil, rápida y segura.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></p>
+				<p class="InfoPrincipal-subtitle">Delivery Guy App es una poderosa herramienta de trabajo que facilita y permite de manera directa la comunicación entre el restaurante y cientos de mensajeros en el área.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></p>
 
 				<div class="InfoPrincipal-assoContainer">
 					<p class="InfoPrincipal-linkContainer "><a href="" class="InfoPrincipal-link "><span class="icon-food"></span>Asociate como Restaurant</a></p>
