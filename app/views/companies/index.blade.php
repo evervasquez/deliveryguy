@@ -21,8 +21,8 @@
         var url = 'companies';
         var grid_table = $(".table-responsive");
         var iddatable = "datatable";
-        var col_names = ['Company Name', 'Address', 'Phone','Latitude','Logitude',''];
-        var col_hidden = [true, true,true,true,true,true]
+        var col_names = ['Id','Company Name', 'Address', 'Phone','Latitude','Logitude',''];
+        var col_hidden = [true,true, true,true,true,true,true]
         var accion = [1];
 
         loadTable(iddatable, 'GET', url + '/getAll', url, grid_table, col_names, accion, col_hidden);

@@ -15,7 +15,7 @@ class CompanyRepositorie
     {
         $companies = \DB::table('companies')
             ->whereNull('deleted_at')
-            ->select('company_name', 'address', 'phone', 'latitude', 'longitude')
+            ->select('id','company_name', 'address', 'phone', 'latitude', 'longitude')
             ->get();
 
         return $companies;
