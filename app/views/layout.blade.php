@@ -5,6 +5,7 @@
 		<meta charset="UTF-8">
 		<title>..:DeliveryGuy:..</title>
 		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"/>
+		<meta name="description" content="Delivery Guy App es una poderosa herramienta de trabajo que facilita y permite de manera directa la comunicación entre el restaurante y cientos de mensajeros en el área">
 		<!-- <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'> -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700,400' rel='stylesheet' type='text/css'>
 		{{ HTML::style('assets/css/estilos.css'); }}
@@ -46,13 +47,13 @@
 				</a>
 			</figure>
 
-			<div class="MainMenu-ContainerOption">
+			<nav class="MainMenu-ContainerOption">
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="{{route('sign-in')}}">Login</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption click-register" href="#">Register</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Preguntas frecuentes</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Ayuda</a></p>
 				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="">Descargar</a></p>
-			</div>
+			</nav>
 		</header>
 
 		<section class="InfoPrincipal">
@@ -63,7 +64,7 @@
 	 		</div>
 			<div class="InfoPrincipal-containerDescription">
 				<p class="InfoPrincipal-title ">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuyApp !</span></p>
-				<p class="InfoPrincipal-subtitle">Delivery Guy App es una poderosa herramienta de trabajo que facilita y permite de manera directa la comunicación entre el restaurante y cientos de mensajeros en el área.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></p>
+				<h1 class="InfoPrincipal-subtitle">Delivery Guy App es una poderosa herramienta de trabajo que facilita y permite de manera directa la comunicación entre el restaurante y cientos de mensajeros en el área.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></h1>
 
 				<div class="InfoPrincipal-assoContainer">
 					<p class="InfoPrincipal-linkContainer "><a href="" class="InfoPrincipal-link "><span class="icon-food"></span>Asociate como Restaurant</a></p>
