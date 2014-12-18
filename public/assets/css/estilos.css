@@ -103,7 +103,7 @@
 	font-weight: bold;
 	/*text-decoration: underline;*/
 	font-size: 1.5em;
-	font-style: italic;
+	/*font-style: italic;*/
 	display: inline-block;
 
 	
@@ -349,9 +349,11 @@
 .InfoPrincipal-subtitle
 {
 
-	color: #676767;
+	color: #023844;
 	font-size: 1.3em;
-	
+	font-weight: bold;
+	font-style: italic;
+	font-family: 'Roboto Slab', serif;
 }
 
 .InfoPrincipal-more{

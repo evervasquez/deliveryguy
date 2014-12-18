@@ -147,11 +147,12 @@ var $bodyGeneral=$('body'),
     $overlay=$('.Body-overlay'),
     $cancel=$('.OLRegister-cancel'),
     $close = $('.OLRegister-close'),
-    $register=$('.MainMenu-linkOption');
+    $register=$('.click-register');
 
 function register()
 {
-    $overlay.css('display', 'block');
+    // $overlay.css('display', 'block');
+    $overlay.fadeIn('slow');
     $bodyGeneral.css('position', 'relative');
     $bodyGeneral.css('overflow-y', 'hidden');
     return false;
@@ -170,4 +171,5 @@ $cancel.click(cerrarOverlay);
 $close.click(cerrarOverlay);
 $register.click(register);
 
-
+// <a href="#" onclick="$('#c1').fadeIn('slow');">[fadeIn]</a>
+// <a href="#" onclick="$('#c1').fadeOut('slow');">[fadeOut]</a><br/>

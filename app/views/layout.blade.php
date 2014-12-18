@@ -48,7 +48,7 @@
 
 			<div class="MainMenu-ContainerOption">
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="{{route('sign-in')}}">Login</a></p>
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="#">Register</a></p>
+				<p class="MainMenu-option"><a class="MainMenu-linkOption click-register" href="#">Register</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Preguntas frecuentes</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Ayuda</a></p>
 				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="">Descargar</a></p>
