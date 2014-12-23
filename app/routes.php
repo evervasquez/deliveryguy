@@ -30,3 +30,4 @@ Route::resource("companies","CompaniesController");
  * API DE DELIVERYGUY
  */
 Route::resource("api/v1/companies","CompaniesGuyApiController");
+Route::resource("api/v1/employees","EmployeesGuyApiController");
