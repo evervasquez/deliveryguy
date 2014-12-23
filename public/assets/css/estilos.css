@@ -42,6 +42,7 @@
 }
 .icon-close:before {
 	content: "\e607";
+
 }
 .icon-google:before {
 	content: "\e602";
@@ -54,9 +55,166 @@
 }
 .icon-facebook:before {
 	content: "\e605";
+
 }
 .icon-menu:before {
 	content: "\e606";
+}
+
+.Body-overlay{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0,0,0,.7);
+    /*cursor: pointer;*/
+}
+
+.OLRegister{
+	background: rgba(255,255,255,0.8);
+	/*background:url('../img/miami1.jpg');*/
+	background-size: cover;
+	background-position:center;
+	background-repeat: no-repeat;
+	width: 45%;
+	margin: 10em auto;
+	text-align: center;
+	border-radius: .5em;
+
+}
+.OLRegister-formContainer,.OLRegister-network{
+	display: inline-block;
+}
+.OLRegister-network
+{
+	vertical-align: top;
+	margin-top: 3.4em;
+	margin-left: 2em;
+}
+
+.OLRegister-title
+{
+	color: #023844;
+	font-family: 'Roboto Slab', serif;
+	font-weight: bold;
+	/*text-decoration: underline;*/
+	font-size: 1.5em;
+	/*font-style: italic;*/
+	display: inline-block;
+
+	
+}
+
+.OLRegister-input
+{
+	display: block;
+	padding: 1em;
+	border-radius: .2em;
+	border: none;
+	font-family: 'Roboto Slab', serif;
+	color: #023844;
+	font-size: 1.2em;
+	margin: 0 auto 1em;
+	   -webkit-transition: all 0.5s ease;
+    -o-transition:all 0.5s ease; 
+    transition:all 0.5s ease; 
+
+}
+
+.OLRegister-input:focus { 
+   
+    -webkit-box-shadow: 0 4px #023844 inset;
+    -moz-box-shadow: 0 0 4px #023844 inset;
+    -ms-box-shadow: 0 0 4px #023844 inset;
+    -o-box-shadow: 0 0 4px #023844 inset;
+    box-shadow: 0 0 4px #023844 inset;
+    background: #ffffc6;
+    outline: none; 
+} 
+
+
+
+.OLRegister-input::-webkit-input-placeholder { color:rgba(29,177,163,0.5);  }
+.OLRegister-input:-moz-placeholder { color:rgba(29,177,163,0.5);  }
+.OLRegister-input::-moz-placeholder { color:rgba(29,177,163,0.5);  }
+
+.OLRegister-send,.OLRegister-cancel{
+	color: #023844;
+	background: #a1c9c5;
+	padding: .5em 1em;
+	border: none;
+	margin-left: 2em;
+	font-weight: bold;
+	border-radius: .2em;
+	border-bottom: 4px solid #1db1a3;
+	margin-bottom: 2em;
+	font-family: 'Roboto Slab', serif;
+
+}
+
+.OLRegister-send:hover
+{
+	color: white;
+	background: #e84207;
+	border-bottom: 4px solid #023844;
+}
+
+.OLRegister-facebookLink, .OLRegister-googleLink,
+.OLRegister-twitterLink
+{
+	display: block;
+	color: white;
+	padding: 1em 3em;
+	text-decoration: none;
+	font-size: 1em;
+
+}
+.OLRegister-close{
+	float: right;
+	color: #e84207;
+	text-decoration: none;
+	margin: 1em 1em 0 0 ;
+}
+.OLRegister-close:hover
+{
+	color: #023844;
+}
+.OLRegister-facebookLink
+{
+	background: #495e90;
+}
+
+.OLRegister-facebookLink:hover
+{
+	background: #2f3d5e;
+}
+
+.OLRegister-googleLink
+{
+	background: #d3402a;
+}
+
+.OLRegister-googleLink:hover
+{
+	background:#a83322;
+}
+.OLRegister-twitterLink
+{
+	background: #55acee;
+}
+.OLRegister-twitterLink:hover
+{
+	background: #1c91e8;
+}
+
+.OLRegister-icon
+{
+	font-size: 1.4em;
+	margin-right: .5em;
 }
 
 .MainMenu{
@@ -141,8 +299,11 @@
 	overflow: hidden;
 	text-align: center;
 	height: 45em;
-	background: linear-gradient(to bottom, white 60%, rgba(36,155,132,0.12));
-
+	/*background: linear-gradient(to bottom, white 60%, rgba(36,155,132,0.12));*/
+	background: url('../img/miami2.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 .InfoPrincipa-phone
 {
@@ -188,9 +349,10 @@
 .InfoPrincipal-subtitle
 {
 
-	color: #676767;
+	color: #023844;
 	font-size: 1.3em;
-	
+	font-weight: bold;
+	font-family: 'Roboto Slab', serif;
 }
 
 .InfoPrincipal-more{
@@ -250,6 +412,8 @@
 
 
 }
+
+
 
 .RequestDelivery{
 	overflow: hidden;

@@ -5,14 +5,40 @@
 		<meta charset="UTF-8">
 		<title>..:DeliveryGuy:..</title>
 		<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1"/>
+		<meta name="description" content="Delivery Guy App es una poderosa herramienta de trabajo que facilita y permite de manera directa la comunicación entre el restaurante y cientos de mensajeros en el área">
 		<!-- <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'> -->
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700,400' rel='stylesheet' type='text/css'>
 		{{ HTML::style('assets/css/estilos.css'); }}
 		{{ HTML::style('assets/css/normalize.css'); }}
 
-
 	</head>
 	<body>
+		<div class="Body-overlay" >  
+			<section class="OLRegister">
+				<h2 class="OLRegister-title">Register</h2>
+				<a href="" class="OLRegister-close icon-close" ></a>
+				<article class="OLRegister-container">
+					<div class="OLRegister-formContainer">
+						<form action="" class="OLRegister-form">
+							
+							<input class="OLRegister-input" autofocus="true" placeholder="Nombre de Empresa" type="text"/>
+							<input class="OLRegister-input" placeholder="Dirección" type="text"/>
+							<input class="OLRegister-input" placeholder="Teléfono" type="tel"/>
+							<input class="OLRegister-input" placeholder="Email" type="email"/>
+							<button class="OLRegister-cancel">Cancelar</button>
+							<button class="OLRegister-send">Enviar</button>
+						</form>
+					</div>
+					<div class="OLRegister-network">
+						<p class="OLRegister-facebook"><a class="OLRegister-facebookLink " href=""><span class="OLRegister-icon icon-facebook "></span>Registrarse con Facebook</a></p>
+						<p class="OLRegister-google"><a class="OLRegister-googleLink " href=""><span class="OLRegister-icon icon-google "></span>Registrarse con Google</a></p>
+						<p class="OLRegister-twitter"><a class="OLRegister-twitterLink " href=""><span class="OLRegister-icon icon-twitter "></span>Registrarse con Twitter</a></p>
+						
+					</div>
+				</article>
+			</section>
+
+		</div> 
 		<header class="MainMenu">
 		  	<figure class="MainMenu-containerImage">
 				<a clsss="MainMenu-logoLink" href="#">
@@ -21,13 +47,13 @@
 				</a>
 			</figure>
 
-			<div class="MainMenu-ContainerOption">
+			<nav class="MainMenu-ContainerOption">
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="{{route('sign-in')}}">Login</a></p>
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Menu</a></p>
+				<p class="MainMenu-option"><a class="MainMenu-linkOption click-register" href="#">Register</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Preguntas frecuentes</a></p>
 				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Ayuda</a></p>
 				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="">Descargar</a></p>
-			</div>
+			</nav>
 		</header>
 
 		<section class="InfoPrincipal">
@@ -38,7 +64,7 @@
 	 		</div>
 			<div class="InfoPrincipal-containerDescription">
 				<p class="InfoPrincipal-title ">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuyApp !</span></p>
-				<p class="InfoPrincipal-subtitle">A conectar los deliveries con los consumidores de una forma mas fácil, rápida y segura.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></p>
+				<h1 class="InfoPrincipal-subtitle">Delivery Guy App es una poderosa herramienta de trabajo que facilita y permite de manera directa la comunicación entre el restaurante y cientos de mensajeros en el área.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></h1>
 
 				<div class="InfoPrincipal-assoContainer">
 					<p class="InfoPrincipal-linkContainer "><a href="" class="InfoPrincipal-link "><span class="icon-food"></span>Asociate como Restaurant</a></p>
@@ -79,7 +105,6 @@
 			</article>			
 		</section>
 
-	
 		<section class="ReceiveDelivery">
 			<article class="ReceiveDelivery-article">
 				
@@ -113,8 +138,6 @@
 				<p class="Footer-title "><a href="" class="Footer-network icon-twitter"></a></p>
 				<p class="Footer-title "><a href="" class="Footer-network icon-facebook"></a></p>
 			</div>
-
-			
 		</footer>
 
 	</body>
@@ -142,5 +165,6 @@
 </script>
 	    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+        {{ HTML::script('assets/js/deliveryguy.js') }}
 
 </html>
