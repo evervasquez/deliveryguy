@@ -42,7 +42,7 @@ class EmployeesGuyApiController extends \BaseController {
         $datos = array(
             "Result" => "OK"
         );
-        print_r($datos);
+        print_r($data);
         //return $this->employeeRepo->create($data);
 	}
 
