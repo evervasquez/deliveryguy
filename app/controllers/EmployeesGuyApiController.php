@@ -38,7 +38,7 @@ class EmployeesGuyApiController extends \BaseController {
 	 */
 	public function store()
 	{
-        $data = json_decode(file_get_contents('php://input'), true);
+        $data = json_decode($_POST);
         $datos = array(
             "Result" => "OK"
         );
