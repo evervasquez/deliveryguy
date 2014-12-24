@@ -39,7 +39,7 @@ class EmployeesGuyApiController extends \BaseController {
 	public function store()
 	{
         $data = Input::all();
-        return json_decode($data);
+        return Input::get('fullname');
         return $this->employeeRepo->create($data);
 	}
 
