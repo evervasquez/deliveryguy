@@ -16,7 +16,7 @@ class EmployeesGuyApiController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		echo 'hola';
 	}
 
 	/**
@@ -38,12 +38,9 @@ class EmployeesGuyApiController extends \BaseController {
 	 */
 	public function store()
 	{
-        $data = json_decode($_POST);
-        $datos = array(
-            "Result" => "OK"
-        );
-        print_r($data);
-        //return $this->employeeRepo->create($data);
+        $datos = Input::all();
+        $employee = $this->employeeRepo->create($datos);
+        return $employee;
 	}
 
 	/**
