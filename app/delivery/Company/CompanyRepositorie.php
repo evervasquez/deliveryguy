@@ -38,12 +38,4 @@ class CompanyRepositorie
 
     }
 
-    public function objectToArray($object)
-    {
-        $array = array();
-        foreach ($object as $member => $data) {
-            $array[$member] = $data;
-        }
-        return $array;
-    }
 }

@@ -18,8 +18,7 @@ class DeliveriesController extends \BaseController
      */
     public function index()
     {
-        $companies = $this->deliveryRepo->storeCompany();
-        return View::make('deliveries/index',compact('companies'));
+        return View::make('deliveries/index');
     }
 
     /**
@@ -30,7 +29,9 @@ class DeliveriesController extends \BaseController
      */
     public function create()
     {
-        //
+        $companies['companies'] = $this->deliveryRepo->storeCompany();
+        $companies['customers'] = $this->deliveryRepo->storeCustomers();
+        return View::make('deliveries/create', compact('companies'));
     }
 
     /**
@@ -41,7 +42,10 @@ class DeliveriesController extends \BaseController
      */
     public function store()
     {
-        //
+        $data = Input::all();
+        $message = $this->deliveryRepo->create($data);
+        $this->sendPush($message);
+        return Redirect::route('deliveries')->with('message','successful registration of the delivery');
     }
 
     /**
@@ -92,4 +96,8 @@ class DeliveriesController extends \BaseController
         //
     }
 
+    public function getAll()
+    {
+        return $this->deliveryRepo->getAll();
+    }
 }
