@@ -9,7 +9,7 @@ return array(
         'service'     =>'apns'
     ),
     'appNameAndroid' => array(
-        'environment' =>'development',
+        'environment' =>'production',
         'apiKey'      =>'AIzaSyBLOktQsPqIToF6cKlgEBgSizMKmRfJrFg',
         'service'     =>'gcm'
     )
