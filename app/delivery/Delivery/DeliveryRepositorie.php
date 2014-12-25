@@ -22,6 +22,7 @@ class DeliveryRepositorie
                 'type_buys.description', 'deliveries.datetime_reservation',
                 'deliveries.datetime_confirmation')
             ->get();
+
         return $deliveries;
     }
 
@@ -47,9 +48,14 @@ class DeliveryRepositorie
         if ($delivery->save()) {
             $max = \DB::table('deliveries')->whereNull('deleted_at')->max('id');
             $delivery = \DB::table('deliveries')->where('id', '=', $max)->get();
-            return $delivery;
+            return \Response::json(array(
+                "Result" => "OK",
+                "delivery" => $delivery
+            ));
         } else {
-            return null;
+            return \Response::json(array(
+                "Result" => "ERROR"
+            ));
         }
     }
 
