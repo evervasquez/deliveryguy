@@ -1,86 +1,95 @@
 <?php
+use delivery\Delivery\DeliveryRepositorie;
 
-class DeliveriesController extends \BaseController {
+class DeliveriesController extends \BaseController
+{
+    protected $deliveryRepo;
 
-	/**
-	 * Display a listing of the resource.
-	 * GET /deliveries
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		return View::make('deliveries/index');
-	}
+    function __construct(DeliveryRepositorie $deliveryRepo)
+    {
+        $this->deliveryRepo = $deliveryRepo;
+    }
 
-	/**
-	 * Show the form for creating a new resource.
-	 * GET /deliveries/create
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+    /**
+     * Display a listing of the resource.
+     * GET /deliveries
+     *
+     * @return Response
+     */
+    public function index()
+    {
+        $companies = $this->deliveryRepo->storeCompany();
+        return View::make('deliveries/index',compact('companies'));
+    }
 
-	/**
-	 * Store a newly created resource in storage.
-	 * POST /deliveries
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+    /**
+     * Show the form for creating a new resource.
+     * GET /deliveries/create
+     *
+     * @return Response
+     */
+    public function create()
+    {
+        //
+    }
 
-	/**
-	 * Display the specified resource.
-	 * GET /deliveries/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
-	{
-		//
-	}
+    /**
+     * Store a newly created resource in storage.
+     * POST /deliveries
+     *
+     * @return Response
+     */
+    public function store()
+    {
+        //
+    }
 
-	/**
-	 * Show the form for editing the specified resource.
-	 * GET /deliveries/{id}/edit
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
+    /**
+     * Display the specified resource.
+     * GET /deliveries/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        //
+    }
 
-	/**
-	 * Update the specified resource in storage.
-	 * PUT /deliveries/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
+    /**
+     * Show the form for editing the specified resource.
+     * GET /deliveries/{id}/edit
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function edit($id)
+    {
+        //
+    }
 
-	/**
-	 * Remove the specified resource from storage.
-	 * DELETE /deliveries/{id}
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
-	}
+    /**
+     * Update the specified resource in storage.
+     * PUT /deliveries/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     * DELETE /deliveries/{id}
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
 
 }

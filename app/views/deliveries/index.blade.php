@@ -2,18 +2,24 @@
 
 @section('content')
 <div class="col-lg-12">
-    <h1 class="page-header">Companies</h1>
+    <h1 class="page-header">New Deliveries</h1>
+
     <div class="panel panel-default">
         <div class="panel-heading">
-            Login Form Company
+            Login Form Deliveries
         </div>
         <div class="panel-body">
             <div class="row">
                 <div class="col-lg-4">
-                    {{ Form::open(array('route' => 'companies.store','id' => 'formulario','role'=>'form')) }}
+                    {{ Form::open(array('route' => 'deliveries.store','id' => 'formulario','role'=>'form')) }}
                     <div class="form-group">
                         <label>Company Name</label>
-                        <input type="text" class="form-control" autofocus name="company_name" />
+                        <select name="comapnyId" class="form-control">
+                            @foreach($companies as $company)
+                            <option value="{{$company->id}}">{{$company->company_name}}</option>
+                            @endforeach
+                        </select>
+                        <input type="text" class="form-control" autofocus name="company_name"/>
                     </div>
                     <div class="form-group">
                         <label>Address</label>
@@ -29,13 +35,13 @@
                     </div>
                     <div class="form-group">
                         <label>Latitude</label>
-                        <input type="text" class="form-control latitude" disabled  />
+                        <input type="text" class="form-control latitude" disabled/>
                         <input type="hidden" class="form-control latitude" name="company_latitude">
                     </div>
                     <div class="form-group">
                         <label>Longitude</label>
-                        <input type="text" class="form-control longitude" disabled />
-                        <input type="hidden" class="form-control longitude" name="company_longitude" />
+                        <input type="text" class="form-control longitude" disabled/>
+                        <input type="hidden" class="form-control longitude" name="company_longitude"/>
                     </div>
                     <button type="submit" class="btn btn-default">Submit</button>
                     <button type="reset" class="btn btn-default">Reset Button</button>
@@ -44,6 +50,7 @@
                 <!-- /.col-lg-6 (nested) -->
                 <div class="col-lg-8">
                     <label>Click here to choose the location</label>
+
                     <div id="map_canvas" class="table-responsive" style="width: 100%; height: 450px">
                     </div>
                     <!-- /.col-lg-6 (nested) -->
