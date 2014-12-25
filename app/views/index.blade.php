@@ -291,7 +291,7 @@
                         <a href="{{route('companies')}}">Companies</a>
                     </li>
                     <li>
-                        <a href="">Employed</a>
+                        <a href="{{route('deliveries')}}">Deliveries</a>
                     </li>
                 </ul>
                 <!-- /.nav-second-level -->
