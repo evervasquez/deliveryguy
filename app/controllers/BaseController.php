@@ -17,12 +17,12 @@ class BaseController extends Controller
 
     protected function sendPush($json)
     {
-        $employees = DB::table('employees')->whereNull('deleted_at')->select('id', 'full_name', 'email','gcm_regid')->get();
+        $employees = DB::table('employees')->whereNull('deleted_at')->select('id', 'gcm_regid')->get();
         foreach ($employees as $employee) {
             PushNotification::app('appNameAndroid')
                 ->to($employee->gcm_regid)
                 ->send("nuevo pedido",array(
-                    "info" => $json
+                    "data" => $json
                 ));
             return $json;
         }

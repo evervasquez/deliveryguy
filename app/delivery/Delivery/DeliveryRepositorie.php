@@ -47,11 +47,8 @@ class DeliveryRepositorie
         $delivery->typebuy_id = $datos['typebuy_id'];
         if ($delivery->save()) {
             $max = \DB::table('deliveries')->whereNull('deleted_at')->max('id');
-            $delivery = \DB::table('deliveries')->where('id', '=', $max)->select('id','delivery_code','created_at')->get();
-            return \Response::json(array(
-                "Result" => "OK",
-                "delivery" => $delivery
-            ));
+            $delivery = \DB::table('deliveries')->where('id', '=', $max)->select('id as serverId','delivery_code','created_at')->get();
+            return $delivery;
         } else {
             return \Response::json(array(
                 "Result" => "ERROR"
