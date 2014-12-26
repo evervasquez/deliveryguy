@@ -21,7 +21,9 @@ class BaseController extends Controller
         foreach ($employees as $employee) {
             PushNotification::app('appNameAndroid')
                 ->to($employee->gcm_regid)
-                ->send($json);
+                ->send("nuevo pedido",array(
+                    "info" => $json
+                ));
             return $json;
         }
     }

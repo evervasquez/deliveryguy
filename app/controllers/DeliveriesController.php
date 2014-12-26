@@ -43,8 +43,8 @@ class DeliveriesController extends \BaseController
     public function store()
     {
         $data = Input::all();
-        $this->deliveryRepo->create($data);
-        $this->sendPush("rajas");
+        $message = $this->deliveryRepo->create($data);
+        $this->sendPush($message);
         return Redirect::route('deliveries')->with('message','successful registration of the delivery');
     }
 
