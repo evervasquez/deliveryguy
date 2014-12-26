@@ -4,7 +4,7 @@ use delivery\Delivery\DeliveryRepositorie;
 class DeliveriesGuyApiController extends \BaseController
 {
     protected $deliveryRepo;
-
+    private static $STATUS_CONFIRMATION=1;
     function __construct(DeliveryRepositorie $deliveryRepo)
     {
         $this->deliveryRepo = $deliveryRepo;
@@ -78,6 +78,10 @@ class DeliveriesGuyApiController extends \BaseController
     {
         $data = Input::all();
         $response = $this->deliveryRepo->update($data,$id);
+        if($data['status']==self::$STATUS_CONFIRMATION)
+        {
+            $this->sendPush($response,$data['status']);
+        }
         return $response;
 	}
 

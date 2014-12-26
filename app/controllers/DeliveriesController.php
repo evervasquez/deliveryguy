@@ -44,7 +44,7 @@ class DeliveriesController extends \BaseController
     {
         $data = Input::all();
         $message = $this->deliveryRepo->create($data);
-        $this->sendPush($message);
+        $this->sendPush($message,$data['status']);
         return Redirect::route('deliveries')->with('message','successful registration of the delivery');
     }
 
