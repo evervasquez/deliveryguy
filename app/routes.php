@@ -36,5 +36,5 @@ Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'Deliver
  */
 Route::resource("api/v1/companies","CompaniesGuyApiController");
 Route::resource("api/v1/employees","EmployeesGuyApiController");
-Route::resource("api/v1/employees","DeliveriesGuyApiController");
+Route::resource("api/v1/deliveries","DeliveriesGuyApiController");
 
