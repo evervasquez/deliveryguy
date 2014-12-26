@@ -50,6 +50,8 @@ class DeliveryRepositorie extends BaseRepository
         $delivery->company_id = $datos['company_id'];
         $delivery->customer_id = $datos['customer_id'];
         $delivery->typebuy_id = $datos['typebuy_id'];
+        $delivery->deliveryTotal = $datos['amount'];
+        $delivery->delivery = $datos['amount'] * 0.3;
         if ($delivery->save()) {
             $max = \DB::table('deliveries')->whereNull('deleted_at')->max('id');
             $delivery = \DB::table('deliveries')->where('id', '=', $max)->select('id as serverId', 'delivery_code', 'created_at')->get();
@@ -82,13 +84,13 @@ class DeliveryRepositorie extends BaseRepository
     public function find($id)
     {
         $delivery = \DB::table('deliveries')
-                    ->join('companies','deliveries.company_id','=','companies.id')
-                    ->join('customers','deliveries.customer_id','=','customers.id')
-                    ->where('deliveries.id','=',$id)
-                    ->select('deliveries.id as serverId','deliveries.deliveryTotal','companies.company_name','deliveries.created_at','deliveries.datetime_reservation',
-                        'companies.address','companies.phone','companies.latitude','companies.longitude',
-                        'customers.fullname','customer.phone as customer_phone')
-                    ->get();
+            ->join('companies', 'deliveries.company_id', '=', 'companies.id')
+            ->join('customers', 'deliveries.customer_id', '=', 'customers.id')
+            ->where('deliveries.id', '=', $id)
+            ->select('deliveries.id as serverId', 'deliveries.deliveryTotal', 'companies.company_name', 'deliveries.created_at', 'deliveries.datetime_reservation',
+                'companies.address', 'companies.phone', 'companies.latitude', 'companies.longitude',
+                'customers.fullname', 'customer.phone as customer_phone')
+            ->get();
         return $delivery;
     }
 }
