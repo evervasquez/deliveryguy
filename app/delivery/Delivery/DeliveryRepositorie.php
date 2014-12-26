@@ -94,7 +94,7 @@ class DeliveryRepositorie extends BaseRepository
             ->where('deliveries.id', '=', $id)
             ->select('deliveries.id as serverId', 'deliveries.delivery_code','deliveries.deliveryTotal as delivery_total',
                 'deliveries.created_at', 'companies.company_name', 'deliveries.datetime_reservation','deliveries.datetime_confirmation',
-                'companies.address', 'companies.phone', 'companies.latitude', 'companies.longitude',
+                'companies.address', 'companies.phone as company_phone', 'companies.latitude', 'companies.longitude',
                 'customers.fullname', 'customers.phone as customer_phone')
             ->get();
         return $delivery;
