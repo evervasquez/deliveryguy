@@ -69,7 +69,7 @@ class DeliveriesGuyApiController extends \BaseController {
 	public function update($id)
 	{
 		$data = Input::all();
-        return $id;
+        return $data['serverId'];
 	}
 
 	/**
