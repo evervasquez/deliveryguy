@@ -65,6 +65,7 @@ class DeliveryRepositorie extends BaseRepository
 
     public function update($data, $id)
     {
+        try{
         $delivery = Delivery::find($id);
         if ($data['status'] == self::$RESERVATION) {
             $delivery->datetime_reservation = $this->getUpdateAt();
@@ -78,6 +79,10 @@ class DeliveryRepositorie extends BaseRepository
             return \Response::json(array(
                 "Result" => "ERROR"
             ));
+        }
+        }catch (\Exception $e)
+        {
+            return $e->getMessage();
         }
     }
 
