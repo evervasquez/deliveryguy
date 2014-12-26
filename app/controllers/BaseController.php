@@ -22,8 +22,10 @@ class BaseController extends Controller
             PushNotification::app('appNameAndroid')
                 ->to($employee->gcm_regid)
                 ->send("nuevo pedido",array(
-                    "data" => $json,
-                    "status"=>$status
+                        "data" => array(
+                            "data" => $json,
+                            "status" => $status
+                        )
                 ));
             return $json;
         }
