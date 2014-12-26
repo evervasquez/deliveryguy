@@ -9,16 +9,21 @@
 namespace delivery\Delivery;
 
 
-class DeliveryRepositorie
+use delivery\Base\BaseRepository;
+
+class DeliveryRepositorie extends BaseRepository
 {
+    private static $RESERVATION = 0;
+    private static $CONFIRMATION = 1;
+
     public function getAll()
     {
         $deliveries = \DB::table('deliveries')
-            ->join('companies','deliveries.company_id','=','companies.id')
-            ->join('customers','deliveries.customer_id','=','customers.id')
-            ->join('type_buys','deliveries.typebuy_id','=','type_buys.id')
+            ->join('companies', 'deliveries.company_id', '=', 'companies.id')
+            ->join('customers', 'deliveries.customer_id', '=', 'customers.id')
+            ->join('type_buys', 'deliveries.typebuy_id', '=', 'type_buys.id')
             ->whereNull('deliveries.deleted_at')
-            ->select('deliveries.id','companies.company_name','deliveries.delivery_code', 'customers.fullname',
+            ->select('deliveries.id', 'companies.company_name', 'deliveries.delivery_code', 'customers.fullname',
                 'type_buys.description', 'deliveries.datetime_reservation',
                 'deliveries.datetime_confirmation')
             ->get();
@@ -47,7 +52,7 @@ class DeliveryRepositorie
         $delivery->typebuy_id = $datos['typebuy_id'];
         if ($delivery->save()) {
             $max = \DB::table('deliveries')->whereNull('deleted_at')->max('id');
-            $delivery = \DB::table('deliveries')->where('id', '=', $max)->select('id as serverId','delivery_code','created_at')->get();
+            $delivery = \DB::table('deliveries')->where('id', '=', $max)->select('id as serverId', 'delivery_code', 'created_at')->get();
             return $delivery;
         } else {
             return \Response::json(array(
@@ -56,4 +61,21 @@ class DeliveryRepositorie
         }
     }
 
+    public function update($data, $id)
+    {
+        $delivery = Delivery::find($id);
+        if ($data['status'] == self::$RESERVATION) {
+            $delivery->datetime_reservation = $this->getUpdateAt();
+        } elseif ($data['status'] == self::$CONFIRMATION) {
+            $delivery->datetime_confirmation = $this->getUpdateAt();
+        }
+        if ($delivery->save()) {
+            $delivery = \DB::table('deliveries')->where('id', '=', $id)->select('id as serverId', 'delivery_code', 'created_at','datetime_reservation as reserva')->get();
+            return $delivery;
+        } else {
+            return \Response::json(array(
+                "Result" => "ERROR"
+            ));
+        }
+    }
 }
