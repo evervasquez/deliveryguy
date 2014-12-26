@@ -70,12 +70,25 @@ class DeliveryRepositorie extends BaseRepository
             $delivery->datetime_confirmation = $this->getUpdateAt();
         }
         if ($delivery->save()) {
-            $delivery = \DB::table('deliveries')->where('id', '=', $id)->select('id as serverId', 'delivery_code', 'created_at','datetime_reservation as reserva')->get();
+            $delivery = $this->find($id);
             return $delivery;
         } else {
             return \Response::json(array(
                 "Result" => "ERROR"
             ));
         }
+    }
+
+    public function find($id)
+    {
+        $delivery = \DB::table('deliveries')
+                    ->join('companies','deliveries.company_id','=','companies.id')
+                    ->join('customers','deliveries.customer_id','=','customers.id')
+                    ->where('deliveries.id','=',$id)
+                    ->select('deliveries.id as serverId','deliveries.deliveryTotal','companies.company_name','deliveries.created_at','deliveries.datetime_reservation',
+                        'companies.address','companies.phone','companies.latitude','companies.longitude',
+                        'customers.fullname','customer.phone as customer_phone')
+                    ->get();
+        return $delivery;
     }
 }

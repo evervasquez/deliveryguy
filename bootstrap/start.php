@@ -26,9 +26,9 @@ $app = new Illuminate\Foundation\Application;
 
 //para cambiar a production
 $env = $app->detectEnvironment(function () {
-   /* if (strpos($_SERVER['HTTP_HOST'], '.') === false) {
+    if (strpos($_SERVER['HTTP_HOST'], '.') === false) {
         return 'local';
-    }*/
+    }
     return 'remoto';
 });
 
