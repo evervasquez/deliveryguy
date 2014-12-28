@@ -69,7 +69,7 @@
 	 			</firgure>
 	 		</div>
 			<div class="InfoPrincipal-containerDescription">
-				<p class="InfoPrincipal-title ">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuyApp !</span></p>
+				<p class="InfoPrincipal-title ">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuy !</span></p>
 				<h1 class="InfoPrincipal-subtitle">Delivery Guy App es una poderosa herramienta de trabajo que facilita y permite de manera directa la comunicación entre el restaurante y cientos de mensajeros en el área.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></h1>
 
 				<div class="InfoPrincipal-assoContainer">
@@ -87,12 +87,12 @@
 			<article class="RequestDelivery-container">
 				<div class="RequestDelivery-content">
 				
-				<h2 class="RequestDelivery-title">DeliveryGuy es:</h2>
+				<h2 class="RequestDelivery-title">¿Tienes un restaurante?</h2>
 					<p class="RequestDelivery-description">
-						- Conectarse a la mejor red de repartidores en tu área a cualquier hora, todos los dias del año. <br>
-						- Agilizar tus entregas con la tecnología móvil en tiempo real.
+						- Conectate a la mejor red de repartidores en tu área a cualquier hora, todos los dias del año. <br>
+						- Agiliza tus entregas con la tecnología móvil en tiempo real.
 						<br>
-						- Aumentar el número de ordenes sin elevar tus gatos. 
+						- Aumenta el número de ordenes sin elevar tus gatos. 
 					</p>
 					<p class="InfoPrincipal-linkContainer link-derecho"><a href="" class="InfoPrincipal-link "><span class="icon-food"></span>Asociate como Restaurant</a></p>
 
