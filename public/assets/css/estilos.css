@@ -399,24 +399,23 @@
 .RequestDelivery{
 	/*background: linear-gradient(to bottom, white 1%, rgba(229,229,229,1));*/
 	background: white;
-	height: 32em;
+	overflow: hidden;
+	margin:0;
+	padding: 0;
 
 	/*border-top: 1px solid red;*/
 	
 }
 
 .RequestDelivery-container{
-	text-align: center;
+	text-align: left;
 	padding-top: 2em;
 	width: 100%;
+	background: url('../img/fondo.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 
-
-}
-
-
-
-.RequestDelivery{
-	overflow: hidden;
 }
 
 .RequestDelivery-content
@@ -435,16 +434,16 @@
 	font-size: 4em;
 	font-weight: lighter;
 	margin: 0;
-	color: #023844;
+	color: #ffffff;
 }
 .RequestDelivery-description{
 	display: inline-block;
 	vertical-align: top;
 	line-height: 2em;
 	font-size: 1.3em;
-	color: #333c4e;
+	color: #ffffff;
 }
-.RequestDelivery-imageContainer{
+/*.RequestDelivery-imageContainer{
 	width: 45%;
 	display: inline-block;
 	margin: 0;
@@ -455,7 +454,7 @@
 	width: 97%;
 	vertical-align: bottom;
 }
-
+*/
 .TrackingDelivery
 {
 	position: relative;

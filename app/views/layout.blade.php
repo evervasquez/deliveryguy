@@ -83,14 +83,13 @@
 					<h2 class="RequestDelivery-title">¿Qué es DeliveryGuy?</h2>
 					<p class="RequestDelivery-description">DeliveryGuy es una aplicación Móvil que ayuda a conectar negocios con consumidores, para facilitar y agilizar el proceso de delivery. Al poner una orden a traves de la aplicación, los negocios tendran acceso immediato a los conductores disponibles en el área, quienes trabajan de manera independiente con nosotros.</p>
 				</div>
-				<figure class="RequestDelivery-imageContainer">
+				<!-- <figure class="RequestDelivery-imageContainer">
 					{{ HTML::image('assets/img/imagen.png','',array('class' => 'RequestDelivery-image')) }}
-				</figure>
+				</figure> -->
 					
 			</article>
 			
 		</section>
-
 
 		<section class="TrackingDelivery">
 			
