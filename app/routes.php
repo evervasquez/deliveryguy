@@ -22,11 +22,17 @@ Route::get('companies/create', ['as' => 'companies.create', 'uses' => 'Companies
 Route::post('companies/store', ['as' => 'companies.store', 'uses' => 'CompaniesController@store']);
 Route::get('companies/getAll', ['as' => 'companies.getAll', 'uses' => 'CompaniesController@getAll']);
 
-//Rest android
-Route::resource("companies","CompaniesController");
+
+//deliveries
+//companies
+Route::get('deliveries', ['as' => 'deliveries', 'uses' => 'DeliveriesController@index']);
+Route::get('deliveries/create', ['as' => 'deliveries.create', 'uses' => 'DeliveriesController@create']);
+Route::post('deliveries/store', ['as' => 'deliveries.store', 'uses' => 'DeliveriesController@store']);
+Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'DeliveriesController@getAll']);
 
 
 /*
  * API DE DELIVERYGUY
  */
 Route::resource("api/v1/companies","CompaniesGuyApiController");
+Route::resource("api/v1/employees","EmployeesGuyApiController");

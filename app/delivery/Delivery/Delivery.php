@@ -1,6 +1,8 @@
 <?php
 namespace delivery\Delivery;
 
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+
 class Delivery extends \Eloquent {
 	protected $fillable = [];
 	use SoftDeletingTrait;

@@ -9,6 +9,25 @@
 namespace delivery\Base;
 
 
-class BaseRepository {
+use Carbon\Carbon;
 
+class BaseRepository
+{
+    public function getCreatedAt()
+    {
+        $carbon = Carbon::now();
+        return $carbon->toDateTimeString();
+    }
+
+    public function getUpdateAt()
+    {
+        $carbon = Carbon::now();
+        return $carbon->toDateTimeString();
+    }
+
+    public function getDeletedAt()
+    {
+        $carbon = Carbon::now();
+        return $carbon->toDateTimeString();
+    }
 } 
