@@ -32,7 +32,7 @@ class BaseController extends Controller
             ->send("nuevo pedido",array(
                 "data" => array(
                     "data" => $json,
-                    "message" => $status
+                    "status" => $status
                 )
             ));
     }
