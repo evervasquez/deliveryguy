@@ -412,8 +412,8 @@
 .RequestDelivery{
 	/*background: linear-gradient(to bottom, white 1%, rgba(229,229,229,1));*/
 	background: white;
-	height: 32em;
-	overflow: hidden;
+	/*height: 20em;
+	overflow: hidden;*/
 	/*border-top: 1px solid red;*/
 	
 }
