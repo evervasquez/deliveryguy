@@ -1,10 +1,10 @@
 <?php
 use delivery\Delivery\DeliveryRepositorie;
 
-class DeliveriesController extends \BaseController
+class DeliveriesGuyApiController extends \BaseController
 {
     protected $deliveryRepo;
-
+    private static $STATUS_CONFIRMATION=1;
     function __construct(DeliveryRepositorie $deliveryRepo)
     {
         $this->deliveryRepo = $deliveryRepo;
@@ -12,45 +12,40 @@ class DeliveriesController extends \BaseController
 
     /**
      * Display a listing of the resource.
-     * GET /deliveries
+     * GET /deliveriesguyapi
      *
      * @return Response
      */
     public function index()
     {
-        return View::make('deliveries/index');
+        //
     }
 
     /**
      * Show the form for creating a new resource.
-     * GET /deliveries/create
+     * GET /deliveriesguyapi/create
      *
      * @return Response
      */
     public function create()
     {
-        $companies['companies'] = $this->deliveryRepo->storeCompany();
-        $companies['customers'] = $this->deliveryRepo->storeCustomers();
-        return View::make('deliveries/create', compact('companies'));
+        //
     }
 
     /**
      * Store a newly created resource in storage.
-     * POST /deliveries
+     * POST /deliveriesguyapi
      *
      * @return Response
      */
     public function store()
     {
-        $data = Input::all();
-        $message = $this->deliveryRepo->create($data);
-        $this->sendPush($message,0);
-        return Redirect::route('deliveries')->with('message','successful registration of the delivery');
+        //
     }
 
     /**
      * Display the specified resource.
-     * GET /deliveries/{id}
+     * GET /deliveriesguyapi/{id}
      *
      * @param  int $id
      * @return Response
@@ -62,7 +57,7 @@ class DeliveriesController extends \BaseController
 
     /**
      * Show the form for editing the specified resource.
-     * GET /deliveries/{id}/edit
+     * GET /deliveriesguyapi/{id}/edit
      *
      * @param  int $id
      * @return Response
@@ -74,19 +69,25 @@ class DeliveriesController extends \BaseController
 
     /**
      * Update the specified resource in storage.
-     * PUT /deliveries/{id}
+     * PUT /deliveriesguyapi/{id}
      *
      * @param  int $id
      * @return Response
      */
     public function update($id)
     {
-        //
-    }
+        $data = Input::all();
+        $response = $this->deliveryRepo->update($data,$id);
+        if($data['status']==self::$STATUS_CONFIRMATION)
+        {
+            $this->sendPush($response,$data['status']);
+        }
+        return $response;
+	}
 
     /**
      * Remove the specified resource from storage.
-     * DELETE /deliveries/{id}
+     * DELETE /deliveriesguyapi/{id}
      *
      * @param  int $id
      * @return Response
@@ -96,8 +97,4 @@ class DeliveriesController extends \BaseController
         //
     }
 
-    public function getAll()
-    {
-        return $this->deliveryRepo->getAll();
-    }
 }

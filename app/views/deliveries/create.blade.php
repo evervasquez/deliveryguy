@@ -14,19 +14,19 @@
                     {{ Form::open(array('route' => 'deliveries.store','id' => 'formulario','role'=>'form')) }}
                     <div class="form-group">
                         <label>Company Name</label>
-                        <select name="company_id" class="form-control">
+                        <select name="company_id" required="required" class="form-control">
                             @foreach($companies['companies'] as $company)
                             <option value="{{$company->id}}">{{$company->company_name}}</option>
                             @endforeach
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Delivery Code</label>
-                        <input type="text" class="form-control" disabled name="deliveryCod">
+                        <label>Amount Delivery</label>
+                        <input type="number" required="required" min="0" class="form-control" name="amount">
                     </div>
                     <div class="form-group">
                         <label>Customer</label>
-                        <select name="customer_id" class="form-control">
+                        <select name="customer_id" required="required" class="form-control">
                             @foreach($companies['customers'] as $customer)
                             <option value="{{$customer->id}}">{{$customer->fullname}}</option>
                             @endforeach
@@ -34,7 +34,7 @@
                     </div>
                     <div class="form-group">
                         <label>Type Buy</label>
-                        <select name="typebuy_id" class="form-control">
+                        <select name="typebuy_id" required="required" class="form-control">
                             <option value="1">Card</option>
                         </select>
                     </div>
@@ -44,9 +44,6 @@
                 </div>
                 <!-- /.col-lg-6 (nested) -->
                 <div class="col-lg-3">
-
-                    <div id="map_canvas" class="table-responsive" style="width: 100%; height: 450px">
-                    </div>
                     <!-- /.col-lg-6 (nested) -->
                 </div>
                 <!-- /.row (nested) -->
