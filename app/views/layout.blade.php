@@ -55,7 +55,9 @@
 						<li class="MainMenu-item"><a class="MainMenu-link" href="">Preguntas frecuentes</a>|</li>
 						<li class="MainMenu-item"><a class="MainMenu-link" href="">Ayuda</a></li>
 					</div>
-					<li class="MainMenu-itemSignIn"><a class="MainMenu-linkSignIn" href="">Descargar</a></li>
+					 <span><a href="#">{{ HTML::image('assets/img/apple.png','',array('class' => 'MainMenu-appStore')) }} </a></span>
+					<span><a href="#">{{ HTML::image('assets/img/google.png','',array('class' => 'MainMenu-google')) }}</a></span>
+				</ul>
 				</ul>
 			</nav>
 		</header>
@@ -85,8 +87,14 @@
 			<article class="RequestDelivery-container">
 				<div class="RequestDelivery-content">
 				
-				<h2 class="RequestDelivery-title">¿Qué es DeliveryGuy?</h2>
-					<p class="RequestDelivery-description">DeliveryGuy es una aplicación Móvil que ayuda a conectar negocios con consumidores, para facilitar y agilizar el proceso de delivery. Al poner una orden a traves de la aplicación, los negocios tendran acceso immediato a los conductores disponibles en el área, quienes trabajan de manera independiente con nosotros.</p>
+				<h2 class="RequestDelivery-title">DeliveryGuy es:</h2>
+					<p class="RequestDelivery-description">
+						- Conectarse a la mejor red de repartidores en tu área a cualquier hora, todos los dias del año. <br>
+						- Agilizar tus entregas con la tecnología móvil en tiempo real.
+						<br>
+						- Aumentar el número de ordenes sin elevar tus gatos. 
+					</p>
+					<p class="InfoPrincipal-linkContainer link-derecho"><a href="" class="InfoPrincipal-link "><span class="icon-food"></span>Asociate como Restaurant</a></p>
 
 				<!-- 	<h2 class="RequestDelivery-title">¿Qué es DeliveryGuy?</h2>
 					<p class="RequestDelivery-description">DeliveryGuy es una aplicación Móvil que ayuda a conectar negocios con consumidores, para facilitar y agilizar el proceso de delivery. Al poner una orden a traves de la aplicación, los negocios tendran acceso immediato a los conductores disponibles en el área, quienes trabajan de manera independiente con nosotros.</p> -->

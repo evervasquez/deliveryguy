@@ -251,6 +251,7 @@
 	display: table-cell;
 	vertical-align: middle;
 	padding-left: 3em;
+	margin: 0;
 
 }
 .MainMenu-list
@@ -278,7 +279,7 @@
 
 .MainMenu-link:hover
 {
-	color:#1db1a3;
+	color:#e84207;
 }
 
 
@@ -286,9 +287,16 @@
 	display: inline-block;
 	font-weight: bold;
 	text-transform: uppercase;
-	
+}
+
+.MainMenu-appStore,.MainMenu-google
+{
+	width: 10%;
+	text-decoration: none;
 
 }
+
+
 
 .MainMenu-linkSignIn
 {	
@@ -430,6 +438,9 @@
 	vertical-align: top;
 
 }
+.link-derecho{
+	text-align: center;
+}
 .RequestDelivery-title{
 
 	vertical-align: top;
@@ -454,7 +465,8 @@
 }
 .RequestDelivery-image{
 	float: right;
-	width: 97%;
+	width: 90%;
+	height: auto;
 	border-radius: 50%;
 	vertical-align: bottom;
 }
