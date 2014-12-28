@@ -39,20 +39,24 @@
 			</section>
 
 		</div> 
-		<header class="MainMenu">
-		  	<figure class="MainMenu-containerImage">
-				<a clsss="MainMenu-logoLink" href="#">
+		<header class="Header">
+		  	<figure class="Header-containerImage">
+				<a clsss="Header-logoLink" href="#">
 
-				{{ HTML::image('assets/img/logoOficial.png','',array('class' => 'MainMenu-image')) }}
+				{{ HTML::image('assets/img/logoOficial.png','',array('class' => 'Header-image')) }}
 				</a>
 			</figure>
 
-			<nav class="MainMenu-ContainerOption">
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="{{route('sign-in')}}">Login</a></p>
-				<p class="MainMenu-option"><a class="MainMenu-linkOption click-register" href="#">Register</a></p>
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Preguntas frecuentes</a></p>
-				<p class="MainMenu-option"><a class="MainMenu-linkOption" href="">Ayuda</a></p>
-				<p class="MainMenu-optionSignIn"><a class="MainMenu-linkSignIn" href="">Descargar</a></p>
+			<nav class="MainMenu">
+				<ul class="MainMenu-list">
+					<div class="MainMenu-itemCont">
+						<li class="MainMenu-item"><a class="MainMenu-link" href="{{route('sign-in')}}">Login </a> |</li>
+						<li class="MainMenu-item"><a class="MainMenu-link click-register" href="">Registrar</a>|</li>
+						<li class="MainMenu-item"><a class="MainMenu-link" href="">Preguntas frecuentes</a>|</li>
+						<li class="MainMenu-item"><a class="MainMenu-link" href="">Ayuda</a></li>
+					</div>
+					<li class="MainMenu-itemSignIn"><a class="MainMenu-linkSignIn" href="">Descargar</a></li>
+				</ul>
 			</nav>
 		</header>
 
@@ -80,16 +84,21 @@
 		<section class="RequestDelivery">
 			<article class="RequestDelivery-container">
 				<div class="RequestDelivery-content">
-					<h2 class="RequestDelivery-title">¿Qué es DeliveryGuy?</h2>
+				
+				<h2 class="RequestDelivery-title">¿Qué es DeliveryGuy?</h2>
 					<p class="RequestDelivery-description">DeliveryGuy es una aplicación Móvil que ayuda a conectar negocios con consumidores, para facilitar y agilizar el proceso de delivery. Al poner una orden a traves de la aplicación, los negocios tendran acceso immediato a los conductores disponibles en el área, quienes trabajan de manera independiente con nosotros.</p>
+
+				<!-- 	<h2 class="RequestDelivery-title">¿Qué es DeliveryGuy?</h2>
+					<p class="RequestDelivery-description">DeliveryGuy es una aplicación Móvil que ayuda a conectar negocios con consumidores, para facilitar y agilizar el proceso de delivery. Al poner una orden a traves de la aplicación, los negocios tendran acceso immediato a los conductores disponibles en el área, quienes trabajan de manera independiente con nosotros.</p> -->
 				</div>
-				<!-- <figure class="RequestDelivery-imageContainer">
-					{{ HTML::image('assets/img/imagen.png','',array('class' => 'RequestDelivery-image')) }}
-				</figure> -->
+				<figure class="RequestDelivery-imageContainer">
+					{{ HTML::image('assets/img/img_restaurant.jpg','',array('class' => 'RequestDelivery-image')) }}
+				</figure>
 					
 			</article>
 			
 		</section>
+
 
 		<section class="TrackingDelivery">
 			
