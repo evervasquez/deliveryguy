@@ -69,7 +69,7 @@
 	 			</firgure>
 	 		</div>
 			<div class="InfoPrincipal-containerDescription">
-				<p class="InfoPrincipal-title ">Te Presentamos a <br><span class="InfoPrincipal-marca">DeliveryGuy !</span></p>
+				<p class="InfoPrincipal-title ">Te Presentamos <br><span class="InfoPrincipal-marca">DeliveryGuy !</span></p>
 				<h1 class="InfoPrincipal-subtitle">DeliveryGuy es una poderosa herramienta de trabajo que facilita y permite de manera directa la comunicación entre el restaurante y cientos de mensajeros en el área.<br><a class="InfoPrincipal-more" href="">Leer Mas...</a></h1>
 
 				<div class="InfoPrincipal-assoContainer">
