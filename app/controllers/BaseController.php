@@ -30,8 +30,10 @@ class BaseController extends Controller
         PushNotification::app('appNameAndroid')
             ->to($devices)
             ->send("nuevo pedido",array(
-                "data" => $json,
-                "status"=>$status
+                "data" => array(
+                    "data" => $json,
+                    "message" => $status
+                )
             ));
     }
 }
