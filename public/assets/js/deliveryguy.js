@@ -148,6 +148,11 @@ var $bodyGeneral=$('body'),
     $cancel=$('.OLRegister-cancel'),
     $close = $('.OLRegister-close'),
     $register=$('.click-register');
+    $smartBtnMenu=$('.MenuSmart-button');
+    $smartBtnClose=$('.MainMenuu-btnClose');
+    $smartOverlay=$('.SmartOverlay');
+    $bodyContainer=$('.bodyContainer');
+
 
 function register()
 {
@@ -155,6 +160,24 @@ function register()
     $overlay.fadeIn('slow');
     $bodyGeneral.css('position', 'relative');
     $bodyGeneral.css('overflow-y', 'hidden');
+    return false;
+}
+
+function overlaySmart()
+{
+    // $overlay.css('display', 'block');
+    $smartOverlay.fadeIn('slow');
+    $bodyGeneral.css('position', 'relative');
+    $bodyGeneral.css('overflow-y', 'hidden');
+    return false;
+}
+
+function overlaySmartClose()
+{
+    // $overlay.css('display', 'block');
+    $smartOverlay.fadeOut('slow');
+     $bodyGeneral.css('position', 'relative');
+    $bodyGeneral.css('overflow-y', 'visible');
     return false;
 }
 
@@ -168,9 +191,32 @@ function cerrarOverlay(){
     return false;
 }
 
+
 $cancel.click(cerrarOverlay);
 $close.click(cerrarOverlay);
 $register.click(register);
+$smartBtnMenu.click(overlaySmart);
+$bodyContainer.click(overlaySmartClose);
+$smartBtnClose.click(overlaySmartClose);
 
-// <a href="#" onclick="$('#c1').fadeIn('slow');">[fadeIn]</a>
-// <a href="#" onclick="$('#c1').fadeOut('slow');">[fadeOut]</a><br/>
+
+
+
+//DETECTAR EVENTO DE SCROOL DE LA PAGINAMOVER EL MAOUSE ABAJO Y ARRIBA
+// var mousewheelevt = (/Firefox/i.test(navigator.userAgent)) ? "DOMMouseScroll" : "mousewheel" //FF doesn't recognize mousewheel as of FF3.x
+// $("body").bind(mousewheelevt, function(e){
+
+//     var evt = window.event || e //equalize event object     
+//     evt = evt.originalEvent ? evt.originalEvent : evt; //convert to originalEvent if possible               
+//     var delta = evt.detail ? evt.detail*(-100) : evt.wheelDelta //check for detail first, because it is used by Opera and FF
+
+//     if(delta > 0) {
+//         //scroll up
+//         $bodyGeneral.css('background', 'blue');
+//     }
+//     else{
+//         //scroll down
+//         $bodyGeneral.css('background', 'red');
+//     }   
+// });
+

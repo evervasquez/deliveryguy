@@ -34,12 +34,12 @@ return array(
         'pgsql' => array(
             'driver'   => 'pgsql',
             'host'     => 'localhost',
-            'database' => 'bd_deliveryguy',
+            'database' => 'delivery',
             'username' => 'postgres',
             'password' => '1234',
             'charset'  => 'utf8',
             'prefix'   => '',
-            'schema'   => 'delivery',
+            'schema'   => 'public',
         ),
 
 	),
