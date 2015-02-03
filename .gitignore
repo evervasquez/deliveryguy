@@ -1,6 +1,6 @@
 /bootstrap/compiled.php
 /vendor
-/public/assets/
+/public/assets
 .idea/
 composer.phar
 .env.*.php
