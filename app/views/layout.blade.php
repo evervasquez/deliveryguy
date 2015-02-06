@@ -38,7 +38,7 @@
 			<span><a href="#">{{ HTML::image('assets/img/google.png','',array('class' => '')) }}</a></span>
 			</li>
 		</ul>
-	</div>
+	</div>	
 
 	<div class="Body-overlay">  
 	<section class="OLRegister">
@@ -96,20 +96,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	 		<div class="InfoPrincipa-phone">
 	 			<firgure class="InfoPrincipal-containerImage">
 	 			 {{ HTML::image('assets/img/phone.png','',array('class' => 'InfoPrincipal-image')) }}
@@ -147,7 +133,7 @@
 					- Aumenta el número de ordenes sin elevar tus gatos. 
 				</p>
 			</div>
-			<p class="InfoPrincipal-linkContainer link-derecho"><a href="" class="InfoPrincipal-link "><span class="icon-food"></span>Asociate como Restaurant</a></p>
+			<p class="InfoPrincipal-linkContainer link-info link-derecho"><a href="" class="InfoPrincipal-link  linkTable"><span class="icon-food"></span>Asociate como Restaurant</a></p>
 
 		<!-- 	<h2 class="RequestDelivery-title">¿Qué es DeliveryGuy?</h2>
 			<p class="RequestDelivery-description">DeliveryGuy es una aplicación Móvil que ayuda a conectar negocios con consumidores, para facilitar y agilizar el proceso de delivery. Al poner una orden a traves de la aplicación, los negocios tendran acceso immediato a los conductores disponibles en el área, quienes trabajan de manera independiente con nosotros.</p> -->
