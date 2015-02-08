@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "davibennun/laravel-push-notification": "dev-master"
+        "davibennun/laravel-push-notification": "dev-master",
+	  	"chrisbjr/api-guard": "0.*"
 	},
     "require-dev": {
         "way/generators": "~2.0",

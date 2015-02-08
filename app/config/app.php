@@ -121,7 +121,10 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-        'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider'
+        'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider',
+		'EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider',
+		'Chrisbjr\ApiGuard\ApiGuardServiceProvider'
+
         //'Way\Generators\GeneratorsServiceProvider',
         //'Barryvdh\Debugbar\ServiceProvider',
         //'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
