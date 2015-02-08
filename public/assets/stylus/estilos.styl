@@ -2,12 +2,12 @@
 @import "normalize.styl"
 @import "fonts.styl"
 
-
-
 anaranjado =  #e84207
 celeste= #1fa392
 azul = #042a34
 gris = #3c3f35 
+
+
 
 .Body-overlay
   display none
@@ -315,7 +315,7 @@ gris = #3c3f35
   top 0
   right 0
   width 35%
-  margin 4em 4em 0 0
+  margin 1em 4em 0 0
   background white
   border-radius 0.7em
   padding-left 1em
@@ -338,25 +338,29 @@ gris = #3c3f35
 
 .ReceiveDelivery-article
   height 29em
+  position relative
   background white
   overflow visible
 
 .ReceiveDelivery-content
   width 40%
   text-align left
-  margin 5em 0 0 5em
+  margin 3.2em 0 0 5em
   display inline-block
 
 .ReceiveDelivery-imageContainer
   margin 0
   display inline-block
   width 40%
-  float right
-  vertical-align bottom
+  position absolute 
+  bottom 0
+  right 0
 
 .ReceiveDelivery-image
   width 100%
-  height auto
+  
+
+  
 
 .ReceiveDelivery-title
   font-family 'Roboto Slab', serif
@@ -422,7 +426,7 @@ gris = #3c3f35
 .MenuSmart 
   display none
 
-@media screen and (max-width:480px)
+@media screen and (max-width:800px)
   .MenuSmart 
     display block
   .left
@@ -436,7 +440,7 @@ gris = #3c3f35
   .InfoPrincipal
     height 40em
     
- 
+    
     &-image
       margin 30em 30%
       width 60%
@@ -466,8 +470,13 @@ gris = #3c3f35
       margin 0
       
     &-link
+      display  block
+      margin 0 auto
       padding 1em
       border-radius 18%
+      &.linkTable
+        width 24%
+        
       .icon-food
       .icon-truck
         font-size 2em
@@ -478,8 +487,13 @@ gris = #3c3f35
         display block
     
     &-linkContainer 
+      text-align center
       width 40%
       height auto
+      &.link-info
+        width 100%
+        
+      
       
     &-subtitle
       font-weight 500
@@ -492,15 +506,18 @@ gris = #3c3f35
     
     &-container
       position relative
+      
+    &-content
+      position: relative
     
     &-imageContainer
       position absolute
-      width 70%
+      width 35%
       top 16%
-      left 17%
+      left 34%
     &-image
       border-radius 10%
-      width 89%
+      width 100%
       border 5px inset celeste
     &-description
       padding 13em .5em 0
@@ -516,8 +533,10 @@ gris = #3c3f35
   .TrackingDelivery
     
     &-content
+      margin-top 8em
       padding .1em 0
       width 100%
+ 
       left .4em
       right 0
       text-align center
@@ -539,14 +558,14 @@ gris = #3c3f35
       position absolute
       top 0
       left 0
-      width 100%
-      margin-top 1em
+      width 30%
+      margin 1em auto
     &-content
       margin 13em 0
       
     &-image
       border-radius 10%
-      width 50%
+      width 100%
       height auto
       border 5px outset anaranjado 
       
@@ -595,7 +614,6 @@ gris = #3c3f35
       display none
       &.is-active
         display block
-    
     
     .MainMenuu
       padding 0 0
@@ -668,6 +686,32 @@ gris = #3c3f35
           padding 0
           border 1px inset white
           
+@media screen and (max-width:425px)
+  .RequestDelivery
+    &-imageContainer
+      width 60%
+      top 15%
+      left 20%
+    &-image
+      width 100%
+  .ReceiveDelivery
+    
+    &-imageContainer
+      width 50%
+
+@media screen and (max-width:396px) 
+  .RequestDelivery
+    &-title
+      font-size 2.2em
+@media screen and (max-width:320px)     
+   .RequestDelivery
+    &-title
+      font-size 2em
+    &-description
+      padding 10em .5em 0
+
+  
+
           
       
       
