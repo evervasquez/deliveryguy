@@ -23,11 +23,11 @@
 			<!-- <figure class="MainMenuu-logoCont">
 				{{ HTML::image('assets/img/logo.png','',array('class' => 'MainMenuu-logo', 'width'=>'70px', 'height' => '70px')) }}
 			</figure> -->
-			<li class="MainMenuu-item Item-register"><a href="" class="MainMenuu-link link-register">Registrar</a></li>
-			<li class="MainMenuu-item item-button"><a href="" class="MainMenuu-link">Login</a></li>
-			<li class="MainMenuu-item item-button"><a href="" class="MainMenuu-link">Preguntas Frecuentes</a></li>
-			<li class="MainMenuu-item item-button"><a href="" class="MainMenuu-link">Ayuda</a></li>
-			<li class="MainMenuu-item item-button"><a href="" class="MainMenuu-link">Decargar</a></li>
+			<li class="MainMenuu-item Item-register"><a href="#" class="MainMenuu-link link-register">Registrar</a></li>
+			<li class="MainMenuu-item item-button"><a href="#" class="MainMenuu-link">Login</a></li>
+			<li class="MainMenuu-item item-button"><a href="#" class="MainMenuu-link">Preguntas Frecuentes</a></li>
+			<li class="MainMenuu-item item-button"><a href="#" class="MainMenuu-link">Ayuda</a></li>
+			<li class="MainMenuu-item item-button"><a href="#" class="MainMenuu-link">Decargar</a></li>
 			<li class="MainMenuu-item item-button img-download">
 				<span><a href="#">{{ HTML::image('assets/img/apple.png','',array('class' => '')) }} </a></span>
 				
@@ -78,9 +78,9 @@
 
 		<nav class="MainMenu">
 			<ul class="MainMenu-list">
-					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="">Ayuda</a></li>
-					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="">Preguntas frecuentes</a>|</li>
-					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link click-register" href="">Registrar</a>|</li>
+					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="http://google.com">Ayuda</a></li>
+					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="#">Preguntas frecuentes</a>|</li>
+					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link click-register" href="#">Registrar</a>|</li>
 					<li class="MainMenu-item MainMenu-itemCont "><a class="MainMenu-link" href="{{route('sign-in')}}">Login </a> |</li>
 				
 				 
@@ -254,9 +254,6 @@
 	$buttonHideMenu.addEventListener("click", hideMenu);
 	$bodyContainer.addEventListener("click", hideMenu);
 	
-	
-	
-
 	 //body.on('panright',showMenu);
 	 //body.on('panleft',hideMenu);
 
