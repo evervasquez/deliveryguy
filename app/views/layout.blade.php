@@ -80,7 +80,8 @@
 			<ul class="MainMenu-list">
 					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="">Ayuda</a></li>
 					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="">Preguntas frecuentes</a>|</li>
-					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link click-register" href="">Registrar</a>|</li>
+					{{--<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link click-register" href="">Registrar</a>|</li>--}}
+					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="{{route('sign-up')}}">Registrar</a>|</li>
 					<li class="MainMenu-item MainMenu-itemCont "><a class="MainMenu-link" href="{{route('sign-in')}}">Login </a> |</li>
 				
 				 

@@ -19,10 +19,6 @@ class AddGcmRegidCompaniesCustomersUsers extends Migration {
         Schema::table('employees',function(Blueprint $table){
             $table->text('gcm_regid')->nullable();
         });
-
-        Schema::table('users',function(Blueprint $table){
-            $table->text('gcm_regid')->nullable();
-        });
 	}
 
 	/**
@@ -37,10 +33,6 @@ class AddGcmRegidCompaniesCustomersUsers extends Migration {
         });
 
         Schema::table('employees',function(Blueprint $table){
-            $table->dropColumn('gcm_regid');
-        });
-
-        Schema::table('users',function(Blueprint $table){
             $table->dropColumn('gcm_regid');
         });
 	}

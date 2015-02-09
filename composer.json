@@ -6,6 +6,7 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "davibennun/laravel-push-notification": "dev-master",
+	  	"cartalyst/sentry": "2.1.*",
 	  	"chrisbjr/api-guard": "0.*"
 	},
     "require-dev": {
@@ -15,7 +16,8 @@
     },
 	"autoload": {
         "psr-4": {
-            "delivery\\": "app/delivery"
+            "delivery\\": "app/delivery",
+		    "api\\": "api"
         },
 		"classmap": [
 			"app/commands",

@@ -34,7 +34,7 @@ return array(
         'pgsql' => array(
             'driver'   => 'pgsql',
             'host'     => 'localhost',
-            'database' => 'delivery',
+            'database' => 'deliveryguy',
             'username' => 'postgres',
             'password' => '1234',
             'charset'  => 'utf8',

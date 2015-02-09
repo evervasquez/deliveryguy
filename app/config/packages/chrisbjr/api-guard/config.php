@@ -10,8 +10,8 @@ return array(
     | You can set this to false once you're done generating an initial API key
     |
     */
-
-    'generateApiKeyRoute'  => true,
+    //key auto generate
+    'generateApiKeyRoute'  => false,
 
     /*
     |--------------------------------------------------------------------------
