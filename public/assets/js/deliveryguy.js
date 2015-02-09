@@ -148,7 +148,11 @@ var $bodyGeneral=$('body'),
     $cancel=$('.OLRegister-cancel'),
     $close = $('.OLRegister-close'),
     $register=$('.click-register');
-    $smartBtnMenu=$('.MenuSmart-button');
+
+    //problema de redireccion
+    //$smartBtnMenu=$('.MenuSmart-button');
+
+
     $smartBtnClose=$('.MainMenuu-btnClose');
     $smartOverlay=$('.SmartOverlay');
     $bodyContainer=$('.bodyContainer');
