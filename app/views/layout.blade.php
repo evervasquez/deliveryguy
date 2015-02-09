@@ -78,18 +78,14 @@
 
 		<nav class="MainMenu">
 			<ul class="MainMenu-list">
-<<<<<<< HEAD
-					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="http://google.com">Ayuda</a></li>
-					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="#">Preguntas frecuentes</a>|</li>
-					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link click-register" href="#">Registrar</a>|</li>
-=======
+
 					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="">Ayuda</a></li>
 					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="">Preguntas frecuentes</a>|</li>
 					{{--<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link click-register" href="">Registrar</a>|</li>--}}
 					<li class="MainMenu-item MainMenu-itemCont"><a class="MainMenu-link" href="{{route('sign-up')}}">Registrar</a>|</li>
->>>>>>> 5b2260a3bfcaa126a0356572e6e73b348f0ffc76
+
 					<li class="MainMenu-item MainMenu-itemCont "><a class="MainMenu-link" href="{{route('sign-in')}}">Login </a> |</li>
-					<a href="http://www.google.com.pe">Registrar</a>
+					
 
 			</ul>
 				<span><a href="#">{{ HTML::image('assets/img/apple.png','',array('class' => 'MainMenu-appStore')) }} </a></span>
@@ -204,7 +200,7 @@
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-{{ HTML::script('assets/js/deliveryguy.js') }}
+<!-- {{ HTML::script('assets/js/deliveryguy.js') }} -->
 <!-- {{ HTML::script('assets/js/hammer.min.js') }} -->
 
    <script type="text/javascript">
