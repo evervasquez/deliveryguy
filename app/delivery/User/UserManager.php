@@ -9,6 +9,22 @@
 namespace delivery\User;
 
 
-class UserManager {
+use delivery\Base\BaseManager;
+
+class UserManager extends BaseManager
+{
+
+    public function getRules()
+    {
+        $rules = [
+            'first_name' => 'required|min:8',
+            'last_name' => 'required',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:8|confirmed',
+            'password_confirmation' => 'required|min:8'
+        ];
+
+        return $rules;
+    }
 
 } 

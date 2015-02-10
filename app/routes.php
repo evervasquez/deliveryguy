@@ -24,6 +24,10 @@ Route::get('createuser', function(){
 //Home
 Route::get('sign-up', ['as' => 'sign-up', 'uses' => 'HomeController@showLayoutSignUp']);
 
+//register
+Route::post('sign-up', ['as' => 'sign-up', 'uses' => 'UsersController@create']);
+Route::get('sign-up-confirmation', ['as' => 'sign-up-confirmation', 'uses' => 'HomeController@signUpConfirmation']);
+
 
 //login
 Route::get('sign-in', ['as' => 'sign-in', 'uses' => 'UserLoginController@index']);

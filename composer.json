@@ -12,12 +12,14 @@
     "require-dev": {
         "way/generators": "~2.0",
 		"barryvdh/laravel-debugbar": "~1.8",
-		"barryvdh/laravel-ide-helper": "~1.11"
+		"barryvdh/laravel-ide-helper": "~1.11",
+	  	"doctrine/dbal": "2.6.*@dev"
     },
 	"autoload": {
         "psr-4": {
             "delivery\\": "app/delivery",
-		    "api\\": "api"
+		    "api\\": "api",
+		  	"events\\": "events"
         },
 		"classmap": [
 			"app/commands",

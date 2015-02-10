@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>DeliveryGuy</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    {{ HTML::style('assets/css/sign-up.css'); }}
 </head>
 <body>
 <div class="container">
@@ -67,36 +69,54 @@
                         <div class="panel panel-default">
                             <br/>
                             <div class="panel-body">
-                                <form class="form form-vertical">
+                                {{ Form::open(array('route' => 'sign-up','class'=> 'form form-vertical','id' => 'formulario','role'=>'form')) }}
                                     <div class="control-group">
-                                        <label>Name</label>
+                                        <label><span class="text-danger">*</span> First Name</label>
                                         <div class="controls">
-                                            <input type="text" class="form-control" placeholder="Enter Name">
+                                            <input type="text" required name="first_name" class="form-control" placeholder="First Name">
+                                            {{ $errors->first('first_name','<p class="error_message">:message</p>') }}
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label>Message</label>
+                                        <label>Last Name</label>
                                         <div class="controls">
-                                            <textarea class="form-control"></textarea>
+                                            <input type="text" required name="last_name" class="form-control" placeholder="Last Name">
+                                            {{ $errors->first('last_name','<p class="error_message">:message</p>') }}
                                         </div>
                                     </div>
-
                                     <div class="control-group">
-                                        <label>Category</label>
+                                        <label>Email</label>
                                         <div class="controls">
-                                            <select class="form-control"><option>options</option></select>
+                                            <input type="email" name="email" required class="form-control" placeholder="Example: maria@yahoo.es">
+                                            {{ $errors->first('email','<p class="error_message">:message</p>') }}
                                         </div>
                                     </div>
-
+                                    <div class="control-group">
+                                        <label>Password</label>
+                                        <div class="controls">
+                                            <input type="password" name="password" required class="form-control" placeholder="Password">
+                                            {{ $errors->first('password','<p class="error_message">:message</p>') }}
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label>Repeat Password</label>
+                                        <div class="controls">
+                                            <input type="password" name="password_confirmation`" required class="form-control" placeholder="Repeat Password">
+                                            {{ $errors->first('password_confirmation','<p class="error_message">:message</p>') }}
+                                        </div>
+                                    </div>
                                     <div class="control-group">
                                         <label></label>
                                         <div class="controls">
                                             <button type="submit" class="btn btn-primary">
-                                                Post
+                                                Enviar
                                             </button>
+                                            <a href="{{URL::previous()}}" class="btn btn-danger">
+                                                Cancelar
+                                            </a>
                                         </div>
                                     </div>
-                                </form>
+                                {{ Form::close() }}
                             </div><!--/panel content-->
                         </div>
 
