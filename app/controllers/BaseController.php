@@ -38,5 +38,24 @@ class BaseController extends Controller
             ));
     }
 
+    /**
+     * metodo permite registrar en sentry
+     * @param $manager
+     * @param $datos
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function register($manager, $repository,$datos)
+    {
+        if ($manager->isValid()) {
 
+            //TODO: colocar algoritmo de mandar correo electronico
+            \Event::fire('user.register', $datos);
+
+            return \Redirect::route('sign-up-confirmation');
+
+        } else {
+            return \Redirect::back()->withInput()->withErrors($manager->getErros());
+        }
+
+    }
 }

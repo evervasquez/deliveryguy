@@ -101,7 +101,7 @@
                                     <div class="control-group">
                                         <label>Repeat Password</label>
                                         <div class="controls">
-                                            <input type="password" name="password_confirmation`" required class="form-control" placeholder="Repeat Password">
+                                            <input type="password" name="password_confirmation" required class="form-control" placeholder="Repeat Password">
                                             {{ $errors->first('password_confirmation','<p class="error_message">:message</p>') }}
                                         </div>
                                     </div>

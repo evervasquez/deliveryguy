@@ -2,10 +2,12 @@
 use delivery\User\UserManager;
 use delivery\User\UserRepository;
 use Illuminate\Events\Dispatcher;
+
 class UsersController extends \BaseController
 {
     private $userRepo;
     private $events;
+
     function __construct(UserRepository $userRepo, Dispatcher $events)
     {
         $this->userRepo = $userRepo;
@@ -33,9 +35,7 @@ class UsersController extends \BaseController
     public function create()
     {
         $datos = Input::all();
-        $manager = new UserManager($datos);
-        Event::fire('user.create',$datos);
-        return $this->userRepo->registerSentry($manager,$datos);
+        //return $this->register($manager, $this->userRepo, $datos);
     }
 
     /**

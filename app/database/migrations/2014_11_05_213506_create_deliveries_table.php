@@ -21,6 +21,7 @@ class CreateDeliveriesTable extends Migration {
             $table->integer('typebuy_id')->unsigned();
             $table->dateTime('datetime_reservation')->nullable();
             $table->dateTime('datetime_confirmation')->nullable();
+			$table->decimal('charge',18,2)->nullable()->default(0);
 			$table->timestamps();
             $table->softDeletes();
 		});
