@@ -20,10 +20,14 @@ class ConfirmationEmailHandler
 
     public function subscribe($events)
     {
-        $events->listen('employee.create', 'events\ConfirmationEmailHandler');
+        $events->listen('employee.create', 'domain\events\ConfirmationEmailHandler@onSendMessage');
     }
 
-    public function handle($employe)
+    /**
+     * send email
+     * @param $employe
+     */
+    public function onSendMessage($employe)
     {
         $data = 'WELCOME';
         $this->fullname = $employe->first_name.' '.$employe->last_name;

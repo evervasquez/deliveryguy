@@ -1,15 +1,26 @@
 <?php
 namespace domain\providers;
 
-use Illuminate\Events\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\ServiceProvider;
 use domain\events\ConfirmationEmailHandler;
 
-class RegistratorsServiceProvider extends ServiceProvider{
+class RegistratorsServiceProvider extends ServiceProvider
+{
 
-    public function boot(DispatcherContract $events)
+
+    public function boot()
     {
-        $this->app->events->subscribe(new ConfirmationEmailHandler(
-                $this->app['mailer'])
-        );
+        $this->app->events->subscribe(new ConfirmationEmailHandler($this->app['mailer']));
     }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        //
+    }
+
 }

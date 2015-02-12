@@ -23,7 +23,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'bd_deliveryguy',
+			'database'  => 'deliveryguy',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

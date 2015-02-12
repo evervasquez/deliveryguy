@@ -2,17 +2,19 @@
 use domain\delivery\Employee\EmployeeRepositorie;
 use Illuminate\Events\Dispatcher;
 use domain\delivery\Employee\EmployeeManager;
+use Illuminate\Mail\Mailer;
 class EmployeesController extends \BaseController
 {
     protected $employeeRepo;
     protected $manager;
     protected $events;
-
-    function __construct(EmployeeRepositorie $employeeRepo, EmployeeManager $manage, Dispatcher $events)
+    protected $mailer;
+    function __construct(EmployeeRepositorie $employeeRepo, EmployeeManager $manage, Dispatcher $events, Mailer $mailer)
     {
         $this->employeeRepo = $employeeRepo;
         $this->manager = $manage;
         $this->events = $events;
+        $this->mailer = $mailer;
     }
 
 
@@ -37,8 +39,7 @@ class EmployeesController extends \BaseController
     {
         if ($this->manager->passes()) {
             $employee = $this->employeeRepo->create(Input::except('_token'));
-            $this->events->fire('employee.create', $employee);
-            return \Redirect::route('sign-up-confirmation');
+            $this->events->fire('employee.create', array($employee));
         } else {
             return \Redirect::back()->withInput()->withErrors($this->manager->getErrors());
         }
