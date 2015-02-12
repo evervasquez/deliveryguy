@@ -26,10 +26,9 @@ class ConfirmationEmailHandler
     public function onSendMessage($employee)
     {
         $data = array('message'=>'WELCOME');
-        $this->fullname = $employee->first_name.' '.$employee->last_name;
-        $this->mailer->send('emails.welcome', $data, function ($message) use ($employee) {
-            $message->to($employee->email, $this->fullname)
-                ->subject('Welcome to DeliveryGuy!');
+        \Mail::send('emails.welcome', $data, function($message)
+        {
+            $message->to('pever@unsm.edu.pe', 'Sonico')->subject('This is a demo!');
         });
     }
 }
