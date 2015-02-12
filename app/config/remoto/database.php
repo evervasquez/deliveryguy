@@ -73,13 +73,13 @@ return array(
 
         'pgsql' => array(
             'driver'   => 'pgsql',
-            'host'     => $host,
-            'database' => $database,
-            'username' => $username,
-            'password' => $password,
+            'host'     => 'ec2-54-83-196-7.compute-1.amazonaws.com',
+            'database' => 'd5se6vl66mcbra',
+            'username' => 'khxqpgfuuwuqjd',
+            'password' => '_ttriqy2shfaYEHMJFHvheqBHF',
             'charset'  => 'utf8',
             'prefix'   => '',
-            'schema'   => 'delivery',
+            'schema'   => 'public',
         ),
 
 		'sqlsrv' => array(
