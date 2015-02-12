@@ -4,9 +4,6 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-	  	"ext-gd":"*",
-	  	"ext-mbstring":"*",
-	  	"ext-exif":"*",
 		"laravel/framework": "4.2.*",
         "davibennun/laravel-push-notification": "dev-master",
 	  	"chrisbjr/api-guard": "0.*"

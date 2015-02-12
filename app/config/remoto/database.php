@@ -1,6 +1,6 @@
 <?php
 
-$url = parse_url(getenv("DATABASE_URL"));
+$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 $host = $url["host"];
 $username = $url["user"];
@@ -33,7 +33,7 @@ return array(
 	|
 	*/
 
-	'default' => 'pgsql',
+	'default' => 'mysql',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -62,10 +62,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'forge',
-			'username'  => 'forge',
-			'password'  => '',
+			'host'     => $host,
+			'database' => $database,
+			'username' => $username,
+			'password' => $password,
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
@@ -73,13 +73,13 @@ return array(
 
         'pgsql' => array(
             'driver'   => 'pgsql',
-            'host'     => 'ec2-54-83-196-7.compute-1.amazonaws.com',
-            'database' => 'd5se6vl66mcbra',
-            'username' => 'khxqpgfuuwuqjd',
-            'password' => '_ttriqy2shfaYEHMJFHvheqBHF',
+            'host'     => $host,
+            'database' => $database,
+            'username' => $username,
+            'password' => $password,
             'charset'  => 'utf8',
             'prefix'   => '',
-            'schema'   => 'public',
+            'schema'   => 'delivery',
         ),
 
 		'sqlsrv' => array(
