@@ -7,6 +7,7 @@ namespace domain\events;
  * Date: 10/02/15
  * Time: 15:21
  */
+use domain\utils\Cript;
 use Illuminate\Mail\Mailer;
 
 class ConfirmationEmailHandler
@@ -25,7 +26,8 @@ class ConfirmationEmailHandler
 
     public function onSendMessage($employee)
     {
-        $url = route('confirmation').'/'.sha1($employee->email);
+        $data = array("key"=>sha1($employee->email));
+        $url = route('confirmation').'?key='.Cript::dataEncriptar($data);
         $code_confirmation = array('code_confirmation'=>$url);
         \Mail::send('emails.confirmation', $code_confirmation, function($message) use ($employee)
         {

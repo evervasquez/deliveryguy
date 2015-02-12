@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'informes@deliveryguyapp.com', 'name' => 'CEO Efrain Gay'),
+	'from' => array('address' => 'informes@deliveryguyapp.com', 'name' => 'CEO Efrain Gamarra'),
 
 	/*
 	|--------------------------------------------------------------------------
