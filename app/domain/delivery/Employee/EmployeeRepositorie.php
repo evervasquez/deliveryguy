@@ -4,43 +4,63 @@ namespace domain\delivery\Employee;
 
 
 use domain\delivery\Base\BaseRepository;
+use domain\delivery\InterfaceRepository;
 
-class EmployeeRepositorie extends BaseRepository
+class EmployeeRepositorie extends BaseRepository implements InterfaceRepository
 {
-
+    /**
+     * create new record
+     * @param $data
+     * @return mixed
+     */
     public function create($data)
     {
-        $idmax = Employee::max('id');
+        $max = str_pad($this->findMaxId(), 8, '0', STR_PAD_LEFT);
         $employee = new Employee();
-        $employee->id = $idmax +1;
-        $employee->full_name = utf8_encode($data['fullname']);
-        $employee->address = "jiron #amonarca 235";
-        $employee->phone = "97614258";
+        $employee->code = 'E' . $max;
+        $employee->first_name = $data['first_name'];
+        $employee->last_name = $data['last_name'];
         $employee->email = $data['email'];
-        $employee->driver_licence = '000-000';
-        $employee->property_card = '000-000';
-        $employee->bank_account = '000-000-000';
-        $employee->id_card = '000-000-000';
-        $employee->sex = 'M';
-        $employee->created_at = $this->getCreatedAt();
-        $employee->updated_at = $this->getUpdateAt();
-        $employee->gcm_regid = $data['regid'];
-        if ($employee->save()) {
-            $idmax = Employee::max('id');
-            $result = \DB::table('employees')->whereNull('deleted_at')
-                ->where('id', '=', $idmax)
-                ->select('id','gcm_regid','full_name','email','driver_licence','property_card','bank_account',
-                            'id_card','sex')
-                ->get();
-            return \Response::json(array(
-                "Result" => "OK",
-                "data" => $result
-            ));
-
-        } else {
-            return \Response::json(array(
-                "Result" => "ERROR"
-            ));
-        }
+        $employee->save();
+        return $employee;
     }
-} 
+
+    /**
+     * find by Id
+     * @param $id
+     * @return mixed
+     */
+    public function findId($id)
+    {
+        // TODO: Implement findId() method.
+    }
+
+    /**
+     * delete record by Id
+     * @param $id
+     * @return mixed
+     */
+    public function delete($id)
+    {
+        // TODO: Implement delete() method.
+    }
+
+    /**
+     * get All records
+     * @return mixed
+     */
+    public function all()
+    {
+        // TODO: Implement all() method.
+    }
+
+    /**
+     * get Id max
+     * @return mixed
+     */
+    public function findMaxId()
+    {
+        return Employee::whereNull('deleted_at')->max('id');
+    }
+
+}

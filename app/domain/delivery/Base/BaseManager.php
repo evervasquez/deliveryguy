@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Investigación2
+ * User: MacBookPro eveR
  * Date: 04/11/14
  * Time: 01:23 AM
  */
@@ -11,34 +11,29 @@ namespace domain\delivery\Base;
 
 abstract class BaseManager
 {
-    protected $data;
+    protected $input;
+
     protected $errors;
 
-    public function __construct($datos)
+    abstract function getRules();
+
+    public function __construct($input = NULL)
     {
-        $this->data = array_only($datos, array_keys($this->getRules()));
+        $this->input = $input ?: array_only(\Input::all(), array_keys($this->getRules()));;
     }
 
-    abstract public function getRules();
-
-    public function isValid()
+    public function passes()
     {
-        //recuperamos todas las reglas
-        $rules = $this->getRules();
+        $validation = \Validator::make($this->input, $this->getRules());
 
-        $validation = \Validator::make($this->data, $rules);
+        if ($validation->passes()) return true;
 
-        //true si pasa
-        $isValid = $validation->passes();
-
-        //mensajes de error
         $this->errors = $validation->messages();
 
-        return $isValid;
+        return false;
     }
 
-    //retornamos los errors
-    public function getErros()
+    public function getErrors()
     {
         return $this->errors;
     }

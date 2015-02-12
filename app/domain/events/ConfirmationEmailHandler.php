@@ -12,7 +12,7 @@ use Illuminate\Mail\Mailer;
 class ConfirmationEmailHandler
 {
     protected $mailer;
-
+    private $fullname;
     public function __construct(Mailer $mailer)
     {
         $this->mailer = $mailer;
@@ -20,14 +20,15 @@ class ConfirmationEmailHandler
 
     public function subscribe($events)
     {
-        $events->listen('user.register', 'events\ConfirmationEmailHandler');
+        $events->listen('employee.create', 'events\ConfirmationEmailHandler');
     }
 
-    public function handle($user)
+    public function handle($employe)
     {
         $data = 'WELCOME';
-        $this->mailer->send('emails.welcome', $data, function ($message) use ($user) {
-            $message->to($user->email, $user->first_name)
+        $this->fullname = $employe->first_name.' '.$employe->last_name;
+        $this->mailer->send('emails.welcome', $data, function ($message) use ($employe) {
+            $message->to($employe->email, $this->fullname)
                 ->subject('Welcome to DeliveryGuy!');
         });
     }

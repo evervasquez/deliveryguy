@@ -16,7 +16,7 @@
     },
 	"autoload": {
         "psr-4": {
-		  	"domain\\": "domain"
+		  	"domain\\": "app/domain"
         },
 		"classmap": [
 			"app/commands",

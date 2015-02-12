@@ -1,6 +1,5 @@
 <?php
-use delivery\User\UserManager;
-use delivery\User\UserRepository;
+use domain\delivery\User\UserRepository;
 use Illuminate\Events\Dispatcher;
 
 class UsersController extends \BaseController
@@ -34,8 +33,9 @@ class UsersController extends \BaseController
      */
     public function create()
     {
-        $datos = Input::all();
-        //return $this->register($manager, $this->userRepo, $datos);
+        $data = Input::all();
+        $result = $this->userRepo->create($data);
+
     }
 
     /**

@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('informes@deliveryguyapp.com' => null, 'CEO Efrain Gamarra' => null),
+	'from' => array('sonico999@gmail.com' => null, 'CEO Efrain Gamarra' => null),
 
 	/*
 	|--------------------------------------------------------------------------

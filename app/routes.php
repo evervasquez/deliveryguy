@@ -1,31 +1,25 @@
 <?php
 
-Route::get('/', function()
-{
-    if(Auth::check())
-    {
+Route::get('/', function () {
+    if (Auth::check()) {
         return View::make('index');
-    }else{
+    } else {
         return View::make('layout');
     }
 });
 
-//test createuser
-Route::get('createuser', function(){
-    Sentry::register(array(
-        'email'    => 'pever@unsm.edu.pe',
-        'password' => '123',
-        'username'=> 'sonico999'
-    ));
+/**
+ * register
+ */
+Route::post('employee/sign-up', ['as' => 'employee.sign-up', 'uses' => 'EmployeesController@create']);
+Route::post('company/sign-up', ['as' => 'company.sign-up', 'uses' => 'CompaniesController@create']);
 
-    return \delivery\User\User::all();
-});
 
 //Home
 Route::get('sign-up', ['as' => 'sign-up', 'uses' => 'HomeController@showLayoutSignUp']);
 
 //register
-Route::post('sign-up', ['as' => 'sign-up', 'uses' => 'UsersController@create']);
+//Route::post('sign-up', ['as' => 'sign-up', 'uses' => 'UsersController@create']);
 Route::get('sign-up-confirmation', ['as' => 'sign-up-confirmation', 'uses' => 'HomeController@signUpConfirmation']);
 
 
@@ -51,7 +45,7 @@ Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'Deliver
 /*
  * API DE DELIVERYGUY
  */
-Route::resource("api/v1/companies","CompaniesGuyApiController");
-Route::resource("api/v1/employees","EmployeesGuyApiController");
-Route::resource("api/v1/deliveries","DeliveriesGuyApiController");
+Route::resource("api/v1/companies", "CompaniesGuyApiController");
+Route::resource("api/v1/employees", "EmployeesGuyApiController");
+Route::resource("api/v1/deliveries", "DeliveriesGuyApiController");
 

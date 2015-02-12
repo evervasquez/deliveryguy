@@ -1,7 +1,20 @@
 <?php
-
+use domain\delivery\Employee\EmployeeRepositorie;
+use Illuminate\Events\Dispatcher;
+use domain\delivery\Employee\EmployeeManager;
 class EmployeesController extends \BaseController
 {
+    protected $employeeRepo;
+    protected $manager;
+    protected $events;
+
+    function __construct(EmployeeRepositorie $employeeRepo, EmployeeManager $manage, Dispatcher $events)
+    {
+        $this->employeeRepo = $employeeRepo;
+        $this->manager = $manage;
+        $this->events = $events;
+    }
+
 
     /**
      * Display a listing of the resource.
@@ -22,7 +35,14 @@ class EmployeesController extends \BaseController
      */
     public function create()
     {
-        //
+        if ($this->manager->passes()) {
+            $employee = $this->employeeRepo->create(Input::except('_token'));
+            $this->events->fire('employee.create', $employee);
+            return \Redirect::route('sign-up-confirmation');
+        } else {
+            return \Redirect::back()->withInput()->withErrors($this->manager->getErrors());
+        }
+
     }
 
     /**

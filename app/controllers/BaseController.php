@@ -47,7 +47,6 @@ class BaseController extends Controller
     public function register($manager, $repository,$datos)
     {
         if ($manager->isValid()) {
-
             //TODO: colocar algoritmo de mandar correo electronico
             \Event::fire('user.register', $datos);
 

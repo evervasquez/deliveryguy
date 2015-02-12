@@ -27,7 +27,7 @@ class HomeController extends BaseController
         return View::make('sign-up');
     }
 
-    public function showSignUpConfirmation()
+    public function signUpConfirmation()
     {
         return View::make('sign-up-confirmation');
     }

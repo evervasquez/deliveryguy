@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
 class Employee extends \Eloquent {
 	protected $fillable = [];
+    protected $guarded = [];
 	use SoftDeletingTrait;
 
         protected $dates = ['deleted_at'];
