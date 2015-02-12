@@ -23,16 +23,12 @@ class ConfirmationEmailHandler
         $events->listen('employee.create', 'domain\events\ConfirmationEmailHandler@onSendMessage');
     }
 
-    /**
-     * send email
-     * @param $employe
-     */
-    public function onSendMessage($employe)
+    public function onSendMessage($employee)
     {
-        $data = array('WELCOME');
-        $this->fullname = $employe->first_name.' '.$employe->last_name;
-        $this->mailer->send('emails.welcome', $data, function ($message) use ($employe) {
-            $message->to($employe->email, $this->fullname)
+        $data = array('message'=>'WELCOME');
+        $this->fullname = $employee->first_name.' '.$employee->last_name;
+        $this->mailer->send('emails.welcome', $data, function ($message) use ($employee) {
+            $message->to($employee->email, $this->fullname)
                 ->subject('Welcome to DeliveryGuy!');
         });
     }
