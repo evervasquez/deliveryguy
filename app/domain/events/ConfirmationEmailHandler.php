@@ -27,7 +27,7 @@ class ConfirmationEmailHandler
     {
         $url = route('confirmation').'/'.sha1($employee->email);
         $code_confirmation = array('code_confirmation'=>$url);
-        \Mail::send('emails.welcome', $code_confirmation, function($message) use ($employee)
+        \Mail::send('emails.confirmation', $code_confirmation, function($message) use ($employee)
         {
             $message->to($employee->email, $employee->first_name)->subject('Welcome to DeliveryGuy!');
         });
