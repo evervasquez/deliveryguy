@@ -9,7 +9,7 @@ Route::get('/', function () {
 });
 
 Route::get('php', function(){
-    View::make('php-version');
+    return View::make('php-version');
 });
 
 
