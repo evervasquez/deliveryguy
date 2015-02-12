@@ -8,6 +8,11 @@ Route::get('/', function () {
     }
 });
 
+Route::get('php', function(){
+    View::make('php-version');
+});
+
+
 /**
  * register
  */
