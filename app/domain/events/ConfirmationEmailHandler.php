@@ -29,7 +29,7 @@ class ConfirmationEmailHandler
      */
     public function onSendMessage($employe)
     {
-        $data = 'WELCOME';
+        $data = array('WELCOME');
         $this->fullname = $employe->first_name.' '.$employe->last_name;
         $this->mailer->send('emails.welcome', $data, function ($message) use ($employe) {
             $message->to($employe->email, $this->fullname)
