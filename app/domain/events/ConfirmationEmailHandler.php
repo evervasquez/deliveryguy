@@ -13,7 +13,6 @@ use Illuminate\Mail\Mailer;
 class ConfirmationEmailHandler
 {
     protected $mailer;
-    private $fullname;
     public function __construct(Mailer $mailer)
     {
         $this->mailer = $mailer;
@@ -26,8 +25,7 @@ class ConfirmationEmailHandler
 
     public function onSendMessage($employee)
     {
-        $data = array("key"=>sha1($employee->email));
-        $url = route('confirmation').'?key='.Cript::dataEncriptar($data);
+        $url = route('confirmation').'?key='.sha1($employee->email);
         $code_confirmation = array('code_confirmation'=>$url);
         \Mail::send('emails.confirmation', $code_confirmation, function($message) use ($employee)
         {
