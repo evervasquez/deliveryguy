@@ -25,10 +25,11 @@ class ConfirmationEmailHandler
 
     public function onSendMessage($employee)
     {
-        $data = array('message'=>'WELCOME');
-        \Mail::send('emails.welcome', $data, function($message)
+        $url = route('confirmation').'/'.sha1($employee->email);
+        $code_confirmation = array('code_confirmation'=>$url);
+        \Mail::send('emails.welcome', $code_confirmation, function($message) use ($employee)
         {
-            $message->to('pever@unsm.edu.pe', 'Sonico')->subject('This is a demo!');
+            $message->to($employee->email, $employee->first_name)->subject('Welcome to DeliveryGuy!');
         });
     }
 }

@@ -97,4 +97,7 @@ class UsersController extends \BaseController
         //
     }
 
+    public function confirmationRegister($code){
+        dd($code);
+    }
 }
