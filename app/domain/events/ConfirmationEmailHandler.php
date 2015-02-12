@@ -7,7 +7,6 @@ namespace domain\events;
  * Date: 10/02/15
  * Time: 15:21
  */
-use domain\utils\Cript;
 use Illuminate\Mail\Mailer;
 
 class ConfirmationEmailHandler
