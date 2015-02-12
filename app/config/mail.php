@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'from@example.com', 'name' => 'John Smith'),
+	'from' => array('address' => 'informes@deliveryguyapp.com', 'name' => 'CEO Efrain Gay'),
 
 	/*
 	|--------------------------------------------------------------------------
