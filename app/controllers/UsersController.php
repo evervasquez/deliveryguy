@@ -98,6 +98,7 @@ class UsersController extends \BaseController
     }
 
     public function confirmationRegister(){
+        
         dd(\domain\Utils::dataDesencriptar(Input::all()));
     }
 }
