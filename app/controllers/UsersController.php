@@ -99,6 +99,5 @@ class UsersController extends \BaseController
 
     public function confirmationRegister(){
         dd(Input::all());
-        
     }
 }
