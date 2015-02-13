@@ -97,7 +97,7 @@ class UsersController extends \BaseController
         //
     }
 
-    public function confirmationRegister($code){
-        dd($code);
+    public function confirmationRegister(){
+        dd(Input::get('key'));
     }
 }
