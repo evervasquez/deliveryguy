@@ -9,6 +9,7 @@ class UserTransformer extends TransformerAbstract{
 
     public function transform(User $user)
     {
+        return $user->email;
         return [
             'id'      => (int) $user->id,
             'title'   => $user->code_user,
