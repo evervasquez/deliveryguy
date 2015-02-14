@@ -29,7 +29,7 @@
 			<li class="MainMenuu-item item-button"><a href="#" class="MainMenuu-link">Ayuda</a></li>
 			<li class="MainMenuu-item item-button"><a href="#" class="MainMenuu-link">Decargar</a></li>
 			<li class="MainMenuu-item item-button img-download">
-				<span><a href="#">{{ HTML::image('assets/img/apple.png','',array('class' => '')) }} </a></span>
+			<span><a href="#">{{ HTML::image('assets/img/apple.png','',array('class' => '')) }} </a></span>
 
 			</li>
 			<li class="MainMenuu-item item-button img-download">
@@ -196,6 +196,7 @@
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+{{ HTML::script('assets/js/utils.js') }}
 <!-- {{ HTML::script('assets/js/deliveryguy.js') }} -->
 <!-- {{ HTML::script('assets/js/hammer.min.js') }} -->
 
@@ -225,31 +226,7 @@
     }
     window.onload = loadScript;
 
-	var $buttonShowMenu = document.getElementById('showMenu');
-	var $buttonHideMenu = document.getElementById('hideMenu');
-	var $menu = document.getElementById('Menu');
 
-	var $body= document.querySelector('body');
-	var $bodyContainer= document.getElementById('bodyContainer');
-
-	//var body= new Hammer($body);
-
-	var showMenu = function(){
-		// console.log("muestra menu");
-		$buttonShowMenu.classList.remove('is-active');
-		$buttonHideMenu.classList.add('is-active');
-		$menu.classList.add('is-active');
-	}
-
-	var hideMenu = function(){
-		$buttonShowMenu.classList.add('is-active');
-		$buttonHideMenu.classList.remove('is-active');
-		$menu.classList.remove('is-active');
-	}
-
-	$buttonShowMenu.addEventListener("click", showMenu);
-	$buttonHideMenu.addEventListener("click", hideMenu);
-	$bodyContainer.addEventListener("click", hideMenu);
 
 	 //body.on('panright',showMenu);
 	 //body.on('panleft',hideMenu);

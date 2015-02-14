@@ -50,6 +50,9 @@ Route::get('companies/create', ['as' => 'companies.create', 'uses' => 'Companies
 Route::post('companies/store', ['as' => 'companies.store', 'uses' => 'CompaniesController@store']);
 Route::get('companies/getAll', ['as' => 'companies.getAll', 'uses' => 'CompaniesController@getAll']);
 
+//Employees
+Route::get('user/employee', ['as' => 'employee', 'uses' => 'EmployeesController@index']);
+
 //deliveries
 //companies
 Route::get('deliveries', ['as' => 'deliveries', 'uses' => 'DeliveriesController@index']);
@@ -57,7 +60,7 @@ Route::get('deliveries/create', ['as' => 'deliveries.create', 'uses' => 'Deliver
 Route::post('deliveries/store', ['as' => 'deliveries.store', 'uses' => 'DeliveriesController@store']);
 Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'DeliveriesController@getAll']);
 
-
+    
 /*
  * API DE DELIVERYGUY
  */
