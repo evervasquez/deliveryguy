@@ -56,7 +56,11 @@ class UserRepository implements InterfaceRepository
      */
     public function findId($id)
     {
-        // TODO: Implement findId() method.
+        try {
+            return User::findOrFail($id);
+        } catch (ModelNotFoundException $e) {
+            return $this->response->errorNotFound();
+        }
     }
 
     /**
