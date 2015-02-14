@@ -3,6 +3,7 @@ namespace domain\api\v1\controllers;
 
 use Chrisbjr\ApiGuard\ApiGuardController;
 use domain\api\v1\transformers\UserTransformer;
+use domain\delivery\User\User;
 use domain\delivery\User\UserRepository;
 
 class UserApiController extends ApiGuardController
@@ -73,7 +74,8 @@ class UserApiController extends ApiGuardController
 
         if ($validator->passes()) {
             if (\Auth::attempt($data)) {
-                return $this->response->withItem(\Auth::user(), new UserTransformer);
+                $user = $this->userRepo->findId(\Auth::user()->id);
+                return $this->response->withItem($user, new UserTransformer);
             }
         } else {
             return $validator->errors();
