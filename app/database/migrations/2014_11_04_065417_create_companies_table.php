@@ -15,11 +15,15 @@ class CreateCompaniesTable extends Migration {
 		Schema::create('companies', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table->string('company_name',200);
+			$table->char('code',15);
+			$table->string('company_name',200);
             $table->string('address');
+			$table->double('latitude')->nullable();
+			$table->double('longitude')->nullable();
             $table->string('phone',15)->nullable();
             $table->string('bank_account',25);
             $table->string('operating_licence')->nullable();
+			$table->text('gcm_regid')->nullable();
 			$table->timestamps();
             $table->softDeletes();
 		});

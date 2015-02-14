@@ -124,10 +124,14 @@ return array(
         'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider',
 		'EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider',
 		'Chrisbjr\ApiGuard\ApiGuardServiceProvider',
-		'Cartalyst\Sentry\SentryServiceProvider'
         //'Way\Generators\GeneratorsServiceProvider',
         //'Barryvdh\Debugbar\ServiceProvider',
         //'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+
+		/**
+		 * events
+		 */
+		'domain\providers\RegistratorsServiceProvider'
 	),
 
 	/*
@@ -196,7 +200,6 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification',
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
-		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
 	),
 
 );

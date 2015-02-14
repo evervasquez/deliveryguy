@@ -95,10 +95,6 @@
 	</header>
 
 	<section class="InfoPrincipal">
-
-
-
-
 	 		<div class="InfoPrincipa-phone">
 	 			<firgure class="InfoPrincipal-containerImage">
 	 			 {{ HTML::image('assets/img/phone.png','',array('class' => 'InfoPrincipal-image')) }}

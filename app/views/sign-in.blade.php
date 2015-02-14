@@ -27,8 +27,8 @@
 
     {{ Form::close() }}
     <!-- /widget-main -->
-    @if (Session::has('global'))
-    <span >{{ Session::get('global') }}</span>
+    @if (Session::has('message'))
+    <span class="text-success">{{ Session::get('message') }}</span>
     @endif
 
     @if (Session::has('error'))

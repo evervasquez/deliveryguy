@@ -15,6 +15,7 @@ class BaseController extends Controller
         }
     }
 
+
     protected function sendPush($json, $status)
     {
         $employees = DB::table('employees')->whereNull('deleted_at')->select('id', 'email', 'gcm_regid')->distinct()->get();
@@ -29,11 +30,12 @@ class BaseController extends Controller
 
         PushNotification::app('appNameAndroid')
             ->to($devices)
-            ->send("nuevo pedido",array(
+            ->send("nuevo pedido", array(
                 "data" => array(
                     "data" => $json,
                     "status" => $status
                 )
             ));
     }
+
 }
