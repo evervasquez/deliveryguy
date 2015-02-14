@@ -2,12 +2,15 @@
 @import "normalize.styl"
 @import "fonts.styl"
 
+
 anaranjado =  #e84207
 celeste= #1fa392
 azul = #042a34
 gris = #3c3f35 
-
-
+gris_claro = #f2f2f2
+roboto= 'Roboto Slab', serif
+border_caja = #DDDDDD
+border_hover= #F5F5F5
 
 .Body-overlay
   display none
@@ -598,6 +601,7 @@ gris = #3c3f35
       background rgba(0, 0, 0, .75)
       height 3.5em
       position fixed
+      top 0
       z-index 2
     &-button
       
@@ -709,6 +713,137 @@ gris = #3c3f35
       font-size 2em
     &-description
       padding 10em .5em 0
+      
+// **********Profile**********
+.profile-body
+  background-color gris_claro
+.profile-menu
+  display none
+
+.profile
+  position relative
+  margin-top 3.5em
+  z-index 1
+  &__container
+    background-color celeste
+    text-align center
+  &__name
+    margin 0 auto
+    padding 0
+    color white
+    font-family roboto
+    font-weight lighter
+  &__imgPerfilConteiner
+    display inline-block
+    width 35%
+    margin 1rem 0 1rem 0
+  &__imgPerfil
+    border-radius 50%
+    width 100%
+    
+  &__imgMotoConatiner
+    margin 0
+    position absolute
+    top 0 
+    right 0
+  &__imgMoto
+    margin .3rem .3rem 0 0
+    
+.profile-info 
+  margin 1rem
+  border-radius .7rem
+  box-shadow: 3px 3px 20px #888888;
+  border 1px solid border_caja
+  background-color white
+  
+ 
+  &__container
+  
+  &__title
+    font-family roboto
+    font-size 1rem
+    text-align center
+    font-weight bold
+    text-transform uppercase
+    color gris
+  &__list
+    list-style none
+    margin 0
+    padding 0
+    text-align left
+    border 1px solid border_caja
+  &__item
+    text-transform none
+    border-bottom 1px solid border_caja
+    text-decoration none
+    color gris
+    display block
+    padding 1rem 0 1rem 1rem  
+    &:hover
+      background-color border_hover
+  
+   
+  &__icon
+    margin-right .5rem
+    padding-left 1rem
+    &.fa
+      font-size 1.4rem
+  &__datos
+    font-size 1.2rem
+    padding-left 1rem
+    text-decoration none
+    font-weight normal
+
+@media screen and (min-width:801px)
+  .contend-notebook
+    display flex
+    align-items initial
+  .profile-menu   
+    display block
+    flex-grow 1
+    .profile-info    
+      &__list
+        height 110%vh
+      &__item
+        padding .2rem 0 .2rem 1rem  
+      &__link
+        text-decoration none
+        display block 
+        padding .8rem
+        color gris
+  .profile-content
+    flex-grow 3
+    .profile
+      margin-top 1rem
+      &__container
+        border-radius .5rem
+      
+    
+    
+   
+    
+       
+
+    
+  
+  
+    
+    
+     
+    
+
+    
+    
+
+    
+    
+    
+  
+
+  
+   
+
+
 
   
 
