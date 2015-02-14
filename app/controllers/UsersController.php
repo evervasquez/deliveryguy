@@ -39,7 +39,7 @@ class UsersController extends \BaseController
         $data = Input::all();
         if ($this->manager->passes()) {
             $this->userRepo->create($data);
-            return Redirect::action('sign-up')->with('message', 'registration was successful, please login to your account to complete your data.');
+            return Redirect::action('sign-in')->with('message', 'registration was successful, please login to your account to complete your data.');
         } else {
             return \Redirect::back()->withInput()->withErrors($this->manager->getErrors());
         }
