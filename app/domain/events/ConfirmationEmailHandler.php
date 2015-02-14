@@ -41,7 +41,7 @@ class ConfirmationEmailHandler
     private function encriptInfo($employee)
     {
         $data = [
-            'id' => $employee->id,
+            'code'=> $employee->code,
             'email' => $employee->email,
             'first_name' => $employee->first_name,
             'last_name' => $employee->last_name

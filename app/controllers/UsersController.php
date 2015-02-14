@@ -1,16 +1,25 @@
 <?php
 use domain\delivery\User\UserRepository;
 use Illuminate\Events\Dispatcher;
+use domain\delivery\Employee\EmployeeRepositorie;
+use domain\delivery\User\UserManager;
 
 class UsersController extends \BaseController
 {
     private $userRepo;
     private $events;
+    private $employeeRepo;
+    private $manager;
 
-    function __construct(UserRepository $userRepo, Dispatcher $events)
+    function __construct(
+        UserRepository $userRepo,
+        EmployeeRepositorie $employeeRepo,
+        Dispatcher $events, UserManager $manager)
     {
         $this->userRepo = $userRepo;
         $this->events = $events;
+        $this->employeeRepo = $employeeRepo;
+        $this->manager = $manager;
     }
 
 
@@ -25,16 +34,15 @@ class UsersController extends \BaseController
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     * GET /users/create
-     *
-     * @return Response
-     */
     public function create()
     {
         $data = Input::all();
-        $result = $this->userRepo->create($data);
+        if ($this->manager->passes()) {
+            $this->userRepo->create($data);
+            return Redirect::action('sign-up')->with('message', 'registration was successful, please login to your account to complete your data.');
+        } else {
+            return \Redirect::back()->withInput()->withErrors($this->manager->getErrors());
+        }
 
     }
 
@@ -97,14 +105,24 @@ class UsersController extends \BaseController
         //
     }
 
+    /**
+     * show view confirmation
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
+     */
     public function showViewConfirmation()
     {
         $data = Input::all();
         $employee = \domain\Utils::dataDesencriptar($data);
+
+        //quitamos el ultimo registro del array
         $key = array_pop($employee);
+
+        //sacamos sha1
         $encript = sha1(implode('|', $employee));
+
+        //comparmos los sha1
         if ($encript == $key) {
-            return View::make('confirmation', compact('employee'));
+            return View::make('confirmation_employee', compact('employee'));
         } else {
             return \Redirect::to('/')->with('error', 'Autentification Failed');
         }

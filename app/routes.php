@@ -23,7 +23,7 @@ Route::post('company/sign-up', ['as' => 'company.sign-up', 'uses' => 'CompaniesC
 
 //confirmation
 Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'UsersController@showViewConfirmation']);
-Route::post('confirmation', ['as' => 'confirmation', 'uses' => 'UsersController@create']);
+Route::post('confirmation', ['as' => 'confirmation.post', 'uses' => 'UsersController@create']);
 
 /**
  * end register

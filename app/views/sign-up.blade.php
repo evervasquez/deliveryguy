@@ -16,7 +16,6 @@
     @section('content')
         <div class="row">
         <br/>
-
         <div class="col-md-3"></div>
         <div class="col-md-6">
             <h4>Registrate como:</h4>

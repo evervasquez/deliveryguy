@@ -18,7 +18,7 @@ class EmployeeManager extends BaseManager{
         $rules = [
             'first_name' => 'required',
             'last_name' => 'required',
-            //'email' => 'required|email|unique:employees'
+            'email' => 'required|email|unique:employees'
         ];
 
         return $rules;

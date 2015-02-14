@@ -17,8 +17,6 @@ class UserManager extends BaseManager
     public function getRules()
     {
         $rules = [
-            'first_name' => 'required',
-            'last_name' => 'required',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8|confirmed',
             'password_confirmation' => 'required|min:8'
