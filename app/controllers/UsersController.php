@@ -4,7 +4,7 @@ use Illuminate\Events\Dispatcher;
 use domain\delivery\Employee\EmployeeRepositorie;
 use domain\delivery\User\UserManager;
 
-class UsersController extends \BaseController
+class UsersController extends BaseController
 {
     private $userRepo;
     private $events;
@@ -22,7 +22,6 @@ class UsersController extends \BaseController
         $this->manager = $manager;
     }
 
-
     /**
      * Display a listing of the resource.
      * GET /users
@@ -34,6 +33,9 @@ class UsersController extends \BaseController
         //
     }
 
+    /**
+     * @return $this|\Illuminate\Http\RedirectResponse
+     */
     public function create()
     {
         $data = Input::all();
