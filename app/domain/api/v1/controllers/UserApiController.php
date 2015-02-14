@@ -72,8 +72,8 @@ class UserApiController extends ApiGuardController
         $validator = \Validator::make($data, $rules);
 
         if ($validator->passes()) {
-            return $data;
             if (\Auth::attempt($data)) {
+                return $data;
                 return $this->response->withCollection(\Auth::user(), new UserTransformer);
             }
         } else {
