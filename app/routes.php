@@ -16,11 +16,20 @@ Route::get('php', function(){
 /**
  * register
  */
+
+// action form
 Route::post('employee/sign-up', ['as' => 'employee.sign-up', 'uses' => 'EmployeesController@create']);
 Route::post('company/sign-up', ['as' => 'company.sign-up', 'uses' => 'CompaniesController@create']);
 
 //confirmation
-Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'UsersController@confirmationRegister']);
+Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'UsersController@showViewConfirmation']);
+Route::post('confirmation', ['as' => 'confirmation', 'uses' => 'UsersController@create']);
+
+/**
+ * end register
+ */
+
+
 
 //Home
 Route::get('sign-up', ['as' => 'sign-up', 'uses' => 'HomeController@showLayoutSignUp']);

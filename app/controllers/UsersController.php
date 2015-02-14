@@ -97,8 +97,16 @@ class UsersController extends \BaseController
         //
     }
 
-    public function confirmationRegister(){
-        
-        dd(\domain\Utils::dataDesencriptar(Input::all()));
+    public function showViewConfirmation()
+    {
+        $data = Input::all();
+        $employee = \domain\Utils::dataDesencriptar($data);
+        $key = array_pop($employee);
+        $encript = sha1(implode('|', $employee));
+        if ($encript == $key) {
+            return View::make('confirmation', compact('employee'));
+        } else {
+            return \Redirect::to('/')->with('error', 'Autentification Failed');
+        }
     }
 }

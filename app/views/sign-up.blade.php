@@ -13,7 +13,8 @@
 </head>
 <body>
 <div class="container">
-    <div class="row">
+    @section('content')
+        <div class="row">
         <br/>
 
         <div class="col-md-3"></div>
@@ -147,6 +148,7 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+    @show
 </div>
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->

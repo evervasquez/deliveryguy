@@ -31,8 +31,6 @@ class ConfirmationEmailHandler
         \Mail::send('emails.confirmation', $code_confirmation, function ($message) use ($employee) {
             $message->to($employee->email, $employee->first_name)->subject('Welcome to DeliveryGuy!');
         });
-
-        return \View::make('sign-up-confirmation');
     }
 
     /**
@@ -43,6 +41,7 @@ class ConfirmationEmailHandler
     private function encriptInfo($employee)
     {
         $data = [
+            'id' => $employee->id,
             'email' => $employee->email,
             'first_name' => $employee->first_name,
             'last_name' => $employee->last_name
