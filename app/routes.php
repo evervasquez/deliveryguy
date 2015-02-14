@@ -64,7 +64,9 @@ Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'Deliver
 /*
  * API DE DELIVERYGUY
  */
-Route::resource("api/v1/companies", "CompaniesGuyApiController");
-Route::resource("api/v1/employees", "EmployeesGuyApiController");
-Route::resource("api/v1/deliveries", "DeliveriesGuyApiController");
+//Route::resource("api/v1/companies", "CompaniesGuyApiController");
+//Route::resource("api/v1/employees", "EmployeesGuyApiController");
+//Route::resource("api/v1/deliveries", "DeliveriesGuyApiController");
+
+Route::post('api/v1/user/login', 'domain\api\v1\controllers\UserApiController@login');
 

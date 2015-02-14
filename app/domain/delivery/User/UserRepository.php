@@ -11,7 +11,8 @@ namespace domain\delivery\User;
 use Carbon\Carbon;
 use domain\delivery\InterfaceRepository;
 
-class UserRepository implements InterfaceRepository{
+class UserRepository implements InterfaceRepository
+{
     /**
      * create new record
      * @param $data
@@ -20,13 +21,13 @@ class UserRepository implements InterfaceRepository{
     public function create($data)
     {
 
-       $user = new User();
-       $user->code_user = base64_decode(base64_decode($data['_type']));
-       $user->email = $data['email'];
-       $user->password = \Hash::make($data['password']);
-       $user->activated_at = Carbon::now();
-       $user->save();
-       return $user;
+        $user = new User();
+        $user->code_user = base64_decode(base64_decode($data['_type']));
+        $user->email = $data['email'];
+        $user->password = \Hash::make($data['password']);
+        $user->activated_at = Carbon::now();
+        $user->save();
+        return $user;
     }
 
     /**
@@ -35,7 +36,7 @@ class UserRepository implements InterfaceRepository{
      */
     public function all()
     {
-        // TODO: Implement all() method.
+        return User::whereNull('deleted_at')->all();
     }
 
     /**
