@@ -1,17 +1,6 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>DeliveryGuy</title>
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+@extends('layout')
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
-
-    {{ HTML::style('assets/css/sign-up.css'); }}
-</head>
-<body>
+@section('content')
 <div class="container">
     @section('content')
         <div class="row">
@@ -149,9 +138,4 @@
     </div>
     @show
 </div>
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-<!-- /container -->
-</body>
-</html>
+@overwrite
