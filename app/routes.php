@@ -69,4 +69,6 @@ Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'Deliver
 //Route::resource("api/v1/deliveries", "DeliveriesGuyApiController");
 
 Route::post('api/v1/user/login', 'domain\api\v1\controllers\UserApiController@login');
+Route::get('api/v1/users', 'domain\api\v1\controllers\UserApiController@all');
+
 

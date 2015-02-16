@@ -36,7 +36,7 @@ class UserRepository implements InterfaceRepository
      */
     public function all()
     {
-        return User::whereNull('deleted_at')->all();
+        return User::all();
     }
 
     /**
