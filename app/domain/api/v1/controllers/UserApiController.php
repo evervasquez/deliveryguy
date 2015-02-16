@@ -11,7 +11,7 @@ class UserApiController extends ApiGuardController
 
     protected $apiMethods = [
         'all' => [
-            'keyAuthentication' => true,
+            'keyAuthentication' => false,
             'level' => 1,
             'limits' => [
                 // The variable below sets API key limits
