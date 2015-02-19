@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'fallback_locale' => 'en',
+	'fallback_locale' => 'es-Pe',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -127,11 +127,17 @@ return array(
         //'Way\Generators\GeneratorsServiceProvider',
         //'Barryvdh\Debugbar\ServiceProvider',
         //'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		'Artdarek\OAuth\OAuthServiceProvider',
 
 		/**
 		 * events
 		 */
-		'domain\providers\RegistratorsServiceProvider'
+		'domain\providers\RegistratorsServiceProvider',
+
+		/**
+		 * providers
+		 */
+		'domain\providers\EmployeeServiceProvider'
 	),
 
 	/*
@@ -200,6 +206,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification',
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 	),
 
 );

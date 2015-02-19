@@ -1,5 +1,6 @@
 <?php
 
+
 Route::get('/', function () {
     if (Auth::check()) {
         return View::make('index');
@@ -16,7 +17,6 @@ Route::get('php', function(){
 /**
  * register
  */
-
 // action form
 Route::post('employee/sign-up', ['as' => 'employee.sign-up', 'uses' => 'EmployeesController@create']);
 Route::post('company/sign-up', ['as' => 'company.sign-up', 'uses' => 'CompaniesController@create']);
@@ -26,9 +26,10 @@ Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'UsersController@s
 Route::post('confirmation', ['as' => 'confirmation.post', 'uses' => 'UsersController@create']);
 
 /**
- * end register
+ * Social register
  */
-
+Route::get('employee/google', ['as' => 'employee.google', 'uses' => 'EmployeesController@createUserGoogle']);
+Route::get('employee/facebook', ['as' => 'employee.facebook', 'uses' => 'EmployeesController@createUserFacebook']);
 
 
 //Home

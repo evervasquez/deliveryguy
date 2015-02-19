@@ -14,19 +14,13 @@
                         <li class="register__item  register__itemEmplo"><a id="register__employee" class="register__link register__link--jsEmployee" href=""><i class="register__link--margin fa fa-cutlery"></i><span>Registro DeliveryGuy</span></a></li>
                     </ul>
                   </article>
-
                   <article class="register__form">
                     <h2 class="register__title">registro DeliveryGuy</h2>
-                            
-
-                    <a class="register__google fa fa-google-plus-square" href=""><span>Google</span></a>
+                    <a class="register__google fa fa-google-plus-square" href="{{route('employee.google')}}"><span>Google</span></a>
                     <a class="register__facebook fa fa-facebook" href=""><span>Facebook</span></a>
                     <br>
                     <span>OR</span>
                     <hr>
-
-
-
                  {{ Form::open(array('route' => 'employee.sign-up','class'=> 'form form-vertical','id' => 'employee-form','role'=>'form')) }}
                         <label class="register__titleFirstName"><span class="register__titleInput text-danger">*</span> First Name</label>
                         <div class="register__contInput controls input-group ">

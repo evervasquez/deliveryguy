@@ -9,6 +9,8 @@ class EmployeesController extends \BaseController
     protected $manager;
     protected $events;
     protected $mailer;
+
+
     function __construct(EmployeeRepositorie $employeeRepo, EmployeeManager $manage, Dispatcher $events, Mailer $mailer)
     {
         $this->employeeRepo = $employeeRepo;
@@ -47,6 +49,13 @@ class EmployeesController extends \BaseController
         }
     }
 
+    public function createUserGoogle(){
+        return $this->employeeRepo->loginWithGoogle();
+    }
+
+    public function createUserFacebook(){
+        return $this->employeeRepo->loginWithFacebook();
+    }
     /**
      * Store a newly created resource in storage.
      * POST /employees
