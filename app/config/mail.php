@@ -15,7 +15,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'smtp',
+	'driver' => getenv('EMAIL_DRIVER'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'host' => 'smtp.sendgrid.net',
+	'host' => getenv('SENDGRID_HOST'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -41,7 +41,7 @@ return array(
 	|
 	*/
 
-	'port' => 587,
+	'port' => getenv('SENDGRID_PORT'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => 'informes@deliveryguyapp.com', 'name' => 'CEO Efrain Gamarra'),
+	'from' => array('address' => getenv('EMAIL_FROM'), 'name' => getenv('EMAIL_NAME')),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -80,7 +80,7 @@ return array(
 	|
 	*/
 
-	'username' => 'app31680899@heroku.com',
+	'username' => getenv('SENDGRID_USERNAME'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => 'hnhzgqrc',
+	'password' => getenv('SENDGRID_PASSWORD'),
 
 	/*
 	|--------------------------------------------------------------------------
