@@ -28,7 +28,7 @@ return array(
 	|
 	*/
 
-	'model' => 'delivery\User\User',
+	'model' => 'domain\delivery\User\User',
 
 	/*
 	|--------------------------------------------------------------------------
