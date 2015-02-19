@@ -57,10 +57,6 @@ class EmployeesController extends \BaseController
         return $this->employeeRepo->loginWithFacebook();
     }
 
-    public function socialCallback(){
-
-    }
-
     /**
      * Store a newly created resource in storage.
      * POST /employees

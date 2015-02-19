@@ -24,7 +24,7 @@ return array(
         'Facebook' => array(
             'client_id'     => getenv('FACEBOOK_CLIENT_ID'),
             'client_secret' => getenv('FACEBOOK_CLIENT_SECRET'),
-            'scope'         => array(),
+            'scope'         => array('email')
         ),
 
 
