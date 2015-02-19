@@ -17,7 +17,7 @@
                   <article class="register__form">
                     <h2 class="register__title">registro DeliveryGuy</h2>
                     <a class="register__google fa fa-google-plus-square" href="{{route('employee.google')}}"><span>Google</span></a>
-                    <a class="register__facebook fa fa-facebook" href=""><span>Facebook</span></a>
+                    <a class="register__facebook fa fa-facebook" href="{{route('employee.facebook')}}"><span>Facebook</span></a>
                     <br>
                     <span>OR</span>
                     <hr>
