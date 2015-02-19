@@ -1,141 +1,122 @@
-@extends('layout')
+@extends("layout")
 
 @section('content')
 <div class="container">
-    @section('content')
+
         <div class="row">
         <br/>
-        <div class="col-md-3"></div>
-        <div class="col-md-6">
-            <h4>Registrate como:</h4>
-
-            <div role="tabpanel">
-                <!-- Nav tabs -->
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#company" aria-controls="company" role="tab"
-                                                              data-toggle="tab">Restaurante</a></li>
-                    <li role="presentation"><a href="#guy" aria-controls="guy" role="tab"
-                                               data-toggle="tab">Repartidor</a></li>
-                </ul>
-
-                <!-- Tab panes -->
-                <div class="tab-content">
-                    <div role="tabpanel" class="tab-pane active" id="company">
-                        <div class="panel panel-default">
-                            <br/>
-
-                            <div class="panel-body">
-                                <form class="form form-vertical">
-                                    <div class="control-group">
-                                        <label>Name</label>
-
-                                        <div class="controls">
-                                            <input type="text" class="form-control" placeholder="Enter Name">
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label>Message</label>
-
-                                        <div class="controls">
-                                            <textarea class="form-control"></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label>Category</label>
-
-                                        <div class="controls">
-                                            <select class="form-control">
-                                                <option>options</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label></label>
-
-                                        <div class="controls">
-                                            <button type="submit" class="btn btn-primary">
-                                                Post
-                                            </button>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
                             <!--/panel content-->
+                           
+              <section class="register">
+                  <article class="register__tab">
+                    <ul class="register__list">
+                        <li class="register__item register__itemRes"><a id="register__restaurant" class="register__link register__link--white  register__link--jsRest"  href=""><i class=" register__link--margin fa fa-motorcycle"></i><span>Registro Restaurant</span></a></li>
+                        <li class="register__item  register__itemEmplo"><a id="register__employee" class="register__link register__link--jsEmployee" href=""><i class="register__link--margin fa fa-cutlery"></i><span>Registro DeliveryGuy</span></a></li>
+                    </ul>
+                  </article>
+
+                  <article class="register__form">
+                    <h2 class="register__title">registro DeliveryGuy</h2>
+                            
+
+                    <a class="register__google fa fa-google-plus-square" href=""><span>Google</span></a>
+                    <a class="register__facebook fa fa-facebook" href=""><span>Facebook</span></a>
+                    <br>
+                    <span>OR</span>
+                    <hr>
+
+
+
+                 {{ Form::open(array('route' => 'employee.sign-up','class'=> 'form form-vertical','id' => 'employee-form','role'=>'form')) }}
+                        <label class="register__titleFirstName"><span class="register__titleInput text-danger">*</span> First Name</label>
+                        <div class="register__contInput controls input-group ">
+                            <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                            <input type="text" required name="first_name" class="form-control register__input form-control">
+                            {{ $errors->first('first_name','<p class="error_message">:message</p>') }}
                         </div>
-                    </div>
-                    <div role="tabpanel" class="tab-pane" id="guy">
-                        <div class="panel panel-default">
-                            <br/>
-
-                            <div class="panel-body">
-                                {{ Form::open(array('route' => 'employee.sign-up','class'=> 'form form-vertical','id' => 'employee-form','role'=>'form')) }}
-                                <div class="control-group">
-                                    <label><span class="text-danger">*</span> First Name</label>
-                                    <div class="controls">
-                                        <input type="text" required name="first_name" class="form-control"
-                                               placeholder="First Name">
-                                        {{ $errors->first('first_name','<p class="error_message">:message</p>') }}
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label>Last Name</label>
-                                    <div class="controls">
-                                        <input type="text" required name="last_name" class="form-control"
-                                               placeholder="Last Name">
-                                        {{ $errors->first('last_name','<p class="error_message">:message</p>') }}
-                                    </div>
-                                </div>
-                                <div class="control-group">
-                                    <label>Email</label>
-                                    <div class="controls">
-                                        <input type="email" name="email" required class="form-control"
-                                               placeholder="Example: maria@yahoo.es">
-                                        {{ $errors->first('email','<p class="error_message">:message</p>') }}
-                                    </div>
-                                </div>
-                                {{--<div class="control-group">--}}
-                                    {{--<label>Password</label>--}}
-                                    {{--<div class="controls">--}}
-                                        {{--<input type="password" name="password" required class="form-control"--}}
-                                               {{--placeholder="Password">--}}
-                                        {{--{{ $errors->first('password','<p class="error_message">:message</p>') }}--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                {{--<div class="control-group">--}}
-                                    {{--<label>Repeat Password</label>--}}
-                                    {{--<div class="controls">--}}
-                                        {{--<input type="password" name="password_confirmation" required--}}
-                                               {{--class="form-control" placeholder="Repeat Password">--}}
-                                        {{--{{ $errors->first('password_confirmation','<p class="error_message">:message</p>') }}--}}
-                                    {{--</div>--}}
-                                {{--</div>--}}
-                                <div class="control-group">
-                                    <label></label>
-
-                                    <div class="controls">
-                                        <button type="submit" class="btn btn-primary">
-                                            Enviar
-                                        </button>
-                                        <a href="{{URL::previous()}}" class="btn btn-danger">
-                                            Cancelar
-                                        </a>
-                                    </div>
-                                </div>
-                                {{ Form::close() }}
-                            </div>
-                            <!--/panel content-->
+                        <label class="register__titleInput">Last Name</label>
+                        <div class="register__contInput controls">
+                            <span class="input-group-addon"><i class="fa fa-user  fa-fw"></i></span>
+                            <input type="text" required name="last_name" class="register__input form-control"
+                                   >
+                            {{ $errors->first('last_name','<p class="error_message">:message</p>') }}
                         </div>
+                        <label class="register__titleInput">Email</label>
+                        <div class="register__contInput controls">
+                             <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                            <input type="email" name="email" required class="register__input form-control"
+                                  >
+                            {{ $errors->first('email','<p class="error_message">:message</p>') }}
+                        </div>
+                       <div class="right send">
+                          <button type="submit" class="register__btnSend btn btn-primary"><i class="fa fa-chevron-circle-right"></i>
+                                      Enviar
+                          </button>
+                        
+                          <a href="{{URL::previous()}}" class="register__btnCancel fa fa-times btn btn-danger">
+                                      Cancelar
+                          </a>
+                        </div>
+                {{ Form::close() }} 
 
-                    </div>
-                </div>
 
-            </div>
-        </div>
-        <div class="col-md-3"></div>
-    </div>
-    @show
-</div>
-@overwrite
+                  </article>  
+
+
+
+              <article class="register__resta">
+                    <h2 class="register__title">registro Restaurant</h2>
+
+                    <a class="register__google fa fa-google-plus-square" href=""><span>Google</span></a>
+                    <a class="register__facebook fa fa-facebook" href=""><span>Facebook</span></a>
+                     <br>
+                     <span>OR</span>
+                     <hr>
+
+                 {{ Form::open(array('route' => 'employee.sign-up','class'=> 'form form-vertical','id' => 'employee-form','role'=>'form')) }}
+                        <label class="register__titleFirstName"><span class="register__titleInput text-danger">*</span>Razon Social</label>
+                        <div class="register__contInput controls input-group ">
+                            <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                            <input type="text" required name="first_name" class="form-control register__input form-control">
+                            {{ $errors->first('first_name','<p class="error_message">:message</p>') }}
+                        </div>
+                        <label class="register__titleInput">Direccion</label>
+                        <div class="register__contInput controls">
+                            <span class="input-group-addon"><i class="fa fa-user  fa-fw"></i></span>
+                            <input type="text" required name="last_name" class="register__input form-control"
+                                   >
+                            {{ $errors->first('last_name','<p class="error_message">:message</p>') }}
+                        </div>
+                        <label class="register__titleInput">Email</label>
+                        <div class="register__contInput controls">
+                             <span class="input-group-addon"><i class="fa fa-envelope-o fa-fw"></i></span>
+                            <input type="email" name="email" required class="register__input form-control"
+                                  >
+                            {{ $errors->first('email','<p class="error_message">:message</p>') }}
+                        </div>
+                       <div class="right send">
+                          <button type="submit" class="register__btnSend btn btn-primary"><i class="fa fa-chevron-circle-right"></i>
+                                      Enviar
+                          </button>
+                        
+                          <a href="{{URL::previous()}}" class="register__btnCancel fa fa-times btn btn-danger">
+                                      Cancelar
+                          </a>
+                        </div>
+                {{ Form::close() }} 
+
+
+                  </article>  
+
+
+
+              </section>                  
+
+            @overwrite
+
+
+
+
+
+                      
+

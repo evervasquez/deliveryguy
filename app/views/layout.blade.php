@@ -9,6 +9,7 @@
 	<!-- <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic' rel='stylesheet' type='text/css'> -->
 
 	{{ HTML::style('assets/css/estilos.css'); }}
+	{{ HTML::style('assets/css/font-awesome.css'); }}
 
 </head>
 

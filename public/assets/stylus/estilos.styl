@@ -817,6 +817,179 @@ border_hover= #F5F5F5
       margin-top 1rem
       &__container
         border-radius .5rem
+
+.right
+  text-align right
+.send
+  width 80% 
+  margin 0
+  margin 3rem 0 3rem 0
+.register
+  margin 0 auto
+  margin-top 3.5rem
+  display flex
+  justify-content center
+  margin-bottom 25vh
+  margin-top 12rem 
+  &__google
+  &__facebook
+    display block
+    padding 1rem 2rem 1rem 2rem
+    color white
+    text-decoration none
+    span
+      margin-left .5rem
+  &__facebook
+    background #3F5D9A
+   
+  &__google
+    background #C43B2B
+    margin-right .5rem
+  &__tab 
+    background #294b53
+    display flex
+    align-items center
+    width 22%
+  &__list
+    padding 0
+    margin-left .2rem  
+    width 100%
+  &__item
+    list-style none
+    width 100%
+    &:last-child
+      width 90%
+  &__link
+    display block
+    background anaranjado 
+    padding 1.5rem 3rem 1.5rem .5rem
+    font-family roboto
+    font-weight lighter
+    font-size 1rem
+    margin .4rem 0 0 0  
+    text-decoration none
+    color white
+
+    &--white
+      background white
+      color celeste 
+      padding-right 8rem
+    
+  &__link--margin
+      margin-right .5rem
+  
+
+  &__resta
+    text-align center
+    background-color white
+    width 30vw
+
+  &__form
+    text-align center
+    background-color white
+    width 30vw
+    display none
+  &__title
+    font-family roboto
+    text-transform uppercase  
+    color azul 
+  .form
+    text-align left
+    margin-left 2rem
+    width 100%
+    border none
+  
+  &__titleInput
+    font-family roboto
+    margin-left .8rem
+  &__contInput
+    display table
+    margin-bottom 1rem
+    .input-group-addon
+      background #EEEEEE
+      color #333333
+      padding .7rem .6rem .7rem .6rem
+      margin 0
+      border 1px solid #cccccc
+      border-radius .3rem
+      border-right 0
+      border-bottom-right-radius 0
+      border-top-right-radius 0
+      white-space nowrap
+      display table-cell
+      vertical-align middle
+
+  &__input
+    background white
+    border 1px solid #cccccc
+    border-radius .3rem
+    padding .7rem 0 .57rem .6rem
+    border-bottom-left-radius 0
+    border-top-left-radius 0
+    display table-cell
+    vertical-align middle
+    width 20vw
+    &:focus
+      outline  none
+      border-color celeste
+      box-shadow 0 0 10px celeste
+    
+  &__btnSend 
+    
+    background celeste
+    color white
+    font-family roboto
+    font-weight lighter 
+    padding .7rem
+    border 0
+    border-radius .3em
+    &:hover
+      background #249284
+  
+  &__btnCancel
+    display inline-block
+    padding .7rem
+    font-family roboto
+    background-color gris 
+    color white
+    text-decoration none
+    border-radius .3em
+    margin-left 1rem
+    
+@media screen and (max-width:824px)
+  .register
+    display block
+    &__tab
+      width 100%
+      height 3.34rem
+    &__item 
+      width 49%
+      display inline-block
+      &:last-child
+        width 49%
+    &__form
+      width 100%
+      margin 0
+      
+    &__resta
+      width 100%
+    &__title
+      margin 0
+      padding-top 3rem
+    &__list
+      margin 0
+      text-align center 
+    &__link
+      padding 1rem 0 1rem 0
+      font-size .7rem
+      
+    &__input
+      width 70vw
+  .right
+    text-align center
+    padding-bottom 2rem
+  .send
+    margin 0
       
     
     
