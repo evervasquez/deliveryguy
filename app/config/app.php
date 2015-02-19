@@ -124,7 +124,7 @@ return array(
         'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider',
 		'EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider',
 		'Chrisbjr\ApiGuard\ApiGuardServiceProvider',
-        //'Way\Generators\GeneratorsServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider',
         //'Barryvdh\Debugbar\ServiceProvider',
         //'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
