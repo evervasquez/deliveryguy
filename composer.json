@@ -6,7 +6,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "davibennun/laravel-push-notification": "dev-master",
-	  	"chrisbjr/api-guard": "0.*"
+	  	"chrisbjr/api-guard": "0.*",
+		"vlucas/phpdotenv": "~1.1"
 	},
     "require-dev": {
         "way/generators": "~2.0",

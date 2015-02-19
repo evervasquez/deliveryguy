@@ -10,7 +10,6 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
-
 $app = new Illuminate\Foundation\Application;
 
 /*
@@ -23,13 +22,14 @@ $app = new Illuminate\Foundation\Application;
 | given environment, then we will automatically detect it for you.
 |
 */
+if (file_exists(__DIR__.'/../.env'))
+{
+    Dotenv::load(__DIR__.'/../');
+}
 
 //para cambiar a production
 $env = $app->detectEnvironment(function () {
-	 if (strpos($_SERVER['HTTP_HOST'], '.') === false) {
-	          return 'local';
-	    }
-    return 'remoto';
+    return getenv('APP_ENV') ?: 'production';
 });
 
 /*
