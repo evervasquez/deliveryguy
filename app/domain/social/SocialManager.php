@@ -1,12 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: eveR
- * Date: 19/02/15
- * Time: 10:22
- */
 namespace domain\social;
+
 interface SocialManager {
+
+    /**
+     * login to google
+     * @return mixed
+     */
     public function loginWithGoogle();
+
+    /**
+     * login to facebook
+     * @return mixed
+     */
     public function loginWithFacebook();
 }

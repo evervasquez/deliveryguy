@@ -8,15 +8,13 @@ class EmployeesController extends \BaseController
     protected $employeeRepo;
     protected $manager;
     protected $events;
-    protected $mailer;
 
 
-    function __construct(EmployeeRepositorie $employeeRepo, EmployeeManager $manage, Dispatcher $events, Mailer $mailer)
+    function __construct(EmployeeRepositorie $employeeRepo, EmployeeManager $manage, Dispatcher $events)
     {
         $this->employeeRepo = $employeeRepo;
         $this->manager = $manage;
         $this->events = $events;
-        $this->mailer = $mailer;
     }
 
 
@@ -49,12 +47,17 @@ class EmployeesController extends \BaseController
         }
     }
 
-    public function createUserGoogle(){
-        return $this->employeeRepo->loginWithGoogle();
+    public function createEmployeeGoogle(){
+        $user = $this->employeeRepo->loginWithGoogle();
+        $this->events->fire('employee.create', array($user));
+        return \View::make('signup-confirmation');
     }
 
-    public function createUserFacebook(){
-        return $this->employeeRepo->loginWithFacebook();
+    public function createEmployeeFacebook(){
+        $user = $this->employeeRepo->loginWithFacebook();
+//        $this->events->fire('employee.create', array($user));
+//        return \View::make('signup-confirmation');
+        return $user->email;
     }
 
     /**

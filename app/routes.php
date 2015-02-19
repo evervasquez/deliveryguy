@@ -28,8 +28,8 @@ Route::post('confirmation', ['as' => 'confirmation.post', 'uses' => 'UsersContro
 /**
  * Social register
  */
-Route::get('employee/google', ['as' => 'employee.google', 'uses' => 'EmployeesController@createUserGoogle']);
-Route::get('employee/facebook', ['as' => 'employee.facebook', 'uses' => 'EmployeesController@createUserFacebook']);
+Route::get('employee/google', ['as' => 'employee.google', 'uses' => 'EmployeesController@createEmployeeGoogle']);
+Route::get('employee/facebook', ['as' => 'employee.facebook', 'uses' => 'EmployeesController@createEmployeeFacebook']);
 
 
 //Home

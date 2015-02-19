@@ -86,12 +86,12 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
             // Send a request with it
             $result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
 
-            $message = 'Your unique Google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
-            echo $message. "<br/>";
+//            $message = 'Your unique Google user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+//            echo $message. "<br/>";
 
             //Var_dump
             //display whole array().
-            dd($result);
+            return $result;
 
         }
         // if not ask for permission first
@@ -121,14 +121,14 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
             $token = $fb->requestAccessToken( $code );
 
             // Send a request with it
-            $result = json_decode( $fb->request( '/me' ), true );
+            $result = $fb->request( '/me' );
 
-            $message = 'Your unique facebook user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
-            echo $message. "<br/>";
+//            $message = 'Your unique facebook user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
+//            echo $message. "<br/>";
 
             //Var_dump
             //display whole array().
-            dd($result);
+            return $result;
 
         }
         // if not ask for permission first
