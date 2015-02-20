@@ -121,7 +121,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
             $token = $fb->requestAccessToken( $code );
 
             // Send a request with it
-            $result = (array) json_decode( $fb->request( '/me' ), true );
+            $result = json_decode( $fb->request( '/me' ), true );
 
 //            $message = 'Your unique facebook user id is: ' . $result['id'] . ' and your name is ' . $result['name'];
 //            echo $message. "<br/>";
@@ -138,6 +138,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
 
             // return to facebook login url
             //return \Redirect::to( (string)$url );
+            return 'aa';
         }
 
     }
