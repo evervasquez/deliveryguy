@@ -128,7 +128,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
 
             //Var_dump
             //display whole array().
-            return $result;
+            dd($result);
 
         }
         // if not ask for permission first
@@ -137,8 +137,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
             $url = $fb->getAuthorizationUri();
 
             // return to facebook login url
-            //return \Redirect::to( (string)$url );
-            return 'aa';
+            return \Redirect::to( (string)$url );
         }
 
     }
