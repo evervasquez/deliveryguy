@@ -15,6 +15,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository
      */
     public function create($data)
     {
+        $info = array();
         if (count($data) > 2) {
             $max = $this->findMaxId();
             $employee = new Employee();
@@ -25,6 +26,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository
             $employee->save();
             return $employee;
         }
+        return $info;
     }
 
     /**
