@@ -18,7 +18,8 @@
     },
 	"autoload": {
         "psr-4": {
-		  	"domain\\": "app/domain"
+		  	"domain\\": "app/domain",
+		  	"Facebook\\":"vendor/facebook/php-sdk-v4/src/Facebook/"
         },
 		"classmap": [
 			"app/commands",

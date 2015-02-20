@@ -46,4 +46,16 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 |
 */
 
+
+/*
+|--------------------------------------------------------------------------
+| Initialized Facebook PHP SDK V4
+|--------------------------------------------------------------------------
+|
+*/
+
+//Initialize
+use Facebook\FacebookSession;
+FacebookSession::setDefaultApplication(getenv('FACEBOOK_CLIENT_ID'),getenv('FACEBOOK_CLIENT_SECRET'));
+
 $app->run();

@@ -2,9 +2,6 @@
 
 namespace domain\social;
 
-use Facebook\FacebookRedirectLoginHelper;
-use Facebook\FacebookSession;
-
 class FacebookAuth implements FacebookManager
 {
     /**
@@ -13,8 +10,7 @@ class FacebookAuth implements FacebookManager
      */
     public function loginWithFacebook()
     {
-        FacebookSession::setDefaultApplication(getenv('FACEBOOK_CLIENT_ID'),getenv('FACEBOOK_CLIENT_SECRET'));
-        $helper = new FacebookRedirectLoginHelper('oauth/fb/callback');
+        $helper = new LaravelFacebookRedirectLoginHelper('oauth/fb/callback');
         return \Redirect::to($helper->getLoginUrl());
     }
 
