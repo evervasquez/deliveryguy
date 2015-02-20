@@ -128,7 +128,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
 
             //Var_dump
             //display whole array().
-            return $result;
+            dd($result);
 
         }
         // if not ask for permission first
