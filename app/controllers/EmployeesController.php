@@ -54,7 +54,7 @@ class EmployeesController extends \BaseController
     }
 
     public function createEmployeeFacebook(){
-        $user = array($this->employeeRepo->loginWithFacebook());
+        $user = $this->employeeRepo->loginWithFacebook();
 //        $this->events->fire('employee.create', array($user));
 //        return \View::make('signup-confirmation');
         return $user;
