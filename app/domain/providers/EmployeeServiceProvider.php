@@ -21,7 +21,7 @@ class EmployeeServiceProvider extends ServiceProvider{
     {
         $app = $this->app;
 
-        $app->bind('domain\social\SocialManager', 'domain\delivery\Employee\EmployeeRepositorie');
+        $app->bind('domain\social\SocialManager', 'domain\social\AutorizateGoogle');
 
     }
 
