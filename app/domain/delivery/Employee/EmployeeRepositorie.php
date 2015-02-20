@@ -137,7 +137,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
             $url = $fb->getAuthorizationUri();
 
             // return to facebook login url
-            return \Redirect::to( (string)$url );
+            //return \Redirect::to( (string)$url );
         }
 
     }
