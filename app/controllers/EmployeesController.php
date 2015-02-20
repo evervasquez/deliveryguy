@@ -40,6 +40,7 @@ class EmployeesController extends \BaseController
     {
         if ($this->manager->passes()) {
             $employee = $this->employeeRepo->create(Input::except('_token'));
+            dd($employee);
             $this->events->fire('employee.create', array($employee));
             return \View::make('signup-confirmation');
         } else {
