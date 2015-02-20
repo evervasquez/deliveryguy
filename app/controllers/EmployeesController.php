@@ -2,7 +2,7 @@
 use domain\delivery\Employee\EmployeeRepositorie;
 use Illuminate\Events\Dispatcher;
 use domain\delivery\Employee\EmployeeManager;
-use Illuminate\Mail\Mailer;
+
 class EmployeesController extends \BaseController
 {
     protected $employeeRepo;
@@ -10,7 +10,10 @@ class EmployeesController extends \BaseController
     protected $events;
 
 
-    function __construct(EmployeeRepositorie $employeeRepo, EmployeeManager $manage, Dispatcher $events)
+    function __construct(
+        EmployeeRepositorie $employeeRepo,
+        EmployeeManager $manage,
+        Dispatcher $events)
     {
         $this->employeeRepo = $employeeRepo;
         $this->manager = $manage;
@@ -40,7 +43,6 @@ class EmployeesController extends \BaseController
     {
         if ($this->manager->passes()) {
             $employee = $this->employeeRepo->create(Input::except('_token'));
-            dd($employee->email);
             $this->events->fire('employee.create', array($employee));
             return \View::make('signup-confirmation');
         } else {
@@ -48,18 +50,18 @@ class EmployeesController extends \BaseController
         }
     }
 
-    public function createEmployeeGoogle(){
-        $user = $this->employeeRepo->loginWithGoogle();
-        $this->events->fire('employee.create', array($user));
+    public function createEmployeeGoogle()
+    {
+        $this->employeeRepo->loginWithGoogle();
+        $this->events->fire('employee.create', array($this->employeeRepo->findMaxId()));
         return \View::make('signup-confirmation');
     }
 
-    public function createEmployeeFacebook(){
-        $user = $this->employeeRepo->loginWithFacebook();
-
-//        $this->events->fire('employee.create', array($user));
-//        return \View::make('signup-confirmation');
-        dd($user);
+    public function createEmployeeFacebook()
+    {
+        $this->employeeRepo->loginWithFacebook();
+        $this->events->fire('employee.create', array($this->employeeRepo->findMaxId()));
+        return \View::make('signup-confirmation');
     }
 
     /**
