@@ -58,7 +58,7 @@ class EmployeesController extends \BaseController
 
 //        $this->events->fire('employee.create', array($user));
 //        return \View::make('signup-confirmation');
-        return $user->email;
+        dd($user);
     }
 
     /**
