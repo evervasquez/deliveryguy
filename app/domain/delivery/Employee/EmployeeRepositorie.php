@@ -127,6 +127,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
 
             //Var_dump
             //display whole array().
+            dd($result);
             $this->create($result);
 
         }
