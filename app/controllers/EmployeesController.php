@@ -67,7 +67,9 @@ class EmployeesController extends \BaseController
     public function authSocial($provider)
     {
         $user = $this->facebook->loginWithFacebook($provider);
-        dd($user);
+        if(isset($user)){
+            dd($user);
+        }
     }
 
     /**
