@@ -10,7 +10,6 @@ use domain\social\SocialManager;
 
 class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,SocialManager
 {
-
     /**
      * create new record
      * @param $data
@@ -18,6 +17,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
      */
     public function create($data)
     {
+        dd($data);
         $max = $this->findMaxId();
         $employee = new Employee();
         $employee->code = 'E' . $max;
@@ -68,7 +68,6 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository,
 
     public function loginWithGoogle()
     {
-
         // get data from input
         $code = \Input::get( 'code' );
 
