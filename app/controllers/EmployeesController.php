@@ -10,21 +10,15 @@ class EmployeesController extends \BaseController
     protected $employeeRepo;
     protected $manager;
     protected $events;
-    protected $google;
-    protected $facebook;
 
     function __construct(
         EmployeeRepositorie $employeeRepo,
         EmployeeManager $manage,
-        Dispatcher $events,
-        GoogleManager $google,
-        FacebookManager $facebook)
+        Dispatcher $events)
     {
         $this->employeeRepo = $employeeRepo;
         $this->manager = $manage;
         $this->events = $events;
-        $this->google=$google;
-        $this->facebook = $facebook;
     }
 
 
@@ -54,21 +48,6 @@ class EmployeesController extends \BaseController
             return \View::make('signup-confirmation');
         } else {
             return \Redirect::back()->withInput()->withErrors($this->manager->getErrors());
-        }
-    }
-
-    public function createEmployeeGoogle()
-    {
-        $this->employeeRepo->loginWithGoogle();
-        $this->events->fire('employee.create', array($this->employeeRepo->findMaxId()));
-        return \View::make('signup-confirmation');
-    }
-
-    public function authSocial($provider)
-    {
-        $user = $this->facebook->loginWithFacebook($provider);
-        if(isset($user['email'])){
-            dd($user);
         }
     }
 

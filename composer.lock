@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4ac0a54ed8cd493a3b73e94fd72cb1be",
+    "hash": "4bc117dbe96b053c1a115d397fa133ed",
     "packages": [
         {
             "name": "chrisbjr/api-guard",
@@ -298,6 +298,55 @@
                 "json"
             ],
             "time": "2014-12-10 19:27:39"
+        },
+        {
+            "name": "facebook/php-sdk-v4",
+            "version": "4.0.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/facebook/facebook-php-sdk-v4.git",
+                "reference": "93ea67bf68439e17433537c0e9f308fa0d2ce42c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/facebook/facebook-php-sdk-v4/zipball/93ea67bf68439e17433537c0e9f308fa0d2ce42c",
+                "reference": "93ea67bf68439e17433537c0e9f308fa0d2ce42c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "~4.0",
+                "mockery/mockery": "dev-master",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Facebook\\": "src/Facebook/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Facebook Platform"
+            ],
+            "authors": [
+                {
+                    "name": "Facebook",
+                    "homepage": "https://github.com/facebook/facebook-php-sdk-v4/contributors"
+                }
+            ],
+            "description": "Facebook SDK for PHP",
+            "homepage": "https://github.com/facebook/facebook-php-sdk-v4",
+            "keywords": [
+                "facebook",
+                "sdk"
+            ],
+            "time": "2015-02-19 22:52:24"
         },
         {
             "name": "filp/whoops",
@@ -624,38 +673,6 @@
                 "rest"
             ],
             "time": "2014-12-10 16:59:07"
-        },
-        {
-            "name": "madewithlove/laravel-oauth2",
-            "version": "0.4.10",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/madewithlove/laravel-oauth2.git",
-                "reference": "0d63afe657cf61c42e20d1c6e731f48c2960fc28"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/madewithlove/laravel-oauth2/zipball/0d63afe657cf61c42e20d1c6e731f48c2960fc28",
-                "reference": "0d63afe657cf61c42e20d1c6e731f48c2960fc28",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "~4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "OAuth2": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "description": "Authorize users in your application with multiple OAuth 2.0 providers.",
-            "homepage": "http://github.com/madewithlove/laravel-oauth2",
-            "keywords": [
-                "laravel",
-                "oauth2"
-            ],
-            "time": "2015-02-15 17:08:46"
         },
         {
             "name": "monolog/monolog",

@@ -2,50 +2,20 @@
 
 namespace domain\social;
 
-use OAuth2\OAuth2;
-use OAuth2\Token_Access;
-use OAuth2\Exception as OAuth2_Exception;
+use Facebook\FacebookRedirectLoginHelper;
+use Facebook\FacebookSession;
 
 class FacebookAuth implements FacebookManager
 {
-
     /**
      * login to facebook
-     * @param $provider
      * @return mixed
      */
-    public function loginWithFacebook($provider)
+    public function loginWithFacebook()
     {
-
-        $provider = OAuth2::provider($provider, \Config::get('social.'.$provider));
-
-        if ( ! isset($_GET['code']))
-        {
-            // By sending no options it'll come back here
-            return $provider->authorize();
-        }
-        else
-        {
-            // Howzit?
-            try
-            {
-                $params = $provider->access($_GET['code']);
-
-                $token = new Token_Access(array(
-                    'access_token' => $params->access_token
-                ));
-                $user = $provider->get_user_info($token);
-
-                // Here you should use this information to A) look for a user B) help a new user sign up with existing data.
-                // If you store it all in a cookie and redirect to a registration page this is crazy-simple.
-                return $user;
-            }
-
-            catch (OAuth2_Exception $e)
-            {
-                show_error('That didnt work: '.$e);
-            }
-        }
+        FacebookSession::setDefaultApplication(getenv('FACEBOOK_CLIENT_ID'),getenv('FACEBOOK_CLIENT_SECRET'));
+        $helper = new FacebookRedirectLoginHelper('oauth/fb/callback');
+        return \Redirect::to($helper->getLoginUrl());
     }
 
     /**
@@ -54,7 +24,7 @@ class FacebookAuth implements FacebookManager
      */
     public function logoutWithFacebook()
     {
-        // TODO: Implement logoutWithFacebook() method.
+
     }
 
 }

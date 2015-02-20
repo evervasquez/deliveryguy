@@ -13,10 +13,9 @@ interface FacebookManager
 {
     /**
      * login to facebook
-     * @param $provider
      * @return mixed
      */
-    public function loginWithFacebook($provider);
+    public function loginWithFacebook();
 
     /**
      * logout to facebook

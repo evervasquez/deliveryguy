@@ -26,10 +26,10 @@ Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'UsersController@s
 Route::post('confirmation', ['as' => 'confirmation.post', 'uses' => 'UsersController@create']);
 
 /**
- * Social register
+ * Social register Facebook
  */
-Route::get('oauth/{any}', ['as' => 'oauth', 'uses' => 'EmployeesController@authSocial']);
-Route::get('employee/facebook', ['as' => 'employee.facebook', 'uses' => 'EmployeesController@createEmployeeFacebook']);
+Route::get('oauth/fb', ['as' => 'oauth.fb', 'uses' => 'AuthSocialController@fbLogin']);
+Route::get('oauth/fb/callback', ['as' => 'oauth.fb.callback', 'uses' => 'AuthSocialController@fbCallback']);
 
 
 //Home

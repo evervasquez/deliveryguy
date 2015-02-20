@@ -10,7 +10,7 @@ return array(
     /**
      * Facebook
      */
-    'Facebook' => array(
+    'facebook' => array(
         'id' => getenv('FACEBOOK_CLIENT_ID'),
         'secret' => getenv('FACEBOOK_CLIENT_SECRET')
     ),
@@ -18,7 +18,7 @@ return array(
     /**
      * Google
      */
-    'Google' => array(
+    'google' => array(
         'id' => getenv('GOOGLE_CLIENT_ID'),
         'secret' => getenv('GOOGLE_CLIENT_SECRET')
     )
