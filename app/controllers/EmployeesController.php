@@ -62,6 +62,7 @@ class EmployeesController extends \BaseController
     public function createEmployeeFacebook()
     {
         $this->social->loginWithFacebook();
+        dd('ee');
         //$this->events->fire('employee.create', array($this->employeeRepo->findMaxId()));
         //return \View::make('signup-confirmation');
     }
