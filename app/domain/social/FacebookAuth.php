@@ -17,10 +17,7 @@ class FacebookAuth implements FacebookManager
     public function loginWithFacebook($provider)
     {
 
-        $provider = OAuth2::provider($provider, array(
-            'id' => getenv('FACEBOOK_CLIENT_ID'),
-            'secret' => getenv('FACEBOOK_CLIENT_SECRET'),
-        ));
+        $provider = OAuth2::provider($provider, \Config::get('social.'.$provider));
 
         if ( ! isset($_GET['code']))
         {
@@ -41,8 +38,7 @@ class FacebookAuth implements FacebookManager
 
                 // Here you should use this information to A) look for a user B) help a new user sign up with existing data.
                 // If you store it all in a cookie and redirect to a registration page this is crazy-simple.
-                echo "<pre>";
-                var_dump($user);
+                return $user;
             }
 
             catch (OAuth2_Exception $e)

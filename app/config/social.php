@@ -1,39 +1,26 @@
-<?php 
+<?php
 
-return array( 
-	
-	/*
-	|--------------------------------------------------------------------------
-	| oAuth Config
-	|--------------------------------------------------------------------------
-	*/
+return array(
 
-	/**
-	 * Storage
-	 */
-	'storage' => 'Session', 
+    /*
+    |--------------------------------------------------------------------------
+    | oAuth Config
+    |--------------------------------------------------------------------------
+    */
+    /**
+     * Facebook
+     */
+    'Facebook' => array(
+        'id' => getenv('FACEBOOK_CLIENT_ID'),
+        'secret' => getenv('FACEBOOK_CLIENT_SECRET')
+    ),
 
-	/**
-	 * Consumers
-	 */
-	'consumers' => array(
-
-		/**
-		 * Facebook
-		 */
-        'Facebook' => array(
-            'client_id'     => getenv('FACEBOOK_CLIENT_ID'),
-            'client_secret' => getenv('FACEBOOK_CLIENT_SECRET'),
-            'scope'         => array('email')
-        ),
-
-
-		'Google' => array(
-			'client_id'     => getenv('GOOGLE_CLIENT_ID'),
-			'client_secret' => getenv('GOOGLE_CLIENT_SECRET'),
-			'scope'         => array('userinfo_email', 'userinfo_profile'),
-		),
-
-	)
+    /**
+     * Google
+     */
+    'Google' => array(
+        'id' => getenv('GOOGLE_CLIENT_ID'),
+        'secret' => getenv('GOOGLE_CLIENT_SECRET')
+    )
 
 );
