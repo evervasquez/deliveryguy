@@ -40,7 +40,7 @@ class EmployeesController extends \BaseController
     {
         if ($this->manager->passes()) {
             $employee = $this->employeeRepo->create(Input::except('_token'));
-            dd($employee);
+            dd($employee->email);
             $this->events->fire('employee.create', array($employee));
             return \View::make('signup-confirmation');
         } else {
@@ -55,11 +55,11 @@ class EmployeesController extends \BaseController
     }
 
     public function createEmployeeFacebook(){
-        $user = (object) $this->employeeRepo->loginWithFacebook();
+        $user = (object) array($this->employeeRepo->loginWithFacebook());
 
 //        $this->events->fire('employee.create', array($user));
 //        return \View::make('signup-confirmation');
-        dd($user);
+        dd($user->email);
     }
 
     /**
