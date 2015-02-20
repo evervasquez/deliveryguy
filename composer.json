@@ -8,7 +8,7 @@
         "davibennun/laravel-push-notification": "dev-master",
 	  	"chrisbjr/api-guard": "0.*",
 		"vlucas/phpdotenv": "~1.1",
-	  	"artdarek/oauth-4-laravel": "dev-master"
+	  	"madewithlove/laravel-oauth2": "0.4.*"
 	},
     "require-dev": {
         "way/generators": "~2.0",

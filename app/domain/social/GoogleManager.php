@@ -1,7 +1,7 @@
 <?php
 namespace domain\social;
 
-interface SocialManager {
+interface GoogleManager {
 
     /**
      * login to google
@@ -10,8 +10,9 @@ interface SocialManager {
     public function loginWithGoogle();
 
     /**
-     * login to facebook
+     * logout to google
      * @return mixed
      */
-    public function loginWithFacebook();
+    public function logoutWithGoogle();
+
 }

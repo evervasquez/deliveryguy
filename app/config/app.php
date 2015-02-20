@@ -127,7 +127,6 @@ return array(
         //'Way\Generators\GeneratorsServiceProvider',
         //'Barryvdh\Debugbar\ServiceProvider',
         //'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-		'Artdarek\OAuth\OAuthServiceProvider',
 
 		/**
 		 * events

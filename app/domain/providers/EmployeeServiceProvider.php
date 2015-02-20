@@ -8,10 +8,10 @@
 
 namespace domain\providers;
 
-
 use Illuminate\Support\ServiceProvider;
 
 class EmployeeServiceProvider extends ServiceProvider{
+
     /**
      * Register the service provider.
      *
@@ -19,9 +19,12 @@ class EmployeeServiceProvider extends ServiceProvider{
      */
     public function register()
     {
+
+
         $app = $this->app;
 
-        $app->bind('domain\social\SocialManager', 'domain\social\AutorizateGoogle');
+        $app->bind('domain\social\GoogleManager', 'domain\social\GoogleAuth');
+        $app->bind('domain\social\FacebookManager', 'domain\social\FacebookAuth');
 
     }
 

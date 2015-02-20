@@ -2,24 +2,29 @@
 use domain\delivery\Employee\EmployeeRepositorie;
 use Illuminate\Events\Dispatcher;
 use domain\delivery\Employee\EmployeeManager;
-use domain\social\SocialManager;
+use domain\social\GoogleManager;
+use domain\social\FacebookManager;
+
 class EmployeesController extends \BaseController
 {
     protected $employeeRepo;
     protected $manager;
     protected $events;
-    protected $social;
+    protected $google;
+    protected $facebook;
 
     function __construct(
         EmployeeRepositorie $employeeRepo,
         EmployeeManager $manage,
         Dispatcher $events,
-        SocialManager $socialManager)
+        GoogleManager $google,
+        FacebookManager $facebook)
     {
         $this->employeeRepo = $employeeRepo;
         $this->manager = $manage;
         $this->events = $events;
-        $this->social = $socialManager;
+        $this->google=$google;
+        $this->facebook = $facebook;
     }
 
 
@@ -59,12 +64,10 @@ class EmployeesController extends \BaseController
         return \View::make('signup-confirmation');
     }
 
-    public function createEmployeeFacebook()
+    public function authSocial($provider)
     {
-        $this->social->loginWithFacebook();
-        dd('ee');
-        //$this->events->fire('employee.create', array($this->employeeRepo->findMaxId()));
-        //return \View::make('signup-confirmation');
+        $user = $this->facebook->loginWithFacebook($provider);
+        dd($user);
     }
 
     /**
@@ -128,5 +131,7 @@ class EmployeesController extends \BaseController
 
     public function updatedRegId()
     {
+
     }
+
 }

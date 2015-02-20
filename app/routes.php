@@ -28,7 +28,7 @@ Route::post('confirmation', ['as' => 'confirmation.post', 'uses' => 'UsersContro
 /**
  * Social register
  */
-Route::get('employee/google', ['as' => 'employee.google', 'uses' => 'EmployeesController@createEmployeeGoogle']);
+Route::get('oauth/{any}', ['as' => 'oauth', 'uses' => 'EmployeesController@authSocial']);
 Route::get('employee/facebook', ['as' => 'employee.facebook', 'uses' => 'EmployeesController@createEmployeeFacebook']);
 
 
