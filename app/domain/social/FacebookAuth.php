@@ -32,11 +32,10 @@ class FacebookAuth implements FacebookManager
             return Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
 
-        if ($this->session) {
-            $request = new FacebookRequest($this->session, 'GET', '/me');
-            $response = $request->execute();
-            dd($response);
-        }
+        $request = new FacebookRequest($this->session, 'GET', '/me');
+        $response = $request->execute();
+        $graphObject = $response->getGraphObject();
+        return $graphObject;
     }
 
 
