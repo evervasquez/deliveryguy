@@ -7,18 +7,15 @@ use Facebook\FacebookRequestException;
 
 class FacebookAuth implements FacebookManager
 {
-    private $helper;
-
+    private $redirect_scope = 'public_profile,email';
     /**
      * login to facebook
      * @return mixed
      */
     public function loginWithFacebook()
     {
-        $this->helper = new LaravelFacebookRedirectLoginHelper(route('oauth.fb.callback'));
-        $permissions = ['email']; // optional
-        $loginUrl = $this->helper->getLoginUrl(route('oauth.fb.callback'),$permissions);
-        return \Redirect::to($loginUrl);
+        $helper = new LaravelFacebookRedirectLoginHelper(route('oauth.fb.callback'));
+        return \Redirect::to($helper->getLoginUrl(array('scope' => $this->redirect_scope)));
     }
 
     /**
