@@ -26,7 +26,7 @@ Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'ShowViewRegisterC
 Route::post('confirmation', ['as' => 'confirmation.post', 'uses' => 'UsersController@create']);
 
 
-//redirect message confirmation
+//redirect confirmation email
 Route::get('confirm_email', ['as' => 'showViewSendingEmail', 'uses' => 'ShowViewRegisterController@showViewSendingEmail']);
 
 

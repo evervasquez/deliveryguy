@@ -45,7 +45,6 @@ class UsersController extends BaseController
         } else {
             return \Redirect::back()->withInput()->withErrors($this->manager->getErrors());
         }
-
     }
 
     /**
@@ -105,14 +104,5 @@ class UsersController extends BaseController
     public function destroy($id)
     {
         //
-    }
-
-    /**
-     * show view confirmation
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\View\View
-     */
-    public function showViewConfirmation()
-    {
-
     }
 }

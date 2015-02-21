@@ -3,6 +3,7 @@ use domain\social\GoogleLogin;
 use domain\social\FacebookLogin;
 use domain\delivery\Employee\EmployeeRepositorie;
 use Illuminate\Events\Dispatcher;
+use domain\delivery\Employee\EmployeeManager;
 
 class AuthSocialController extends \BaseController
 {
@@ -10,6 +11,7 @@ class AuthSocialController extends \BaseController
     protected $facebook;
     protected $employeeRepo;
     protected $events;
+
     function __construct(
         Dispatcher $event,
         EmployeeRepositorie $repo,
@@ -19,7 +21,7 @@ class AuthSocialController extends \BaseController
         $this->google = $google;
         $this->facebook = $facebook;
         $this->employeeRepo = $repo;
-        $this->events=$event;
+        $this->events = $event;
     }
 
     public function fbLogin()
@@ -31,12 +33,15 @@ class AuthSocialController extends \BaseController
     {
         $code = Input::get('code');
         $user = $this->facebook->callback($code);
+        $manager = new EmployeeManager($user);
+        if ($manager->passes()) {
+            $employee = $this->employeeRepo->createUserFacebook($user);
+            $this->events->fire('employee.create', array($employee));
+            return Redirect::route('showViewSendingEmail');
+        } else {
+            return \Redirect::back()->withInput()->withErrors($this->manager->getErrors());
+        }
 
-        $employee = $this->employeeRepo->createUserFacebook($user);
-
-        $this->events->fire('employee.create', array($employee));
-
-        return Redirect::route('showViewSendingEmail');
     }
 
 }
