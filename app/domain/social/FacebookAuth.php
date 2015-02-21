@@ -5,14 +5,14 @@ namespace domain\social;
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
 
-class FacebookAuth implements FacebookManager
+class FacebookAuth implements SocialLoginInterface
 {
     private $redirect_scope = 'public_profile,email';
     /**
      * login to facebook
      * @return mixed
      */
-    public function loginWithFacebook()
+    public function login()
     {
         $helper = new LaravelFacebookRedirectLoginHelper(route('oauth.fb.callback'));
         return \Redirect::to($helper->getLoginUrl(array('scope' => $this->redirect_scope)));
@@ -24,7 +24,7 @@ class FacebookAuth implements FacebookManager
      * @return mixed
      * @throws \Facebook\FacebookRequestException
      */
-    public function manageCallback($code)
+    public function callback($code)
     {
         if (strlen($code) == 0) {
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
@@ -57,7 +57,7 @@ class FacebookAuth implements FacebookManager
      * logout to facebook
      * @return mixed
      */
-    public function logoutWithFacebook()
+    public function logout()
     {
 
     }

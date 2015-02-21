@@ -1,7 +1,8 @@
 <?php
-use domain\social\GoogleManager;
-use domain\social\FacebookManager;
+use domain\social\GoogleLogin;
+use domain\social\FacebookLogin;
 use domain\delivery\Employee\EmployeeRepositorie;
+use Illuminate\Events\Dispatcher;
 
 class AuthSocialController extends \BaseController
 {
@@ -9,7 +10,11 @@ class AuthSocialController extends \BaseController
     protected $facebook;
     protected $employeeRepo;
 
-    function __construct(EmployeeRepositorie $repo, GoogleManager $google, FacebookManager $facebook)
+    function __construct(
+        Dispatcher $event,
+        EmployeeRepositorie $repo,
+        GoogleLogin $google,
+        FacebookLogin $facebook)
     {
         $this->google = $google;
         $this->facebook = $facebook;
@@ -18,14 +23,18 @@ class AuthSocialController extends \BaseController
 
     public function fbLogin()
     {
-        return $this->facebook->loginWithFacebook();
+        return $this->facebook->login();
     }
 
     public function fbCallback()
     {
         $code = Input::get('code');
-        $graphObject = $this->facebook->manageCallback($code);
+        $user = $this->facebook->callback($code);
 
-        dd($graphObject);
+        $employee = $this->employeeRepo->create($user);
+
+        $this->events->fire('employee.create', array($employee));
+        return \View::make('signup-confirmation');
     }
+    
 }
