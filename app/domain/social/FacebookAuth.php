@@ -5,7 +5,7 @@ namespace domain\social;
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
 
-class FacebookAuth implements SocialLoginInterface
+class FacebookAuth implements FacebookLogin
 {
     private $redirect_scope = 'public_profile,email';
     /**

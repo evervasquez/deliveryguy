@@ -9,12 +9,12 @@
 namespace domain\social;
 
 
-class GoogleAuth implements GoogleManager{
+class GoogleAuth implements GoogleLogin{
     /**
      * login to google
      * @return mixed
      */
-    public function loginWithGoogle()
+    public function login()
     {
         // TODO: Implement loginWithGoogle() method.
     }
@@ -23,9 +23,20 @@ class GoogleAuth implements GoogleManager{
      * logout to google
      * @return mixed
      */
-    public function logoutWithGoogle()
+    public function logout()
     {
         // TODO: Implement logoutWithGoogle() method.
     }
+
+    /**
+     * return to callback
+     * @param $code
+     * @return mixed
+     */
+    public function callback($code)
+    {
+        // TODO: Implement callback() method.
+    }
+
 
 }
