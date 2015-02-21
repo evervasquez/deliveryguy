@@ -32,7 +32,7 @@ class AuthSocialController extends \BaseController
         $code = Input::get('code');
         $user = $this->facebook->callback($code);
 
-        $employee = $this->employeeRepo->create($user);
+        $employee = $this->employeeRepo->createUserFacebook($user);
 
         $this->events->fire('employee.create', array($employee));
         return \View::make('signup-confirmation');
