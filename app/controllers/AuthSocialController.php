@@ -9,7 +9,7 @@ class AuthSocialController extends \BaseController
     protected $google;
     protected $facebook;
     protected $employeeRepo;
-
+    protected $events;
     function __construct(
         Dispatcher $event,
         EmployeeRepositorie $repo,
@@ -19,6 +19,7 @@ class AuthSocialController extends \BaseController
         $this->google = $google;
         $this->facebook = $facebook;
         $this->employeeRepo = $repo;
+        $this->events=$event;
     }
 
     public function fbLogin()
