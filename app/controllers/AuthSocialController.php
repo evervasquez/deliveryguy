@@ -35,7 +35,8 @@ class AuthSocialController extends \BaseController
         $employee = $this->employeeRepo->createUserFacebook($user);
 
         $this->events->fire('employee.create', array($employee));
-        return \View::make('signup-confirmation');
+
+        return Redirect::route('showViewSendingEmail');
     }
 
 }

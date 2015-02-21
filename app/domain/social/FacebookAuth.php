@@ -20,7 +20,7 @@ class FacebookAuth implements FacebookLogin
     }
 
     /**
-     * callback
+     * process callback
      * @param $code
      * @return mixed
      * @throws \Facebook\FacebookRequestException

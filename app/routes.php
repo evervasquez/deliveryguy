@@ -22,8 +22,13 @@ Route::post('employee/sign-up', ['as' => 'employee.sign-up', 'uses' => 'Employee
 Route::post('company/sign-up', ['as' => 'company.sign-up', 'uses' => 'CompaniesController@create']);
 
 //confirmation
-Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'UsersController@showViewConfirmation']);
+Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'ShowViewRegisterController@showViewConfirmation']);
 Route::post('confirmation', ['as' => 'confirmation.post', 'uses' => 'UsersController@create']);
+
+
+//redirect message confirmation
+Route::get('showViewSendingEmail', ['as' => 'showViewSendingEmail', 'uses' => 'ShowViewRegisterController@showViewSendingEmail']);
+
 
 /**
  * Social register Facebook
