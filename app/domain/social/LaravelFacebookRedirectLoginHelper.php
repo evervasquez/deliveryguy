@@ -41,7 +41,7 @@ class LaravelFacebookRedirectLoginHelper extends FacebookRedirectLoginHelper
     }
 
 
-    //Fix for state value from Auth redirect not equal to session stored state value
+    //Fix for state value from AuthSocial redirect not equal to session stored state value
     //Get FacebookSession via User access token from code
     public function getAccessTokenDetails($app_id,$app_secret,$redirect_url,$code)
     {

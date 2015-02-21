@@ -3,7 +3,7 @@ use domain\social\GoogleLogin;
 use domain\social\FacebookLogin;
 use domain\delivery\Employee\EmployeeRepositorie;
 use Illuminate\Events\Dispatcher;
-use domain\delivery\Employee\EmployeeManager;
+use domain\delivery\Base\SocialManager;
 
 class AuthSocialController extends \BaseController
 {
@@ -41,9 +41,7 @@ class AuthSocialController extends \BaseController
             'email' => $user->getEmail()
         );
 
-        dd($data);
-        
-        $manager = new EmployeeManager($data);
+        $manager = new FacebookManager($data);
 
         if ($manager->passes()) {
             $employee = $this->employeeRepo->createUserFacebook($user);

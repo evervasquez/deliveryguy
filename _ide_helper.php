@@ -1547,7 +1547,7 @@ namespace {
         }
         
         /**
-         * Attempt to authenticate using HTTP Basic Auth.
+         * Attempt to authenticate using HTTP Basic AuthSocial.
          *
          * @param string $field
          * @param \Symfony\Component\HttpFoundation\Request $request

@@ -167,7 +167,7 @@ return array(
 
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
-		'Auth'            => 'Illuminate\Support\Facades\Auth',
+		'AuthSocial'            => 'Illuminate\Support\Facades\Auth',
 		'Blade'           => 'Illuminate\Support\Facades\Blade',
 		'Cache'           => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'     => 'Illuminate\Support\ClassLoader',
@@ -205,7 +205,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification',
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
-		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
+		'OAuth' => 'Artdarek\OAuthSocial\Facade\OAuthSocial',
 	),
 
 );
