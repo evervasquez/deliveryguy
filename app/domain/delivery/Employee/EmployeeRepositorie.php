@@ -15,6 +15,7 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository
      */
     public function create($data)
     {
+        dd($data);
         $max = $this->findMaxId();
         $employee = new Employee();
         $employee->code = 'E' . $max;
