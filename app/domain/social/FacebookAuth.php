@@ -4,6 +4,7 @@ namespace domain\social;
 
 use Facebook\FacebookRequest;
 use Facebook\FacebookRequestException;
+use Facebook\GraphUser;
 
 class FacebookAuth implements FacebookLogin
 {
@@ -45,10 +46,9 @@ class FacebookAuth implements FacebookLogin
             // Logged in
             $request = new FacebookRequest($session, 'GET', '/me');
             $response = $request->execute();
-            $graphObject = $response->getGraphObject();
         }
-
-        return $graphObject;
+        $user = $response->getGraphObject(GraphUser::className());
+        return $user;
 
     }
 
