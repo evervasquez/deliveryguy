@@ -41,6 +41,8 @@ class AuthSocialController extends \BaseController
             'email' => $user->getEmail()
         );
 
+        dd($data);
+        
         $manager = new EmployeeManager($data);
 
         if ($manager->passes()) {
