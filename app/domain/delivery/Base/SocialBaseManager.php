@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: eveR
- * Date: 20/02/15
- * Time: 23:30
- */
 
 namespace domain\delivery\Base;
 
