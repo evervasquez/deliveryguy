@@ -41,6 +41,7 @@ class AuthSocialController extends \BaseController
             'email' => $user->getEmail()
         );
 
+        //manager for facebook
         $manager = new FacebookManager($data);
 
         if ($manager->passes()) {

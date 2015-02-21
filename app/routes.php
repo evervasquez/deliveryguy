@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
     if (Auth::check()) {
@@ -12,7 +13,6 @@ Route::get('/', function () {
 Route::get('php', function(){
     return View::make('php-version');
 });
-
 
 /**
  * register
