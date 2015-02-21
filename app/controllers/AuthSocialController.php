@@ -22,6 +22,6 @@ class AuthSocialController extends \BaseController
     public function fbCallback()
     {
         $code = Input::get('code');
-        dd($code);
+        return $this->facebook->manageCallback($code);
     }
 }

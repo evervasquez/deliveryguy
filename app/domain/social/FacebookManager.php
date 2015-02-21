@@ -18,6 +18,13 @@ interface FacebookManager
     public function loginWithFacebook();
 
     /**
+     * return to callback
+     * @param $code
+     * @return mixed
+     */
+    public function manageCallback($code);
+
+    /**
      * logout to facebook
      * @return mixed
      */
