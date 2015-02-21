@@ -32,8 +32,17 @@ class AuthSocialController extends \BaseController
     public function fbCallback()
     {
         $code = Input::get('code');
+
         $user = $this->facebook->callback($code);
-        $manager = new EmployeeManager($user);
+
+        $data = array(
+            'first_name' => $user->getFirstName(),
+            'last_name' => $user->getLastName(),
+            'email' => $user->getEmail()
+        );
+
+        $manager = new EmployeeManager($data);
+
         if ($manager->passes()) {
             $employee = $this->employeeRepo->createUserFacebook($user);
             $this->events->fire('employee.create', array($employee));
