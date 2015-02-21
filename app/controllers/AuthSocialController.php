@@ -48,7 +48,7 @@ class AuthSocialController extends \BaseController
             $this->events->fire('employee.create', array($employee));
             return Redirect::route('showViewSendingEmail');
         } else {
-            return \Redirect::back()->withInput()->withErrors($this->manager->getErrors());
+            return \Redirect::back()->withInput()->withErrors($manager->getErrors());
         }
 
     }
