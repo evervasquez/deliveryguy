@@ -49,7 +49,7 @@ class FacebookAuth implements FacebookManager
             $graphObject = $response->getGraphObject();
         }
 
-        dd($graphObject);
+        return $graphObject;
 
     }
 

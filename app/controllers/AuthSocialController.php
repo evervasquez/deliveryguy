@@ -23,6 +23,7 @@ class AuthSocialController extends \BaseController
     {
         $code = Input::get('code');
         $graphObject = $this->facebook->manageCallback($code);
+
         dd($graphObject);
     }
 }
