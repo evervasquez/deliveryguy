@@ -15,18 +15,14 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository
      */
     public function create($data)
     {
-        $info = array();
-        if (count($data) > 2) {
-            $max = $this->findMaxId();
-            $employee = new Employee();
-            $employee->code = 'E' . $max;
-            $employee->first_name = $data['first_name'];
-            $employee->last_name = $data['last_name'];
-            $employee->email = $data['email'];
-            $employee->save();
-            return $employee;
-        }
-        return $info;
+        $max = $this->findMaxId();
+        $employee = new Employee();
+        $employee->code = 'E' . $max;
+        $employee->first_name = $data['first_name'];
+        $employee->last_name = $data['last_name'];
+        $employee->email = $data['email'];
+        $employee->save();
+        return $employee;
     }
 
     /**
