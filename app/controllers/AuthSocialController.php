@@ -24,6 +24,7 @@ class AuthSocialController extends \BaseController
         $this->events = $event;
     }
 
+    //region LOGIN_FACEBOOK
     public function fbLogin()
     {
         return $this->facebook->login();
@@ -53,5 +54,11 @@ class AuthSocialController extends \BaseController
         }
 
     }
+    //endregion
 
+    //region LOGIN_GOOGLE
+    public function googleLogin(){
+        return $this->google->login();
+    }
+    //endregion
 }

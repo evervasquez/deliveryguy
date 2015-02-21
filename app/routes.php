@@ -10,7 +10,7 @@ Route::get('/', function () {
     }
 });
 
-Route::get('php', function(){
+Route::get('php', function () {
     return View::make('php-version');
 });
 
@@ -35,6 +35,12 @@ Route::get('confirm_email', ['as' => 'showViewSendingEmail', 'uses' => 'ShowView
  */
 Route::get('oauth/fb', ['as' => 'oauth.fb', 'uses' => 'AuthSocialController@fbLogin']);
 Route::get('oauth/fb/callback', ['as' => 'oauth.fb.callback', 'uses' => 'AuthSocialController@fbCallback']);
+
+/**
+ * Social register Google
+ */
+Route::get('oauth/google', ['as' => 'oauth.google', 'uses' => 'AuthSocialController@googleLogin']);
+Route::get('oauth/google/callback', ['as' => 'oauth.google.callback', 'uses' => 'AuthSocialController@googleCallback']);
 
 
 //Home
@@ -66,7 +72,7 @@ Route::get('deliveries/create', ['as' => 'deliveries.create', 'uses' => 'Deliver
 Route::post('deliveries/store', ['as' => 'deliveries.store', 'uses' => 'DeliveriesController@store']);
 Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'DeliveriesController@getAll']);
 
-    
+
 /*
  * API DE DELIVERYGUY
  */
@@ -74,7 +80,10 @@ Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'Deliver
 //Route::resource("api/v1/employees", "EmployeesGuyApiController");
 //Route::resource("api/v1/deliveries", "DeliveriesGuyApiController");
 
-Route::post('api/v1/user/login', 'domain\api\v1\controllers\UserApiController@login');
-Route::get('api/v1/users', 'domain\api\v1\controllers\UserApiController@all');
 
+Route::group(array('prefix' => 'api/v1', 'before' => 'auth.basic'), function () {
 
+    Route::post('api/v1/user/login', 'domain\api\v1\controllers\AuthApiController@loginGuy');
+    Route::get('api/v1/users', 'domain\api\v1\controllers\UserApiController@all');
+
+});

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ff091ef811c8ac60ca9aa956495cf3df",
+    "hash": "b68dbddb4c94f9c23c5090cea887141c",
     "packages": [
         {
             "name": "chrisbjr/api-guard",
@@ -405,6 +405,48 @@
                 "zf2"
             ],
             "time": "2014-10-26 09:05:09"
+        },
+        {
+            "name": "google/apiclient",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/google/google-api-php-client.git",
+                "reference": "82c16d0654cdbfd784bcca53b39d9d834fb8bd7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/82c16d0654cdbfd784bcca53b39d9d834fb8bd7a",
+                "reference": "82c16d0654cdbfd784bcca53b39d9d834fb8bd7a",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Client library for Google APIs",
+            "homepage": "http://developers.google.com/api-client-library/php",
+            "keywords": [
+                "google"
+            ],
+            "time": "2015-02-21 11:48:19"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -3350,6 +3392,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "davibennun/laravel-push-notification": 20,
+        "google/apiclient": 20,
         "doctrine/dbal": 20
     },
     "prefer-stable": false,
