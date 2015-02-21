@@ -36,5 +36,5 @@ class AuthSocialController extends \BaseController
         $this->events->fire('employee.create', array($employee));
         return \View::make('signup-confirmation');
     }
-    
+
 }

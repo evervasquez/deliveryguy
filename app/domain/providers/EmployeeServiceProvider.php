@@ -23,8 +23,8 @@ class EmployeeServiceProvider extends ServiceProvider{
 
         $app = $this->app;
 
-        $app->bind('domain\social\GoogleManager', 'domain\social\GoogleAuth');
-        $app->bind('domain\social\FacebookManager', 'domain\social\FacebookAuth');
+        $app->bind('domain\social\GoogleLogin', 'domain\social\GoogleAuth');
+        $app->bind('domain\social\FacebookLogin', 'domain\social\FacebookAuth');
 
     }
 
