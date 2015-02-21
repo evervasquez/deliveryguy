@@ -3,7 +3,7 @@ use domain\social\GoogleLogin;
 use domain\social\FacebookLogin;
 use domain\delivery\Employee\EmployeeRepositorie;
 use Illuminate\Events\Dispatcher;
-use domain\delivery\Base\SocialManager;
+use domain\delivery\AuthSocial\FacebookManager;
 
 class AuthSocialController extends \BaseController
 {

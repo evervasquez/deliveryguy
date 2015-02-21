@@ -1,11 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: eveR
- * Date: 20/02/15
- * Time: 23:34
- */
-use domain\delivery\Base\SocialBaseManager;
+namespace domain\delivery\AuthSocial;
 
 class FacebookManager extends SocialBaseManager
 {
