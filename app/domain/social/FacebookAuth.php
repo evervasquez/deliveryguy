@@ -10,7 +10,7 @@ class FacebookAuth implements FacebookManager
      */
     public function loginWithFacebook()
     {
-        $helper = new LaravelFacebookRedirectLoginHelper(url('/fbCallback'));
+        $helper = new LaravelFacebookRedirectLoginHelper('/fbCallback');
         return \Redirect::to($helper->getLoginUrl());
     }
 
