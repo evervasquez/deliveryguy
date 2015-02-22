@@ -27,7 +27,7 @@ class GoogleAuth implements GoogleLogin
      */
     public function login()
     {
-        return $this->google->getAuthorizationUri();
+        return \Redirect::to($this->google->getAuthorizationUri());
     }
 
     /**
