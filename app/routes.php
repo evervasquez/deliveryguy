@@ -40,7 +40,6 @@ Route::get('oauth/fb/callback', ['as' => 'oauth.fb.callback', 'uses' => 'AuthSoc
  * Social register Google
  */
 Route::get('oauth/google', ['as' => 'oauth.google', 'uses' => 'AuthSocialController@googleLogin']);
-Route::get('oauth/google/callback/', ['as' => 'oauth.google.callback', 'uses' => 'AuthSocialController@googleCallback']);
 
 
 //Home
