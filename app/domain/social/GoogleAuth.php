@@ -48,7 +48,17 @@ class GoogleAuth implements GoogleLogin
      */
     public function callback($code)
     {
-        // TODO: Implement callback() method.
+        if (strlen($code) == 0) {
+            return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
+        }
+
+        $this->client->authenticate($code);
+
+        $_SESSION['access_token'] = $this->client->getAccessToken();
+
+        $plus = new \Google_Service_Plus($this->client);
+
+        dd($plus);
     }
 
 
