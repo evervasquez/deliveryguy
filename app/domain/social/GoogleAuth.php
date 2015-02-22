@@ -36,7 +36,7 @@ class GoogleAuth implements GoogleLogin
      */
     public function login()
     {
-        $google = OAuth::consumer('Google',route('oauth/google/callback'));
+        $google = OAuth::consumer('Google',route('oauth.google.callback'));
         return \Redirect::to($google->getAuthorizationUri());
     }
 
