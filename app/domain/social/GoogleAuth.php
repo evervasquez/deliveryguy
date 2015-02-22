@@ -22,7 +22,7 @@ class GoogleAuth implements GoogleLogin
     {
         $auth = new GoogleAuth($this->client);
         if ( !empty( $code ) ) {
-
+            dd($code);
         }
         // if not ask for permission first
         else {
