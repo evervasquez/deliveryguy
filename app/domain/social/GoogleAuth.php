@@ -17,7 +17,7 @@ class GoogleAuth implements GoogleLogin
 
     function __construct()
     {
-        $this->google = OAuth::consumer('Google', route('oauth.google.callback'));
+        $this->google = OAuth::consumer('Google', route('oauth.google.callback'),array('userinfo_email', 'userinfo_profile'));
     }
 
 
