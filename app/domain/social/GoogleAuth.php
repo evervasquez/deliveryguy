@@ -59,9 +59,6 @@ class GoogleAuth implements GoogleLogin
         if (strlen($code) == 0) {
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
-
-
-
     }
 
 
