@@ -2,26 +2,10 @@
 
 namespace domain\social;
 
+use Artdarek\OAuth\OAuth;
+
 class GoogleAuth implements GoogleLogin
 {
-    private $client;
-
-    function __construct()
-    {
-        $this->client = $this->initGoogle();
-    }
-
-
-    public function initGoogle()
-    {
-        $client = new \Google_Client();
-        $client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-        $client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
-        $client->setRedirectUri(route('oauth.google.callback'));
-        $client->setScopes(\Google_Service_Plus::PLUS_ME);
-        return $client;
-    }
-
 
     public function login($code = null)
     {
@@ -52,7 +36,7 @@ class GoogleAuth implements GoogleLogin
             $url = $googleService->getAuthorizationUri();
 
             // return to facebook login url
-            return Redirect::to( (string)$url );
+            return \Redirect::to( (string)$url );
         }
     }
 
