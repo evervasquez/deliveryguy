@@ -54,7 +54,9 @@ class GoogleAuth implements GoogleLogin
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
         $client = $this->service->getClient();
-        return $client;
+        $result = json_decode($client->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
+
+        return $result;
     }
 
 
