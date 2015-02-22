@@ -9,7 +9,7 @@ class GoogleAuth implements GoogleLogin
     public function login($code = null)
     {
         // get google service
-        $googleService = \OAuth::consumer( 'Google' );
+        $googleService = \OAuth::consumer('Google');
 
         // check if code is valid
 
@@ -17,7 +17,7 @@ class GoogleAuth implements GoogleLogin
         if ( !empty( $code ) ) {
 
             // This was a callback request from google, get the token
-            $token = $googleService->requestAccessToken( $code );
+            $token = $googleService->requestAccessToken($code);
 
             // Send a request with it
             $result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
@@ -58,9 +58,6 @@ class GoogleAuth implements GoogleLogin
         if (strlen($code) == 0) {
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
-        $client = $this->initGoogle();
-        $plus = new \Google_Service_Plus($client);
-        return $plus->people->get('me');
     }
 
 
