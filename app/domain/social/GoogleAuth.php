@@ -15,13 +15,18 @@ class GoogleAuth implements GoogleLogin
 
     function __construct()
     {
+        $this->initGoogle();
+    }
+
+
+    public function initGoogle()
+    {
         $this->client = new \Google_Client();
         $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
         $this->client->setRedirectUri(route('oauth.google.callback'));
         $this->client->addScope("https://www.googleapis.com/auth/urlshortener");
     }
-
 
     /**
      * login to google
@@ -52,6 +57,8 @@ class GoogleAuth implements GoogleLogin
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
 
+        $this->initGoogle();
+        
         $this->client->authenticate($code);
 
         $_SESSION['access_token'] = $this->client->getAccessToken();
