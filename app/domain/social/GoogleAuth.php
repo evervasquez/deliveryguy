@@ -5,11 +5,10 @@ namespace domain\social;
 class GoogleAuth implements GoogleLogin
 {
     private $client;
-    private $service;
 
     function __construct()
     {
-        $this->client= $this->initGoogle();
+        $this->client = $this->initGoogle();
     }
 
 
@@ -23,13 +22,38 @@ class GoogleAuth implements GoogleLogin
         return $client;
     }
 
-    /**
-     * login to google
-     * @return mixed
-     */
-    public function login()
+
+    public function login($code = null)
     {
-        return \Redirect::to($this->client->createAuthUrl());
+        // get google service
+        $googleService = OAuth::consumer( 'Google' );
+
+        // check if code is valid
+
+        // if code is provided get user data and sign in
+        if ( !empty( $code ) ) {
+
+            // This was a callback request from google, get the token
+            $token = $googleService->requestAccessToken( $code );
+
+            // Send a request with it
+            $result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
+
+            if(!empty($token)){
+
+                dd($result);
+
+            }
+
+        }
+        // if not ask for permission first
+        else {
+            // get googleService authorization
+            $url = $googleService->getAuthorizationUri();
+
+            // return to facebook login url
+            return Redirect::to( (string)$url );
+        }
     }
 
     /**

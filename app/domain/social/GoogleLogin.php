@@ -6,9 +6,10 @@ interface GoogleLogin
 {
     /**
      * login to facebook
+     * @param $code
      * @return mixed
      */
-    public function login();
+    public function login($code=null);
 
     /**
      * return to callback

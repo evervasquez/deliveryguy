@@ -124,6 +124,7 @@ return array(
         'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider',
 		'EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider',
 		'Chrisbjr\ApiGuard\ApiGuardServiceProvider',
+		'Artdarek\OAuth\OAuthServiceProvider',
         //'Way\Generators\GeneratorsServiceProvider',
         //'Barryvdh\Debugbar\ServiceProvider',
         //'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
@@ -205,6 +206,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification',
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
+		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
 	),
 
 );
