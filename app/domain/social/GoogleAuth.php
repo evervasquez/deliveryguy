@@ -16,8 +16,7 @@ class GoogleAuth implements GoogleLogin
 
         if ($this->checkRedirectCode($code)) {
             dd('perfect');
-            $token = $this->client->getAccessToken();
-            dd($token);
+
 
         } // if not ask for permission first
         else {
@@ -45,11 +44,13 @@ class GoogleAuth implements GoogleLogin
 
         if (isset($code)) {
 
-
+            $this->client->setAccessType('offline');
+            
+            $token = $this->client->authenticate($code);
 
             $this->client->authenticate($code);
 
-            $this->setToken($this->client->getAccessToken());
+            $this->setToken($token);
 
             return true;
         }
