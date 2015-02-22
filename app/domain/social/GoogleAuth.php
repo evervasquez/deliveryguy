@@ -11,21 +11,21 @@ class GoogleAuth implements GoogleLogin
     {
         $this->initGoogleClient();
 
-        if ($this->checkRedirectCode($code)) {
+        $client = new \Google_Client();
+        $client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+        $client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
+        $client->setRedirectUri(route('oauth.google'));
+        $client->setScopes('email');
+
+        if ($this->checkRedirectCode($client,$code)) {
+
+            dd($this->getPayLoad($client));
 
         } // if not ask for permission first
         else {
             // return to google login url
             return \Redirect::to($this->getAuthUrl());
         }
-    }
-
-    private function initGoogleClient(){
-        $this->client = new \Google_Client();
-        $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-        $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
-        $this->client->setRedirectUri(route('oauth.google'));
-        $this->client->setScopes('email');
     }
 
     /**
@@ -42,21 +42,15 @@ class GoogleAuth implements GoogleLogin
         return $this->client->createAuthUrl();
     }
 
-    private function checkRedirectCode($code)
+    private function checkRedirectCode($client,$code)
     {
-//        $client = new \Google_Client();
-//        $client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-//        $client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
-//        $client->setRedirectUri(route('oauth.google'));
-//        $client->setScopes('email');
 
         if (isset($code)) {
 
-            $this->client->authenticate($code);
+            $client->authenticate($code);
 
-            $this->setToken($this->client->getAccessToken());
+            $this->setToken($client,$client->getAccessToken());
 
-            dd($this->getPayLoad());
 
             return true;
         }
@@ -64,15 +58,15 @@ class GoogleAuth implements GoogleLogin
         return false;
     }
 
-    private function setToken($token)
+    private function setToken($client,$token)
     {
         //\Session::put('access_token',$token);
-        $this->client->setAccessToken($token);
+        $client->setAccessToken($token);
     }
 
-    private function getPayLoad()
+    private function getPayLoad($client)
     {
-        $ticket = $this->client->verifyIdToken($this->client->getAccessToken());
+        $ticket = $client->verifyIdToken($client->getAccessToken());
         if($ticket){
             $data = $ticket->getAttributes();
             return $data;
