@@ -7,24 +7,20 @@ class GoogleAuth implements GoogleLogin
     protected $client;
     protected $auth;
 
-    function __construct()
+    public function login($code = null)
     {
         $this->client = new \Google_Client();
-        if($this->client){
+
+        if ($this->client) {
             $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
             $this->client->setClientSecret('GOOGLE_CLIENT_SECRET');
             $this->client->setRedirectUri(route('oauth.google'));
             $this->client->setScopes('email');
         }
-    }
 
-
-    public function login($code = null)
-    {
         if ($this->checkRedirectCode($code)) {
 
-        }
-        // if not ask for permission first
+        } // if not ask for permission first
         else {
             // return to google login url
             return \Redirect::to($this->getAuthUrl());
@@ -37,16 +33,18 @@ class GoogleAuth implements GoogleLogin
      */
     public function logout()
     {
-       \Session::forget('access_token');
+        \Session::forget('access_token');
     }
 
-    private function  getAuthUrl(){
+    private function  getAuthUrl()
+    {
         return $this->client->createAuthUrl();
     }
 
-    private function checkRedirectCode($code){
+    private function checkRedirectCode($code)
+    {
 
-        if(isset($code)){
+        if (isset($code)) {
 
             $this->client->authenticate($code);
 
@@ -60,12 +58,14 @@ class GoogleAuth implements GoogleLogin
         return false;
     }
 
-    private function setToken($token){
+    private function setToken($token)
+    {
         //\Session::put('access_token',$token);
         $this->client->setAccessToken($token);
     }
 
-    private function getPayLoad(){
+    private function getPayLoad()
+    {
         $payload = $this->client->verifyIdToken()->getAttributes();
         return $payload;
     }
