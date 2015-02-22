@@ -51,6 +51,8 @@ class GoogleAuth implements GoogleLogin
             $this->google->requestAccessToken($code);
             // Send a request with it
             $result = json_decode($this->google->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
+            dd($result);
+
             return $result;
         } else {
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Google');
