@@ -56,7 +56,7 @@ class GoogleAuth implements GoogleLogin
 
         $_SESSION['access_token'] = $this->client->getAccessToken();
 
-        $plus = new \Google_Service_Plus($this->client);
+        $plus = new \Google_Auth_OAuth2($this->client);
 
         dd($plus);
     }
