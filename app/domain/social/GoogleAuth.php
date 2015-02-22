@@ -31,7 +31,7 @@ class GoogleAuth implements GoogleLogin
      */
     public function login()
     {
-        return \Redirect::to($this->client->createAuthUrl());
+        return \Redirect::to($this->client->createAuthUrl(),array('userinfo_email', 'userinfo_profile'));
     }
 
     /**
