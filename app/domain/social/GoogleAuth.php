@@ -45,7 +45,8 @@ class GoogleAuth implements GoogleLogin
         if (isset($code)) {
 
             $this->client->setAccessType('offline');
-            
+
+            dd($code);
             $token = $this->client->authenticate($code);
 
             $this->client->authenticate($code);
