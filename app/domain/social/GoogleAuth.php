@@ -23,7 +23,6 @@ class GoogleAuth implements GoogleLogin
     {
         if ($this->checkRedirectCode()) {
 
-            dd($this->getPayLoad());
         }
         // if not ask for permission first
         else {
@@ -50,6 +49,7 @@ class GoogleAuth implements GoogleLogin
         if(isset($code)){
             $this->client->authenticate($code);
             $this->setToken($this->client->getAccessToken());
+            dd($this->getPayLoad());
             return true;
         }
 
@@ -57,7 +57,7 @@ class GoogleAuth implements GoogleLogin
     }
 
     private function setToken($token){
-        \Session::put('access_token',$token);
+        //\Session::put('access_token',$token);
         $this->client->setAccessToken($token);
     }
 
