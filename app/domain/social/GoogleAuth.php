@@ -5,10 +5,11 @@ namespace domain\social;
 class GoogleAuth implements GoogleLogin
 {
     protected $client;
+    protected $auth;
 
-    function __construct(\Google_Client $client=null)
+    function __construct()
     {
-        $this->client = $client;
+        $this->client = new \Google_Client();
         if($this->client){
             $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
             $this->client->setClientSecret('GOOGLE_CLIENT_SECRET');
@@ -20,15 +21,14 @@ class GoogleAuth implements GoogleLogin
 
     public function login($code = null)
     {
-        $auth = new GoogleAuth($this->client);
-        if ( !empty( $code ) ) {
-            dd($code);
+        if ($this->checkRedirectCode()) {
+
+            dd($this->getPayLoad());
         }
         // if not ask for permission first
         else {
-
             // return to google login url
-            return \Redirect::to($auth->getAuthUrl());
+            return \Redirect::to($this->getAuthUrl());
         }
     }
 
@@ -38,10 +38,31 @@ class GoogleAuth implements GoogleLogin
      */
     public function logout()
     {
-        // TODO: Implement logoutWithGoogle() method.
+       \Session::forget('access_token');
     }
 
     private function  getAuthUrl(){
         return $this->client->createAuthUrl();
+    }
+
+    private function checkRedirectCode(){
+        $code = \Input::get('code');
+        if(isset($code)){
+            $this->client->authenticate($code);
+            $this->setToken($this->client->getAccessToken());
+            return true;
+        }
+
+        return false;
+    }
+
+    private function setToken($token){
+        \Session::put('access_token',$token);
+        $this->client->setAccessToken($token);
+    }
+
+    private function getPayLoad(){
+        $payload = $this->client->verifyIdToken()->getAttributes();
+        return $payload;
     }
 }
