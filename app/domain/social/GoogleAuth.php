@@ -9,14 +9,7 @@ class GoogleAuth implements GoogleLogin
 
     public function login($code = null)
     {
-        $this->client = new \Google_Client();
-
-        if ($this->client) {
-            $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-            $this->client->setClientSecret('GOOGLE_CLIENT_SECRET');
-            $this->client->setRedirectUri(route('oauth.google'));
-            $this->client->setScopes('email');
-        }
+        $this->initGoogleClient();
 
         if ($this->checkRedirectCode($code)) {
 
@@ -24,6 +17,17 @@ class GoogleAuth implements GoogleLogin
         else {
             // return to google login url
             return \Redirect::to($this->getAuthUrl());
+        }
+    }
+
+    private function initGoogleClient(){
+        $this->client = new \Google_Client();
+
+        if ($this->client) {
+            $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+            $this->client->setClientSecret('GOOGLE_CLIENT_SECRET');
+            $this->client->setRedirectUri(route('oauth.google'));
+            $this->client->setScopes('email');
         }
     }
 
@@ -43,7 +47,8 @@ class GoogleAuth implements GoogleLogin
 
     private function checkRedirectCode($code)
     {
-
+        $this->initGoogleClient();
+        
         if (isset($code)) {
 
 
