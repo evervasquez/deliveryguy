@@ -47,14 +47,15 @@ class GoogleAuth implements GoogleLogin
 
     private function checkRedirectCode($code)
     {
-        $this->initGoogleClient();
-        
+        $client = new \Google_Client();
+        $client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+        $client->setClientSecret('GOOGLE_CLIENT_SECRET');
+        $client->setRedirectUri(route('oauth.google'));
+        $client->setScopes('email');
+
         if (isset($code)) {
 
-
-            $this->client->authenticate($code);
-
-            dd($code);
+            $client->authenticate($code);
 
             $this->setToken($this->client->getAccessToken());
 
