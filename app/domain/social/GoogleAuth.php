@@ -1,17 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: eveR
- * Date: 19/02/15
- * Time: 23:53
- */
 
 namespace domain\social;
-
 
 class GoogleAuth implements GoogleLogin
 {
     private $client;
+    private $service;
 
     function __construct()
     {
@@ -22,6 +16,9 @@ class GoogleAuth implements GoogleLogin
     public function initGoogle()
     {
         $this->client = new \Google_Client();
+
+        $this->service = new \Google_Service($this->client);
+
         $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
         $this->client->setRedirectUri(route('oauth.google.callback'));
@@ -56,8 +53,8 @@ class GoogleAuth implements GoogleLogin
         if (strlen($code) == 0) {
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
-
-        return $code;
+        $client = $this->service->getClient();
+        return $client;
     }
 
 
