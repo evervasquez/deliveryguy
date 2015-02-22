@@ -10,6 +10,7 @@ class ShowViewRegisterController extends \BaseController
 
     public function showViewConfirmation(){
         $data = Input::all();
+
         $employee = \domain\Utils::dataDesencriptar($data);
 
         //quitamos el ultimo registro del array
@@ -17,6 +18,8 @@ class ShowViewRegisterController extends \BaseController
 
         //sacamos sha1
         $encript = sha1(implode('|', $employee));
+
+        dd($key.'-----'.$encript);
 
         //comparmos los sha1
         if ($encript == $key) {
