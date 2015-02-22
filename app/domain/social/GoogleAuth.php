@@ -29,7 +29,7 @@ class GoogleAuth implements GoogleLogin
      */
     public function login()
     {
-        return $this->client->createAuthUrl();
+        return \Redirect::to($this->client->createAuthUrl());
     }
 
     /**
