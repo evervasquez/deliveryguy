@@ -30,7 +30,7 @@ return array(
 		'Google' => array(
 			'client_id'     => getenv('GOOGLE_CLIENT_ID'),
 			'client_secret' => getenv('GOOGLE_CLIENT_SECRET'),
-			'scope'         => array('userinfo_email', 'userinfo_profile'),
+			'scope'         => array(\OAuth\OAuth2\Service\Google::SCOPE_USERINFO_EMAIL, \OAuth\OAuth2\Service\Google::SCOPE_USERINFO_PROFILE),
 		),
 	)
 

@@ -20,7 +20,7 @@ class GoogleAuth implements GoogleLogin
 
             // This was a callback request from google, get the token
             dd($code);
-            
+
             $googleService->requestAccessToken($code);
 
             // Send a request with it
