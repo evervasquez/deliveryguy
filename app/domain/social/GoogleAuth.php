@@ -13,7 +13,7 @@ class GoogleAuth implements GoogleLogin
             $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
             $this->client->setClientSecret('GOOGLE_CLIENT_SECRET');
             $this->client->setRedirectUri(route('oauth.google'));
-            $this->client->setScopes(array('email','userinfo'));
+            $this->client->setScopes('email');
         }
     }
 
