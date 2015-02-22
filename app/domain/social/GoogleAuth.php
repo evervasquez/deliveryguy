@@ -56,7 +56,7 @@ class GoogleAuth implements GoogleLogin
     // app/src/GA_Service.php
     public function isLoggedIn(){
         if (\Session::has('token')) {
-            $this->client->setAccessToken(\Session::has('token'));
+            $this->client->setAccessToken(\Session::get('token'));
             return true;
         }
 
