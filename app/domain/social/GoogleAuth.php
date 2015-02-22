@@ -9,7 +9,7 @@ class GoogleAuth implements GoogleLogin
     public function login($code = null)
     {
         // get google service
-        $googleService = \OAuth::consumer('Google');
+        $googleService = \OAuth::consumer('Google',route('oauth/google'));
 
         // check if code is valid
 
