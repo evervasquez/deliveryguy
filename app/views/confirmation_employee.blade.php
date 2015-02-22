@@ -1,4 +1,4 @@
-@extends('sign-up')
+@extends('layout')
 
 @section('content')
     <div class="container">
