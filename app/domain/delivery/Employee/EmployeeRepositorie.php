@@ -63,13 +63,18 @@ class EmployeeRepositorie extends BaseRepository implements InterfaceRepository
         return Employee::whereNull('deleted_at')->max('id');
     }
 
-    public function createUserFacebook($user){
+    /**
+     * create user from facebook or google
+     * @param $user
+     * @return Employee
+     */
+    public function createUserSocial($user){
         $max = $this->findMaxId();
         $employee = new Employee();
         $employee->code = 'E' . $max;
-        $employee->first_name = $user->getFirstName();
-        $employee->last_name = $user->getLastName();
-        $employee->email = $user->getEmail();
+        $employee->first_name = $user['first_name'];
+        $employee->last_name = $user['last_name'];
+        $employee->email = $user['email'];
         $employee->save();
         return $employee;
     }

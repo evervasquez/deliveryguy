@@ -2,7 +2,7 @@
 namespace domain\delivery\AuthSocial;
 use domain\delivery\Base\SocialBaseManager;
 
-class FacebookManager extends SocialBaseManager
+class SocialManager extends SocialBaseManager
 {
 
     function getRules()

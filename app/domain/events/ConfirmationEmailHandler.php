@@ -21,7 +21,7 @@ class ConfirmationEmailHandler
 
     public function subscribe($events)
     {
-        $events->listen('employee.create', 'domain\events\ConfirmationEmailHandler@onSendMessage');
+        $events->listen('confirmation.email.register', 'domain\events\ConfirmationEmailHandler@onSendMessage');
     }
 
     public function onSendMessage($employee)

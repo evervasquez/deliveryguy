@@ -3,7 +3,7 @@ use domain\social\GoogleLogin;
 use domain\social\FacebookLogin;
 use domain\delivery\Employee\EmployeeRepositorie;
 use Illuminate\Events\Dispatcher;
-use domain\delivery\AuthSocial\FacebookManager;
+use domain\delivery\AuthSocial\SocialManager;
 
 class AuthSocialController extends \BaseController
 {
@@ -24,6 +24,7 @@ class AuthSocialController extends \BaseController
         $this->events = $event;
     }
 
+
     //region LOGIN_FACEBOOK
     public function fbLogin()
     {
@@ -43,11 +44,11 @@ class AuthSocialController extends \BaseController
         );
 
         //manager for facebook
-        $manager = new FacebookManager($data);
+        $manager = new SocialManager($data);
 
         if ($manager->passes()) {
-            $employee = $this->employeeRepo->createUserFacebook($user);
-            $this->events->fire('employee.create', array($employee));
+            $employee = $this->employeeRepo->createUserSocial($data);
+            $this->events->fire('confirmation.email.register', array($employee));
             return Redirect::route('showViewSendingEmail');
         } else {
             return \Redirect::back()->withInput()->withErrors($manager->getErrors());
@@ -56,14 +57,38 @@ class AuthSocialController extends \BaseController
     }
     //endregion
 
+
     //region LOGIN_GOOGLE
-    public function googleLogin(){
+    public function googleLogin()
+    {
         return $this->google->login();
     }
 
-    public function googleCallback(){
+    public function googleCallback()
+    {
         $code = Input::get('code');
-        $user = $this->google->callback($code);
-        echo '<pre>'; print_r($user);exit;
+        $googleUser = $this->google->callback($code);
+//        echo '<pre>'; print_r($user);exit;
+
+        $data = array(
+            'first_name' => $googleUser->givenName,
+            'last_name' => $googleUser->familyName,
+            'email' => $googleUser->email,
+            'picture' => $googleUser->picture,
+            'google_id' => $googleUser->id
+        );
+
+        //manager social google
+        $manager = new SocialManager($data);
+
+        if ($manager->passes()) {
+            $employee = $this->employeeRepo->createUserSocial($data);
+            $this->events->fire('confirmation.email.register', array($employee));
+            return Redirect::route('showViewSendingEmail');
+        } else {
+            return \Redirect::back()->withInput()->withErrors($manager->getErrors());
+        }
+
     }
+    //endregion
 }
