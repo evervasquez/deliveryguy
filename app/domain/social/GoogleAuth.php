@@ -17,7 +17,6 @@ class GoogleAuth implements GoogleLogin
         if ( !empty( $code ) ) {
 
             // This was a callback request from google, get the token
-
             $token = $googleService->requestAccessToken(\Input::get('code'));
 
             // Send a request with it
