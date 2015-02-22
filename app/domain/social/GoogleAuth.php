@@ -13,14 +13,21 @@ use Artdarek\OAuth\Facade\OAuth;
 
 class GoogleAuth implements GoogleLogin
 {
+    private $google;
+
+    function __construct()
+    {
+        $this->google = OAuth::consumer('Google', route('oauth.google.callback'));
+    }
+
+
     /**
      * login to google
      * @return mixed
      */
     public function login()
     {
-        $google = OAuth::consumer('Google', route('oauth.google.callback'));
-        return \Redirect::to($google->getAuthorizationUri());
+        return \Redirect::to($this->google->getAuthorizationUri());
     }
 
     /**
@@ -41,10 +48,9 @@ class GoogleAuth implements GoogleLogin
     {
         if (!empty($code)) {
             // This was a callback request from google, get the token
-            $google = \OAuth::consumer('Google');
-            $token = $google->requestAccessToken($code);
+            $this->google->requestAccessToken($code);
             // Send a request with it
-            $result = json_decode($google->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
+            $result = json_decode($this->google->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
             return $result;
         } else {
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Google');
