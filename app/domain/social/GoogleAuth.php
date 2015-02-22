@@ -8,9 +8,7 @@ class GoogleAuth implements GoogleLogin
 
     public function login($code = null)
     {
-        include_once ('../vendor/google/apiclient/src/Google/Client.php');
-
-        $this->client = new Google_Client();
+        $this->client = new \Google_Client();
         $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
         $this->client->setRedirectUri(route('oauth.google'));
