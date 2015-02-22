@@ -3,13 +3,15 @@
 namespace domain\social;
 
 
+use Artdarek\OAuth\Facade\OAuth;
+
 class GoogleAuth implements GoogleLogin
 {
 
     public function login($code = null)
     {
         // get google service
-        $googleService = \OAuth::consumer('Google',url('/').'/oauth/google/');
+        $googleService = OAuth::consumer('Google',route('oauth.google'));
 
         // check if code is valid
 
