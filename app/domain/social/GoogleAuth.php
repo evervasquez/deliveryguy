@@ -15,8 +15,9 @@ class GoogleAuth implements GoogleLogin
         $this->client->setScopes('email');
 
         if ($this->checkRedirectCode($code)) {
-
-            dd($this->getPayLoad());
+            dd('perfect');
+            $token = $this->client->getAccessToken();
+            dd($token);
 
         } // if not ask for permission first
         else {
@@ -43,10 +44,8 @@ class GoogleAuth implements GoogleLogin
     {
 
         if (isset($code)) {
-            
-            $token = $this->client->getAccessToken();
 
-            dd($token);
+
 
             $this->client->authenticate($code);
 
