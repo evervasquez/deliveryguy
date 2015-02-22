@@ -16,7 +16,12 @@ class GoogleAuth implements GoogleLogin
         $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
         $this->client->setRedirectUri(route('oauth.google'));
-        $this->client->setScopes(array(\Google_Service_Oauth2::USERINFO_EMAIL,\Google_Service_Oauth2::USERINFO_PROFILE,\Google_Service_Oauth2::PLUS_ME));
+        $this->client->setScopes(array(
+            "https://www.googleapis.com/auth/plus.login",
+            "https://www.googleapis.com/auth/userinfo.email",
+            "https://www.googleapis.com/auth/userinfo.profile",
+            "https://www.googleapis.com/auth/plus.me"
+        ));
     }
 
     public function login($code = null)
@@ -29,8 +34,10 @@ class GoogleAuth implements GoogleLogin
 
         if ($this->isLoggedIn()) {
 
-            echo '<pre>';print_r($this->getPayLoad());exit;
-
+            //echo '<pre>';print_r($this->getPayLoad());exit;
+            $oauth = new \Google_Service_Oauth2($this->client);
+            $user = $oauth->userinfo->get();
+            dd($user);
         } // if not ask for permission first
         else {
             // return to google login url
