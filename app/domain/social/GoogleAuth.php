@@ -46,6 +46,8 @@ class GoogleAuth implements GoogleLogin
 
         if (isset($code)) {
 
+            dd($code);
+
             $this->client->authenticate($code);
 
             $this->setToken($this->client->getAccessToken());
@@ -61,7 +63,6 @@ class GoogleAuth implements GoogleLogin
     private function setToken($token)
     {
         //\Session::put('access_token',$token);
-        dd($token);
         $this->client->setAccessToken($token);
     }
 
