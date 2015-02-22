@@ -19,7 +19,7 @@ class ShowViewRegisterController extends \BaseController
         //sacamos sha1
         $encript = sha1(implode('|', $employee));
 
-        dd($key.'-----'.$encript);
+        //dd($key.'-----'.$encript);
 
         //comparmos los sha1
         if ($encript == $key) {
