@@ -54,7 +54,7 @@ class GoogleAuth implements GoogleLogin
         $client = $this->service->getClient();
         $plus = new \Google_Service_Plus($client);
 
-        return $plus;
+        return $plus->people->get('me');
     }
 
 
