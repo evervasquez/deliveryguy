@@ -2,7 +2,6 @@
 
 namespace domain\social;
 
-use Artdarek\OAuth\OAuth;
 
 class GoogleAuth implements GoogleLogin
 {
@@ -10,7 +9,7 @@ class GoogleAuth implements GoogleLogin
     public function login($code = null)
     {
         // get google service
-        $googleService = OAuth::consumer( 'Google' );
+        $googleService = \OAuth::consumer( 'Google' );
 
         // check if code is valid
 
