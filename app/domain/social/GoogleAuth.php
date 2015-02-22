@@ -5,7 +5,6 @@ namespace domain\social;
 class GoogleAuth implements GoogleLogin
 {
     protected $client;
-    protected $auth;
 
     public function login($code = null)
     {
@@ -44,11 +43,14 @@ class GoogleAuth implements GoogleLogin
     {
 
         if (isset($code)) {
+            
+            $token = $this->client->getAccessToken();
+
+            dd($token);
 
             $this->client->authenticate($code);
 
-            $this->setToken($this->client,$this->client->getAccessToken());
-
+            $this->setToken($this->client->getAccessToken());
 
             return true;
         }
