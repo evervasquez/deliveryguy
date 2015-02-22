@@ -46,7 +46,7 @@ class GoogleAuth implements GoogleLogin
         if (!empty($code)) {
             // This was a callback request from google, get the token
             $google = OAuth::consumer('Google',route('oauth.google.callback'));
-            $google->requestAccessToken($_GET['code']);
+            $google->requestAccessToken($code);
             // Send a request with it
             $result = json_decode($google->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
             return $result;
