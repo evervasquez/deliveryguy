@@ -22,7 +22,7 @@ class GoogleAuth implements GoogleLogin
         } // if not ask for permission first
         else {
             // return to google login url
-            return \Redirect::to($this->getAuthUrl());
+            return \Redirect::to($this->getAuthUrl($client));
         }
     }
 
@@ -35,9 +35,9 @@ class GoogleAuth implements GoogleLogin
         \Session::forget('access_token');
     }
 
-    private function  getAuthUrl()
+    private function  getAuthUrl($client)
     {
-        return $this->client->createAuthUrl();
+        return $client->createAuthUrl();
     }
 
     private function checkRedirectCode($client,$code)
