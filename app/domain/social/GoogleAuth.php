@@ -9,18 +9,18 @@ class GoogleAuth implements GoogleLogin
 
     function __construct()
     {
-        $this->initGoogle();
+        $this->client= $this->initGoogle();
     }
 
 
     public function initGoogle()
     {
-        $this->client = new \Google_Client();
-        $this->service = new \Google_Service($this->client);
-        $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-        $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
-        $this->client->setRedirectUri(route('oauth.google.callback'));
-        $this->client->setScopes(\Google_Service_Plus::PLUS_ME);
+        $client = new \Google_Client();
+        $client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+        $client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
+        $client->setRedirectUri(route('oauth.google.callback'));
+        $client->setScopes(\Google_Service_Plus::PLUS_ME);
+        return $client;
     }
 
     /**
@@ -51,9 +51,8 @@ class GoogleAuth implements GoogleLogin
         if (strlen($code) == 0) {
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
-        $client = $this->service->getClient();
+        $client = $this->initGoogle();
         $plus = new \Google_Service_Plus($client);
-
         return $plus->people->get('me');
     }
 
