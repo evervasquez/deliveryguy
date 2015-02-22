@@ -9,7 +9,7 @@
 	  	"chrisbjr/api-guard": "0.*",
 		"vlucas/phpdotenv": "~1.1",
 	    "facebook/php-sdk-v4" : "4.0.*",
-	  	"google/apiclient": "1.0.*@beta"
+	    "artdarek/oauth-4-laravel": "dev-master"
 	},
     "require-dev": {
         "way/generators": "~2.0",

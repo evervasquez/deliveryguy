@@ -9,23 +9,25 @@
 namespace domain\social;
 
 
+use Artdarek\OAuth\Facade\OAuth;
+
 class GoogleAuth implements GoogleLogin
 {
     private $client;
 
     function __construct()
     {
-        $this->initGoogle();
+//        $this->initGoogle();
     }
 
 
     public function initGoogle()
     {
-        $this->client = new \Google_Client();
-        $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-        $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
-        $this->client->setRedirectUri(route('oauth.google.callback'));
-        $this->client->addScope("https://www.googleapis.com/auth/urlshortener");
+//        $this->client = new \Google_Client();
+//        $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+//        $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
+//        $this->client->setRedirectUri(route('oauth.google.callback'));
+//        $this->client->addScope("https://www.googleapis.com/auth/urlshortener");
     }
 
     /**
@@ -34,7 +36,8 @@ class GoogleAuth implements GoogleLogin
      */
     public function login()
     {
-        return \Redirect::to($this->client->createAuthUrl());
+        $google = OAuth::consumer('Google',route('oauth/google/callback'));
+        return \Redirect::to($google->getAuthorizationUri());
     }
 
     /**
@@ -57,13 +60,8 @@ class GoogleAuth implements GoogleLogin
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
 
-        $this->initGoogle();
 
-        $this->client->authenticate($code);
 
-        $_SESSION['access_token'] = $this->client->getAccessToken();
-
-        dd($this->client);
     }
 
 
