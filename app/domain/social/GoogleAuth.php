@@ -20,7 +20,7 @@ class GoogleAuth implements GoogleLogin
             $token = $googleService->requestAccessToken($code);
 
             // Send a request with it
-            $result = json_decode( $googleService->request( 'https://www.googleapis.com/oauth2/v1/userinfo' ), true );
+            $result = json_decode( $googleService->request('https://www.googleapis.com/oauth2/v1/userinfo' ), true );
 
             if(!empty($token)){
 
@@ -47,18 +47,5 @@ class GoogleAuth implements GoogleLogin
     {
         // TODO: Implement logoutWithGoogle() method.
     }
-
-    /**
-     * return to callback
-     * @param $code
-     * @return mixed
-     */
-    public function callback($code)
-    {
-        if (strlen($code) == 0) {
-            return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
-        }
-    }
-
 
 }

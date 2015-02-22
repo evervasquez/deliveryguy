@@ -27,9 +27,6 @@ return array(
             'scope'         => array(),
         ),
 
-		/**
-		 * Google
-		 */
 		'Google' => array(
 			'client_id'     => getenv('GOOGLE_CLIENT_ID'),
 			'client_secret' => getenv('GOOGLE_CLIENT_SECRET'),

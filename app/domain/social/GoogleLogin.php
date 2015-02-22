@@ -12,13 +12,6 @@ interface GoogleLogin
     public function login($code=null);
 
     /**
-     * return to callback
-     * @param $code
-     * @return mixed
-     */
-    public function callback($code);
-
-    /**
      * logout to facebook
      * @return mixed
      */
