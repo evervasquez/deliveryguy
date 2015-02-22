@@ -29,7 +29,7 @@ class GoogleAuth implements GoogleLogin
 
         if ($this->isLoggedIn()) {
 
-            dd("login");
+            dd($this->getPayLoad());
 
         } // if not ask for permission first
         else {
