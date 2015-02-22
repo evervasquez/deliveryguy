@@ -22,13 +22,10 @@ class GoogleAuth implements GoogleLogin
 
     private function initGoogleClient(){
         $this->client = new \Google_Client();
-
-        if ($this->client) {
-            $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-            $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
-            $this->client->setRedirectUri(route('oauth.google'));
-            $this->client->setScopes('email');
-        }
+        $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+        $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
+        $this->client->setRedirectUri(route('oauth.google'));
+        $this->client->setScopes('email');
     }
 
     /**
