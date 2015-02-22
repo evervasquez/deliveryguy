@@ -49,8 +49,6 @@ class GoogleAuth implements GoogleLogin
             dd($code);
             $token = $this->client->authenticate($code);
 
-            $this->client->authenticate($code);
-
             $this->setToken($token);
 
             return true;
