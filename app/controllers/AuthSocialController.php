@@ -63,9 +63,7 @@ class AuthSocialController extends \BaseController
 
     public function googleCallback(){
         $code = Input::get('code');
-        $user = $this->google->callback($code);
-
-        dd($user);
+        return $this->google->callback($code);
     }
     //endregion
 }

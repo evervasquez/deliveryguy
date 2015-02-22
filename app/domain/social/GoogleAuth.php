@@ -9,17 +9,24 @@
 namespace domain\social;
 
 
-use Artdarek\OAuth\Facade\OAuth;
-
 class GoogleAuth implements GoogleLogin
 {
-    private $google;
+    private $client;
 
     function __construct()
     {
-        $this->google = OAuth::consumer('Google', route('oauth.google.callback'),array('userinfo_email', 'userinfo_profile'));
+        $this->initGoogle();
     }
 
+
+    public function initGoogle()
+    {
+        $this->client = new \Google_Client();
+        $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+        $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
+        $this->client->setRedirectUri(route('oauth.google.callback'));
+        $this->client->addScope("https://www.googleapis.com/auth/urlshortener");
+    }
 
     /**
      * login to google
@@ -27,7 +34,7 @@ class GoogleAuth implements GoogleLogin
      */
     public function login()
     {
-        return \Redirect::to($this->google->getAuthorizationUri());
+        return \Redirect::to($this->client->createAuthUrl());
     }
 
     /**
@@ -46,19 +53,11 @@ class GoogleAuth implements GoogleLogin
      */
     public function callback($code)
     {
-        if (!empty($code)) {
-            $this->google = OAuth::consumer('Google', route('oauth.google.callback'),array('userinfo_email', 'userinfo_profile'));
-            // This was a callback request from google, get the token
-            $token = $this->google->requestAccessToken($code);
-            dd($token);
-
-            // Send a request with it
-            $result = json_decode($this->google->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
-
-            return $result;
-        } else {
-            return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Google');
+        if (strlen($code) == 0) {
+            return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
+
+        return $code;
     }
 
 
