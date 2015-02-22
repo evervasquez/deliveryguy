@@ -29,7 +29,7 @@ class GoogleAuth implements GoogleLogin
 
         if ($this->isLoggedIn()) {
 
-            dd($this->getPayLoad());
+            echo '<pre>';print_r($this->getPayLoad());exit;
 
         } // if not ask for permission first
         else {
@@ -45,7 +45,7 @@ class GoogleAuth implements GoogleLogin
      */
     public function logout()
     {
-        \Session::forget('access_token');
+        \Session::forget('token');
     }
 
     private function  getAuthUrl()
@@ -65,11 +65,7 @@ class GoogleAuth implements GoogleLogin
 
     private function getPayLoad()
     {
-        $ticket = $this->client->verifyIdToken($this->client->getAccessToken());
-        if($ticket){
-            $data = $ticket->getAttributes();
-            return $data;
-        }
-        return false;
+        $payload = $this->client->verifyIdToken()->getAttributes();
+        return $payload;
     }
 }
