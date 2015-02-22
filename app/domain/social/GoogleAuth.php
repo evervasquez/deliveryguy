@@ -15,7 +15,7 @@ class GoogleAuth implements GoogleLogin
         $this->client->setScopes('email');
 
         if ($this->checkRedirectCode($code)) {
-            dd('perfect');
+            dd($this->getPayLoad());
 
 
         } // if not ask for permission first
