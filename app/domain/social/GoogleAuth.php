@@ -63,13 +63,6 @@ class GoogleAuth implements GoogleLogin
         return $this->client->getAccessToken();
     }
 
-
-    private function setToken($token)
-    {
-        //\Session::put('access_token',$token);
-        $this->client->setAccessToken($token);
-    }
-
     private function getPayLoad()
     {
         $ticket = $this->client->verifyIdToken($this->client->getAccessToken());
