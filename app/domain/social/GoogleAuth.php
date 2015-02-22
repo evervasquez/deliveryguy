@@ -48,7 +48,7 @@ class GoogleAuth implements GoogleLogin
 
             $this->client->authenticate($code);
 
-            //$this->setToken($this->client->getAccessToken());
+            $this->setToken($this->client->getAccessToken());
 
             dd($this->getPayLoad());
 
@@ -61,6 +61,7 @@ class GoogleAuth implements GoogleLogin
     private function setToken($token)
     {
         //\Session::put('access_token',$token);
+        dd($token);
         $this->client->setAccessToken($token);
     }
 
