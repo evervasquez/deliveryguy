@@ -21,6 +21,8 @@ class GoogleAuth implements GoogleLogin
             // This was a callback request from google, get the token
             $googleService->requestAccessToken($_GET['code']);
 
+            $url = $googleService->getAuthorizationUri();
+
             // Send a request with it
             $result = json_decode( $googleService->request('https://www.googleapis.com/oauth2/v1/userinfo' ), true );
 
