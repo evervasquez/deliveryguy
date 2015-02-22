@@ -16,7 +16,7 @@ class GoogleAuth implements GoogleLogin
         $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
         $this->client->setRedirectUri(route('oauth.google'));
-        $this->client->setScopes(array(\Google_Service_Oauth2::USERINFO_EMAIL,\Google_Service_Oauth2::USERINFO_PROFILE));
+        $this->client->setScopes(array(\Google_Service_Oauth2::USERINFO_EMAIL,\Google_Service_Oauth2::USERINFO_PROFILE,\Google_Service_Oauth2::PLUS_ME));
     }
 
     public function login($code = null)
