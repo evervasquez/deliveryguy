@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+    <br/><br/><br/>
     <div class="container">
         <h2>{{ucwords($employee['first_name']).' '.ucwords($employee['last_name'])}} Welcome to DeliveryGuy</h2>
         <p>To complete the registration has to create a strong password for your future income.</p>
