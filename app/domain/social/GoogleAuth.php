@@ -21,7 +21,7 @@ class GoogleAuth implements GoogleLogin
 
     public function login($code = null)
     {
-        if ($this->checkRedirectCode()) {
+        if ($this->checkRedirectCode($code)) {
 
         }
         // if not ask for permission first
@@ -44,12 +44,16 @@ class GoogleAuth implements GoogleLogin
         return $this->client->createAuthUrl();
     }
 
-    private function checkRedirectCode(){
-        $code = \Input::get('code');
+    private function checkRedirectCode($code){
+
         if(isset($code)){
+
             $this->client->authenticate($code);
+
             $this->setToken($this->client->getAccessToken());
+
             dd($this->getPayLoad());
+
             return true;
         }
 
