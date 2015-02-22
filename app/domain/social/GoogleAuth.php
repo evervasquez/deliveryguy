@@ -13,13 +13,12 @@ class GoogleAuth implements GoogleLogin
         // get google service
         $googleService = OAuth::consumer('Google',route('oauth.google'));
 
-        // check if code is valid
+        $googleService->requestAccessToken($code);
 
         // if code is provided get user data and sign in
         if ( !empty( $code ) ) {
 
             // This was a callback request from google, get the token
-            $token = $googleService->requestAccessToken($code);
 
             // Send a request with it
             $result = json_decode( $googleService->request('https://www.googleapis.com/oauth2/v1/userinfo' ), true );
