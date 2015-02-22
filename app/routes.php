@@ -22,7 +22,7 @@ Route::post('employee/sign-up', ['as' => 'employee.sign-up', 'uses' => 'Employee
 Route::post('company/sign-up', ['as' => 'company.sign-up', 'uses' => 'CompaniesController@create']);
 
 //confirmation
-Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'ShowViewRegisterController@showViewConfirmation']);
+Route::get('confirmation', ['as' => 'confirmation', 'uses' => 'ShowViewRegisterController@showViewSendingEmail']);
 Route::post('confirmation', ['as' => 'confirmation.post', 'uses' => 'UsersController@create']);
 
 
