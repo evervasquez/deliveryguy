@@ -6,17 +6,30 @@ class GoogleAuth implements GoogleLogin
 {
     protected $client;
 
-    public function login($code = null)
+    function __construct(\Google_Client $client)
     {
-        $this->client = new \Google_Client();
+        $this->client = $client;
+        $this->init();
+    }
+
+    private function init(){
         $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
         $this->client->setRedirectUri(route('oauth.google'));
         $this->client->setScopes('email');
+    }
 
-        if ($this->checkRedirectCode($code)) {
-            dd($this->getPayLoad());
+    public function login($code = null)
+    {
+        if(isset($code)){
+            $this->client->authenticate($code);
+            $token = $this->client->getAccessToken();
+            \Session::put('token',$token);
+        }
 
+        if ($this->isLoggedIn()) {
+
+            dd("login");
 
         } // if not ask for permission first
         else {
@@ -24,6 +37,7 @@ class GoogleAuth implements GoogleLogin
             return \Redirect::to($this->getAuthUrl());
         }
     }
+
 
     /**
      * logout to google
@@ -39,22 +53,16 @@ class GoogleAuth implements GoogleLogin
         return $this->client->createAuthUrl();
     }
 
-    private function checkRedirectCode($code)
-    {
-
-        if (isset($code)) {
-
-            $this->client->setAccessType('online');
-
-//            $token = $this->client->authenticate($code);
-//
-//            $this->setToken($token);
-
+    // app/src/GA_Service.php
+    public function isLoggedIn(){
+        if (\Session::has('token')) {
+            $this->client->setAccessToken(\Session::has('token'));
             return true;
         }
 
-        return false;
+        return $this->client->getAccessToken();
     }
+
 
     private function setToken($token)
     {
