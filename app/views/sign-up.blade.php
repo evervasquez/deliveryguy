@@ -2,11 +2,9 @@
 
 @section('content')
 <div class="container">
-
         <div class="row">
         <br/>
                             <!--/panel content-->
-                           
               <section class="register">
                   <article class="register__tab">
                     <ul class="register__list">
@@ -106,7 +104,9 @@
 
               </section>                  
 
-            @overwrite
+        </div>
+    </div>
+@overwrite
 
 
 
