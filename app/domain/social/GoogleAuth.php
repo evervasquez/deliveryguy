@@ -50,9 +50,10 @@ class GoogleAuth implements GoogleLogin
             $this->google = OAuth::consumer('Google', route('oauth.google.callback'),array('userinfo_email', 'userinfo_profile'));
             // This was a callback request from google, get the token
             $token = $this->google->requestAccessToken($code);
+            dd($token);
+
             // Send a request with it
             $result = json_decode($this->google->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
-            dd($result);
 
             return $result;
         } else {
