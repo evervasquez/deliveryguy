@@ -66,7 +66,11 @@ class GoogleAuth implements GoogleLogin
 
     private function getPayLoad()
     {
-        $payload = $this->client->verifyIdToken()->getAttributes();
-        return $payload;
+        $ticket = $this->client->verifyIdToken($this->client->getAccessToken());
+        if($ticket){
+            $data = $ticket->getAttributes();
+            return $data;
+        }
+        return false;
     }
 }
