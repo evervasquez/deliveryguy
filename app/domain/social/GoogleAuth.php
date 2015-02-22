@@ -18,12 +18,16 @@ class GoogleAuth implements GoogleLogin
 
             // This was a callback request from google, get the token
 
+            $token = $googleService->requestAccessToken(\Input::get('code'));
+
             // Send a request with it
             $result = json_decode( $googleService->request('https://www.googleapis.com/oauth2/v1/userinfo' ), true );
 
+            if(!empty($token)){
 
                 dd($result);
 
+            }
 
         }
         // if not ask for permission first
