@@ -19,7 +19,7 @@ class GoogleAuth implements GoogleLogin
      */
     public function login()
     {
-        $google = OAuth::consumer('Google',route('oauth.google.callback'));
+        $google = OAuth::consumer('Google', route('oauth.google.callback'));
         return \Redirect::to($google->getAuthorizationUri());
     }
 
@@ -39,17 +39,15 @@ class GoogleAuth implements GoogleLogin
      */
     public function callback($code)
     {
-        if (strlen($code) == 0) {
-            return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
-        }
-
         if (!empty($code)) {
             // This was a callback request from google, get the token
-            $google = OAuth::consumer('Google',route('oauth.google.callback'));
-            $google->requestAccessToken($code);
+            $google = OAuth::consumer('Google');
+            $token = $google->requestAccessToken($code);
             // Send a request with it
             $result = json_decode($google->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
             return $result;
+        } else {
+            return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
         }
     }
 
