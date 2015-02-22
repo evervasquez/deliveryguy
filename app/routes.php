@@ -34,7 +34,7 @@ Route::get('confirm_email', ['as' => 'showViewSendingEmail', 'uses' => 'ShowView
  * Social register Facebook
  */
 Route::get('oauth/fb', ['as' => 'oauth.fb', 'uses' => 'AuthSocialController@fbLogin']);
-Route::get('oauth/fb/callback', ['as' => 'oauth.fb.callback', 'uses' => 'AuthSocialController@fbCallback']);
+Route::get('oauth/fb/callback/', ['as' => 'oauth.fb.callback', 'uses' => 'AuthSocialController@fbCallback']);
 
 /**
  * Social register Google
