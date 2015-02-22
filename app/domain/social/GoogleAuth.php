@@ -12,39 +12,29 @@ class GoogleAuth implements GoogleLogin
         $this->init();
     }
 
-    private function init(){
+    /**
+     * initialize object
+     */
+    private function init()
+    {
         $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
-        $this->client->setRedirectUri(route('oauth.google'));
-        $this->client->setScopes(array(
-            "https://www.googleapis.com/auth/plus.login",
-            "https://www.googleapis.com/auth/userinfo.email",
-            "https://www.googleapis.com/auth/userinfo.profile",
-            "https://www.googleapis.com/auth/plus.me"
+        $this->client->setRedirectUri(route('oauth.google.callback'));
+        $this->client->setScopes(array(\Google_Service_Oauth2::PLUS_LOGIN,
+            \Google_Service_Oauth2::USERINFO_EMAIL,
+            \Google_Service_Oauth2::USERINFO_PROFILE,
+            \Google_Service_Oauth2::PLUS_ME
         ));
     }
 
-    public function login($code = null)
+    /**
+     * login
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function login()
     {
-        if(isset($code)){
-            $this->client->authenticate($code);
-            $token = $this->client->getAccessToken();
-            \Session::put('token',$token);
-        }
-
-        if ($this->isLoggedIn()) {
-
-            //echo '<pre>';print_r($this->getPayLoad());exit;
-            $oauth = new \Google_Service_Oauth2($this->client);
-            $user = $oauth->userinfo->get();
-            dd($user);
-        } // if not ask for permission first
-        else {
-            // return to google login url
-            return \Redirect::to($this->getAuthUrl());
-        }
+        return \Redirect::to($this->getAuthUrl());
     }
-
 
     /**
      * logout to google
@@ -55,24 +45,46 @@ class GoogleAuth implements GoogleLogin
         \Session::forget('token');
     }
 
+    /**
+     * get url to redirect
+     * @return string
+     */
     private function  getAuthUrl()
     {
         return $this->client->createAuthUrl();
     }
 
-    // app/src/GA_Service.php
-    public function isLoggedIn(){
+
+    /**
+     * verify is logged
+     * @return bool|string
+     */
+    private function isLoggedIn()
+    {
         if (\Session::has('token')) {
             $this->client->setAccessToken(\Session::get('token'));
             return true;
         }
-
         return $this->client->getAccessToken();
     }
 
-    private function getPayLoad()
+    public function callback($code)
     {
-        $payload = $this->client->verifyIdToken()->getAttributes();
-        return $payload;
+        if (isset($code)) {
+            $this->client->authenticate($code);
+            $token = $this->client->getAccessToken();
+            \Session::put('token', $token);
+        }
+
+        if ($this->isLoggedIn()) {
+            $oauth = new \Google_Service_Oauth2($this->client);
+            return $oauth->userinfo->get();
+        } // if not ask for permission first
+        else {
+            // return to google login url
+            return \Redirect::to($this->getAuthUrl());
+        }
     }
+
+
 }

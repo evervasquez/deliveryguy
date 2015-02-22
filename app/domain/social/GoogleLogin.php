@@ -6,14 +6,15 @@ interface GoogleLogin
 {
     /**
      * login to facebook
-     * @param $code
      * @return mixed
      */
-    public function login($code=null);
+    public function login();
 
     /**
      * logout to facebook
      * @return mixed
      */
     public function logout();
+
+    public function callback($code);
 }

@@ -58,8 +58,12 @@ class AuthSocialController extends \BaseController
 
     //region LOGIN_GOOGLE
     public function googleLogin(){
-        $code = Input::get( 'code' );
-        return $this->google->login($code);
+        return $this->google->login();
     }
 
+    public function googleCallback(){
+        $code = Input::get('code');
+        $user = $this->google->callback($code);
+        echo '<pre>'; print_r($user);exit;
+    }
 }
