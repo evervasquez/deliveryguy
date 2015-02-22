@@ -13,21 +13,11 @@ use Artdarek\OAuth\Facade\OAuth;
 
 class GoogleAuth implements GoogleLogin
 {
-    private $client;
+    private $google;
 
     function __construct()
     {
-//        $this->initGoogle();
-    }
-
-
-    public function initGoogle()
-    {
-//        $this->client = new \Google_Client();
-//        $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-//        $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
-//        $this->client->setRedirectUri(route('oauth.google.callback'));
-//        $this->client->addScope("https://www.googleapis.com/auth/urlshortener");
+        $this->google = OAuth::consumer('Google',route('oauth.google.callback'));
     }
 
     /**
@@ -36,8 +26,8 @@ class GoogleAuth implements GoogleLogin
      */
     public function login()
     {
-        $google = OAuth::consumer('Google',route('oauth.google.callback'));
-        return \Redirect::to($google->getAuthorizationUri());
+
+        return \Redirect::to($this->google->getAuthorizationUri());
     }
 
     /**
@@ -58,6 +48,14 @@ class GoogleAuth implements GoogleLogin
     {
         if (strlen($code) == 0) {
             return \Redirect::route('sign-up')->with('message', 'There was an error communicating with Facebook');
+        }
+
+        if (!empty($code)) {
+            // This was a callback request from google, get the token
+            $this->google->requestAccessToken($_GET['code']);
+            // Send a request with it
+            $result = json_decode($this->google->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
+            return $result;
         }
     }
 
