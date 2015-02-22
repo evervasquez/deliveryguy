@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b68dbddb4c94f9c23c5090cea887141c",
+    "hash": "7e9140fa75f8499b2808dee2a49f9bca",
     "packages": [
         {
             "name": "chrisbjr/api-guard",
@@ -408,16 +408,16 @@
         },
         {
             "name": "google/apiclient",
-            "version": "dev-master",
+            "version": "1.0.6-beta",
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client.git",
-                "reference": "82c16d0654cdbfd784bcca53b39d9d834fb8bd7a"
+                "reference": "a41a9dc0662e36420030eaab802dbb1f85459479"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/82c16d0654cdbfd784bcca53b39d9d834fb8bd7a",
-                "reference": "82c16d0654cdbfd784bcca53b39d9d834fb8bd7a",
+                "url": "https://api.github.com/repos/google/google-api-php-client/zipball/a41a9dc0662e36420030eaab802dbb1f85459479",
+                "reference": "a41a9dc0662e36420030eaab802dbb1f85459479",
                 "shasum": ""
             },
             "require": {
@@ -429,7 +429,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1.x-dev"
+                    "dev-master": "1.0.x-dev"
                 }
             },
             "autoload": {
@@ -438,6 +438,9 @@
                 ]
             },
             "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "src/"
+            ],
             "license": [
                 "Apache-2.0"
             ],
@@ -446,7 +449,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2015-02-21 11:48:19"
+            "time": "2014-09-30 19:33:59"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -3392,7 +3395,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "davibennun/laravel-push-notification": 20,
-        "google/apiclient": 20,
+        "google/apiclient": 10,
         "doctrine/dbal": 20
     },
     "prefer-stable": false,
