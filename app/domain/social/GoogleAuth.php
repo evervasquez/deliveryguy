@@ -25,7 +25,7 @@ class GoogleAuth implements GoogleLogin
 
         if ($this->client) {
             $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-            $this->client->setClientSecret('GOOGLE_CLIENT_SECRET');
+            $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
             $this->client->setRedirectUri(route('oauth.google'));
             $this->client->setScopes('email');
         }
@@ -47,15 +47,15 @@ class GoogleAuth implements GoogleLogin
 
     private function checkRedirectCode($code)
     {
-        $client = new \Google_Client();
-        $client->setClientId(getenv('GOOGLE_CLIENT_ID'));
-        $client->setClientSecret('GOOGLE_CLIENT_SECRET');
-        $client->setRedirectUri(route('oauth.google'));
-        $client->setScopes('email');
+//        $client = new \Google_Client();
+//        $client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+//        $client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
+//        $client->setRedirectUri(route('oauth.google'));
+//        $client->setScopes('email');
 
         if (isset($code)) {
 
-            $client->authenticate($code);
+            $this->client->authenticate($code);
 
             $this->setToken($this->client->getAccessToken());
 
