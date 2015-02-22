@@ -30,7 +30,7 @@ class GoogleAuth implements GoogleLogin
     public function login()
     {
         $service = new \Google_Service_Urlshortener($this->client);
-        dd($service);
+        return \Redirect::to($service);
     }
 
     /**
