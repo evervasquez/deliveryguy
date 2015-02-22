@@ -8,6 +8,8 @@ class GoogleAuth implements GoogleLogin
 
     public function login($code = null)
     {
+        \File::requireOnce('../vendor/google/apiclient/src/Google/Client.php');
+
         $this->client = new \Google_Client();
         $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
         $this->client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET'));
@@ -44,9 +46,8 @@ class GoogleAuth implements GoogleLogin
 
         if (isset($code)) {
 
-            $this->client->setAccessType('offline');
+            $this->client->setAccessType('online');
 
-            dd($code);
             $token = $this->client->authenticate($code);
 
             $this->setToken($token);

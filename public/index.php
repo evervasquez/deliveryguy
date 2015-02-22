@@ -58,5 +58,4 @@ $app = require_once __DIR__.'/../bootstrap/start.php';
 use Facebook\FacebookSession;
 FacebookSession::setDefaultApplication(getenv('FACEBOOK_CLIENT_ID'),getenv('FACEBOOK_CLIENT_SECRET'));
 
-require_once '../vendor/google/apiclient/src/Google/Client.php';
 $app->run();
