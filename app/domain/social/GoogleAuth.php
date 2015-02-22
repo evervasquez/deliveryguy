@@ -2,44 +2,33 @@
 
 namespace domain\social;
 
-
-use Artdarek\OAuth\Facade\OAuth;
-
 class GoogleAuth implements GoogleLogin
 {
+    protected $client;
+
+    function __construct(\Google_Client $client=null)
+    {
+        $this->client = $client;
+        if($this->client){
+            $this->client->setClientId(getenv('GOOGLE_CLIENT_ID'));
+            $this->client->setClientSecret('GOOGLE_CLIENT_SECRET');
+            $this->client->setRedirectUri(route('oauth.google'));
+            $this->client->setScopes(array('email','userinfo'));
+        }
+    }
+
 
     public function login($code = null)
     {
-        // get google service
-        $googleService = OAuth::consumer('Google',route('oauth.google'));
-
-        // check if code is valid
-
-        // if code is provided get user data and sign in
+        $auth = new GoogleAuth($this->client);
         if ( !empty( $code ) ) {
-
-            // This was a callback request from google, get the token
-            $googleService->requestAccessToken($_GET['code']);
-
-            $url = $googleService->getAuthorizationUri();
-
-            // Send a request with it
-            $result = json_decode( $googleService->request('https://www.googleapis.com/oauth2/v1/userinfo' ), true );
-
-            if(!empty($token)){
-
-                dd($result);
-
-            }
 
         }
         // if not ask for permission first
         else {
-            // get googleService authorization
-            $url = $googleService->getAuthorizationUri();
 
-            // return to facebook login url
-            return \Redirect::to( (string)$url );
+            // return to google login url
+            return \Redirect::to($auth->getAuthUrl());
         }
     }
 
@@ -52,4 +41,7 @@ class GoogleAuth implements GoogleLogin
         // TODO: Implement logoutWithGoogle() method.
     }
 
+    private function  getAuthUrl(){
+        return $this->client->createAuthUrl();
+    }
 }
