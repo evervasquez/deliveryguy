@@ -79,7 +79,12 @@ Route::filter('csrf', function () {
 
 use Cartalyst\Sentry\Facades\Laravel\Sentry;
 
-Route::filter('auth.token', function ($route, $request) {
+Route::filter('auth.token', /**
+ * @param $route
+ * @param $request
+ * @return \Illuminate\Http\JsonResponse
+ */
+    function ($route, $request) {
     $authenticated = false;
 
     //region LOGIN OR CREATE TOKEN
@@ -137,8 +142,8 @@ Route::filter('auth.token', function ($route, $request) {
     //endregion
 
 
-    //REGION AUTH SOCIAL
 
+    //region AUTH SOCIAL
     if ($authenticated && !Sentry::check()) {
         Sentry::login(Auth::user());
     }
