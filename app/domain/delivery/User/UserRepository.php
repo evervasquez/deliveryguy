@@ -1,33 +1,25 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Investigación2
- * Date: 04/11/14
- * Time: 01:52 AM
- */
-
 namespace domain\delivery\User;
 
-use Carbon\Carbon;
+use Cartalyst\Sentry\Facades\CI\Sentry;
 use domain\delivery\InterfaceRepository;
 
 class UserRepository implements InterfaceRepository
 {
     /**
-     * create new record
+     * create new record || Sentry
      * @param $data
      * @return mixed
      */
     public function create($data)
     {
-
-        $user = new User();
-        $user->code_user = base64_decode(base64_decode($data['_type']));
-        $user->email = $data['email'];
-        $user->password = \Hash::make($data['password']);
-        $user->activated_at = Carbon::now();
-        $user->save();
-        return $user;
+        //create user for Sentry
+        Sentry::createUser(array(
+            'code_user' => base64_decode(base64_decode($data['_type'])),
+            'email' => $data['email'],
+            'password' => \Hash::make($data['password']),
+            'activated' => true,
+        ));
     }
 
     /**

@@ -20,8 +20,7 @@ class UserTransformer extends TransformerAbstract
                     'rel' => 'self',
                     'uri' => '/user/' . $user->id,
                 ]
-            ],
-            'deleted_at' => $user->deleted_at
+            ]
         ];
     }
 }

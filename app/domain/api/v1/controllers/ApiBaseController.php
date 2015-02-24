@@ -9,6 +9,6 @@
 namespace domain\api\v1\controllers;
 
 
-class ApiBaseController {
+class ApiBaseController extends \Controller{
 
 }

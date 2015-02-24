@@ -6,11 +6,12 @@
 	"require": {
 		"laravel/framework": "4.2.*",
         "davibennun/laravel-push-notification": "dev-master",
-	  	"chrisbjr/api-guard": "0.*",
 		"vlucas/phpdotenv": "~1.1",
 	    "facebook/php-sdk-v4" : "4.0.*",
 		"google/apiclient": "1.0.3-beta",
-	  	"artdarek/oauth-4-laravel": "dev-master"
+	  	"cartalyst/sentry": "2.1.*",
+	  	"hisorange/browser-detect": "1.*",
+	    "ellipsesynergie/api-response": "~0.7"
 	},
     "require-dev": {
         "way/generators": "~2.0",

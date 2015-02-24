@@ -2,6 +2,7 @@
 
 namespace domain\api\v1\controllers;
 
+
 class AuthApiController extends ApiBaseController
 {
 

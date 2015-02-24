@@ -122,21 +122,25 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
         'Davibennun\LaravelPushNotification\LaravelPushNotificationServiceProvider',
+		'Cartalyst\Sentry\SentryServiceProvider',
+		'hisorange\BrowserDetect\Provider\BrowserDetectService',
 		'EllipseSynergie\ApiResponse\Laravel\ResponseServiceProvider',
-		'Chrisbjr\ApiGuard\ApiGuardServiceProvider',
-		'Artdarek\OAuth\OAuthServiceProvider',
         //'Way\Generators\GeneratorsServiceProvider',
         //'Barryvdh\Debugbar\ServiceProvider',
         //'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
 
-		/**
-		 * events
-		 */
+		/*
+		|--------------------------------------------------------------------------
+		| Events DeliveryGuy
+		|--------------------------------------------------------------------------
+		*/
 		'domain\providers\RegistratorsServiceProvider',
 
-		/**
-		 * providers
-		 */
+		/*
+		|--------------------------------------------------------------------------
+		| Providers DeliveryGuy
+		|--------------------------------------------------------------------------
+		*/
 		'domain\providers\EmployeeServiceProvider'
 	),
 
@@ -168,7 +172,7 @@ return array(
 
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
-		'AuthSocial'            => 'Illuminate\Support\Facades\Auth',
+		'Auth'            => 'Illuminate\Support\Facades\Auth',
 		'Blade'           => 'Illuminate\Support\Facades\Blade',
 		'Cache'           => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'     => 'Illuminate\Support\ClassLoader',
@@ -206,7 +210,8 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
         'PushNotification' => 'Davibennun\LaravelPushNotification\Facades\PushNotification',
         'Debugbar' => 'Barryvdh\Debugbar\Facade',
-		'OAuth' => 'Artdarek\OAuth\Facade\OAuth',
+		'Sentry' => 'Cartalyst\Sentry\Facades\Laravel\Sentry',
+		'BrowserDetect' => 'hisorange\BrowserDetect\Facade\Parser',
 	),
 
 );

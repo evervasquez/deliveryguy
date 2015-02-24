@@ -81,9 +81,18 @@ Route::get('deliveries/getAll', ['as' => 'deliveries.getAll', 'uses' => 'Deliver
 //Route::resource("api/v1/deliveries", "DeliveriesGuyApiController");
 
 
-Route::group(array('prefix' => 'api/v1', 'before' => 'auth.basic'), function () {
-
+Route::group(array('before' => 'auth.token'), function () {
     Route::post('api/v1/user/login', 'domain\api\v1\controllers\AuthApiController@loginGuy');
     Route::get('api/v1/users', 'domain\api\v1\controllers\UserApiController@all');
+});
 
+//create user
+Route::get('create/user',function(){
+    $user = \Cartalyst\Sentry\Facades\Laravel\Sentry::createUser(array(
+        'email'     => 'test@example.com',
+        'password'  => 'test',
+        'activated' => true,
+    ));
+
+    return $user;
 });
