@@ -88,6 +88,7 @@ Route::group(array('before' => 'auth.token'), function () {
 
 //create user
 Route::get('create/user',function(){
+
     $user = \Cartalyst\Sentry\Facades\Laravel\Sentry::createUser(array(
         'email'     => 'test@example.com',
         'password'  => 'test',

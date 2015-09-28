@@ -8,7 +8,7 @@ use Facebook\GraphUser;
 
 class FacebookAuth implements FacebookLogin
 {
-    private $redirect_scope = 'public_profile,email';
+        private $redirect_scope = 'public_profile,email';
     /**
      * login to facebook
      * @return mixed
